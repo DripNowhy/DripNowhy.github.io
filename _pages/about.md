@@ -74,19 +74,19 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
     <title>Map Widget</title>
     <style>
         .map-container {
-            width: 300px; 
+            width: 600px; 
             margin: 0 auto; 
             text-align: center; 
         }
         .map-container iframe {
             width: 100%; 
-            height: 300px; 
+            height: 400px; 
         }
     </style>
 </head>
 <body>
     <div class="map-container">
-        <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=v_GbMmUIZgjzaC0X6Zd7_lxQceuBA-_4-HDe90WH_Vw&cl=ffffff&w=a"></script>
+        <script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=080808&w=a&t=n&d=v_GbMmUIZgjzaC0X6Zd7_lxQceuBA-_4-HDe90WH_Vw&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script>
     </div>
 </body>
 </html>
