@@ -38,7 +38,7 @@ In my spare time, I am very passionate about digital and film photography. In ad
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='images/TTD.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Test-Time Dynamic Image Fusion](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
+**Test-Time Dynamic Image Fusion**
 
 Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
@@ -50,12 +50,14 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2024</div><img src='images/Predictive_Dynamic_Fusion.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Predictive Dynamic Fusion](https://arxiv.org/pdf/2406.04802)
+<strong>Predictive Dynamic Fusion<strong>
 
 Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
-[**PDF**](https://arxiv.org/pdf/2406.04802) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-[**BIBTEX**](https://scholar.googleusercontent.com/scholar.bib?q=info:7koiDcHQJuwJ:scholar.google.com/&output=citation&scisdr=ClE_r7TfEKTG19lGGCM:AFWwaeYAAAAAZnFAACN5VErBEz-NQ26VMQxwlC4&scisig=AFWwaeYAAAAAZnFAAJk9PgExYY0mQdtg64Ss3AE&scisf=4&ct=citation&cd=-1&hl=en) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**[PDF]**](https://arxiv.org/pdf/2406.04802) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**[CITE]**](https://scholar.googleusercontent.com/scholar.bib?q=info:7koiDcHQJuwJ:scholar.google.com/&output=citation&scisdr=ClE_r7TfEKTG19lGGCM:AFWwaeYAAAAAZnFAACN5VErBEz-NQ26VMQxwlC4&scisig=AFWwaeYAAAAAZnFAAJk9PgExYY0mQdtg64Ss3AE&scisf=4&ct=citation&cd=-1&hl=en) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**[CODE]**](https://github.com/Yinan-Xia/PDF) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+
 **TL;DR**: Dynamic weight can achieving the reduction of generalization error upper bound.
 
 </div>
