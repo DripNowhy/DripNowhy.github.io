@@ -75,7 +75,7 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
     <style>
         .map-container {
             width: 600px; 
-            margin: 0 auto; 
+            margin: 1 auto; 
             text-align: center; 
         }
         .map-container iframe {
