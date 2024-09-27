@@ -17,18 +17,23 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. Suspendisse condimentum, libero vel tempus mattis, risus risus vulputate libero, elementum fermentum mi neque vel nisl. Maecenas facilisis maximus dignissim. Curabitur mattis vulputate dui, tincidunt varius libero luctus eu. Mauris mauris nulla, scelerisque eget massa id, tincidunt congue felis. Sed convallis tempor ipsum rhoncus viverra. Pellentesque nulla orci, accumsan volutpat fringilla vitae, maximus sit amet tortor. Aliquam ultricies odio ut volutpat scelerisque. Donec nisl nisl, porttitor vitae pharetra quis, fringilla sed mi. Fusce pretium dolor ut aliquam consequat. Cras volutpat, tellus accumsan mattis molestie, nisl lacus tempus massa, nec malesuada tortor leo vel quam. Aliquam vel ex consectetur, vehicula leo nec, efficitur eros. Donec convallis non urna quis feugiat.
+Hi! I'm a last year undergraduate student from **[School of Mathematics](https://math.tju.edu.cn/), [Tianjin University](https://www.tju.edu.cn/)**. My research interests primarily focus on **<font color=FireBrick>Trustworthy Multimodal Learning, Computer Vision (Image Fusion), Vision Language Models, etc</font>**.
 
-My research interest includes neural machine translation and computer vision. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).
+I am a research assistant in the MLDM Lab Multimodal Vision Processing (MVP) Group, advised by Dr. [Bing Cao](https://bcaosudo.github.io/), and my research topic is mostly focus on **<font color=FireBrick>Trustworthy Machine Leaning and Multimodal Fusion with theoretical guarantee</font>**. Currently, I am doing **internship** at Computer Science Department, Purdue University, advised by Dr. [Ruqi Zhang](https://ruqizhang.github.io/).
+
+In my spare time, I am very passionate about digital and film photography. In addition to this, I also enjoy making coffee, whether it is hand-poured or espresso. If you share the same interest, I welcome you to exchange ideas with me!
+
+🔥🔥🔥**<font color=FireBrick>I'm finding 25 Fall PhD opportunities!!! If you share the same research interests with me, welcome to add my</font>** [Wechat](./assets/img/wechat.jpg)🔥🔥🔥
 
 
 # 🔥 News
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- **[Sep. 2024]**: &nbsp; 🎉🎉🎉 Our paper about Dynamic Image Fusion without additional training is accepted to NeurIPS 2024! 
+- **[Jul. 2024]**: &nbsp;🎉🎉🎉 Yi will make a poster presentation at Tue 23 Jul 1:30 p.m. — 3 p.m. on ICML Hall C 4-9 #2817, Vienna, Austria!
+- **[May. 2024]**: &nbsp;🎉🎉🎉 Our paper about Multimodal Fusion is accepted to ICML 2024!
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2024</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Deep Residual Learning for Image Recognition](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
