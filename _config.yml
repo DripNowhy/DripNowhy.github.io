@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Yi Ding's Homepage"
-description              : "Drip no whyyyy!"
+description              : "Undergraduate"
 repository               : "DripNowhy/DripNowhy.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -21,8 +21,8 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Yi Ding"
-  avatar           : "images/Tianjin_University_logo.svg.png"
+  name             : "Yi Ding (丁熠)"
+  avatar           : "images/yi_photo.jpg"
   bio              : "Tianjin University"
   location         : "Beijing, China"
   employer         :
