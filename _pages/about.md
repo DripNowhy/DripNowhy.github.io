@@ -86,7 +86,7 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 </head>
 <body>
     <div class="map-container">
-        <script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=A_f055x2SKq5iPu0Y-d83fyqNpmEBJS_FuWqT1pY6eM"></script>
+        <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=v_GbMmUIZgjzaC0X6Zd7_lxQceuBA-_4-HDe90WH_Vw&cl=ffffff&w=a"></script>
     </div>
 </body>
 </html>
