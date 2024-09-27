@@ -64,7 +64,7 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 </div>
 
 # 📖 Educations
-- *2021.08 - Present*, B.S. School of Mathematics, Tianjin University
+- *2021.08 - Present*, B.S., School of Mathematics, Tianjin University
 - *2024.05 - Present*, Intern, Department of Computer Science, Purdue University 
 
 <html lang="en">
@@ -75,12 +75,12 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
     <style>
         .map-container {
             width: 600px; 
-            margin: 1 auto; 
+            margin: 0 auto; 
             text-align: center; 
         }
         .map-container iframe {
             width: 100%; 
-            height: 400px; 
+            height: 300px; 
         }
     </style>
 </head>
