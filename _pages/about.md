@@ -66,3 +66,27 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 # 📖 Educations
 - *2021.08 - Present*, B.S. School of Mathematics, Tianjin University
 - *2024.05 - Present*, Intern, Department of Computer Science, Purdue University 
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Widget</title>
+    <style>
+        .map-container {
+            width: 300px; 
+            margin: 0 auto; 
+            text-align: center; 
+        }
+        .map-container iframe {
+            width: 100%; 
+            height: 300px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="map-container">
+        <script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=fbffc5&w=a&t=m&d=2DkJRDrBeg-CCyqtKLmfTsHaZGyMG4L1RfpChDpZ6is&co=9ff4f3&cmo=f96e6e&ct=ffffff'></script>
+    </div>
+</body>
+</html>
