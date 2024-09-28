@@ -18,23 +18,23 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # 👀 About Me
-Hi! I'm a last year undergraduate student from **[<font color=LightSlateGray>School of Mathematics</font>](https://math.tju.edu.cn/), [<font color=LightSlateGray>Tianjin University</font>](https://www.tju.edu.cn/)**. Currently, I am an **research intern** at RZ-Lab, Purdue University, advised by **[<font color=LightSlateGray>Dr. Ruqi Zhang</font>](https://ruqizhang.github.io/)**. Meanwhile, I'm also a research assistant in the MLDM Lab **M**ultimodal **V**ision **P**rocessing (MVP) Group, advised by **[<font color=LightSlateGray>Dr. Bing Cao</font>](https://bcaosudo.github.io/)** and **[<font color=LightSlateGray>Prof. Qinghua Hu</font>](https://cic.tju.edu.cn/faculty/huqinghua/index.html)**. I am interested in building reliable machine learning algorithms/frameworks in the real world, especially on the alignment of Large Foundation Models (LLMs, VLMs) and the generalization of multimodal learning algorithms.
+Hi! I'm a last year undergraduate student from **[<font color=SlateGray>School of Mathematics</font>](https://math.tju.edu.cn/), [<font color=LightSlateGray>Tianjin University</font>](https://www.tju.edu.cn/)**. Currently, I am an **research intern** at RZ-Lab, Purdue University, advised by **[<font color=SlateGray>Dr. Ruqi Zhang</font>](https://ruqizhang.github.io/)**. Meanwhile, I'm also a research assistant in the MLDM Lab **M**ultimodal **V**ision **P**rocessing (MVP) Group, advised by **[<font color=SlateGray>Dr. Bing Cao</font>](https://bcaosudo.github.io/)** and **[<font color=SlateGray>Prof. Qinghua Hu</font>](https://cic.tju.edu.cn/faculty/huqinghua/index.html)**. I am interested in building reliable machine learning algorithms/frameworks in the real world, especially on the alignment of Large Foundation Models (LLMs, VLMs) and the generalization of multimodal learning algorithms.
 
 <span class='anchor' id='research-interests'></span>
 
 ## 💖 Research Interests
-- **<font color=DarkGoldenrod4>Multimodal Learning:</font>** **Multimodal Fusion, Imbalanced Multimodal Learning.**
-- **<font color=DarkGoldenrod4>Alignment of Foundation Models:</font>** **LLMs, VLMs.**
-- **<font color=DarkGoldenrod4>Trustworthy AI:</font>** **Safety, Uncertainty, etc.**
+- **<font color=FireBrick>Multimodal Learning:</font>** **Multimodal Fusion, Imbalanced Multimodal Learning.**
+- **<font color=FireBrick>Alignment of Foundation Models:</font>** **LLMs, VLMs.**
+- **<font color=FireBrick>Trustworthy AI:</font>** **Safety, Uncertainty, etc.**
 
-## **<font color=DarkGoldenrod4>I'm finding 25 Fall PhD opportunities! You can find my</font> [<font color=LightSlateGray>CV here~</font>](../pdf/CV_Yi_Ding.pdf) <font color=DarkGoldenrod4>If you share the same research interests with me, welcome to add my</font> [<font color=LightSlateGray>Wechat</font>](../images/wechat.jpg)**
+## **<font color=FireBrick>I'm finding 25 Fall PhD opportunities! You can find my</font> [<font color=SlateGray>CV here~</font>](../pdf/CV_Yi_Ding.pdf) <font color=FireBrick>If you share the same research interests with me, welcome to add my</font> [<font color=SlateGray>Wechat</font>](../images/wechat.jpg)**
 
 <span class='anchor' id='news'></span>
 
 # 🔥 News
-- **[Sep. 2024]**: &nbsp; 🎉🎉🎉 Our paper about Dynamic Image Fusion without additional training is accepted to NeurIPS 2024! 
+- **[Sep. 2024]**: &nbsp; 🎉🎉🎉 Our paper about Dynamic Image Fusion without additional training is accepted to **NeurIPS 2024**! 
 - **[Jul. 2024]**: &nbsp;🎉🎉🎉 Yi will make a poster presentation at Tue 23 Jul 1:30 p.m. — 3 p.m. on ICML Hall C 4-9 #2817, Vienna, Austria!
-- **[May. 2024]**: &nbsp;🎉🎉🎉 Our paper about Multimodal Fusion is accepted to ICML 2024!
+- **[May. 2024]**: &nbsp;🎉🎉🎉 Our paper about Multimodal Fusion is accepted to **ICML 2024**!
 
 <span class='anchor' id='publications'></span>
 
@@ -61,9 +61,9 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
 Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
-[**<font color=LightSlateGray>[PDF]</font>**](https://arxiv.org/pdf/2406.04802) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-[**<font color=LightSlateGray>[CITE]</font>**](https://scholar.googleusercontent.com/scholar.bib?q=info:7koiDcHQJuwJ:scholar.google.com/&output=citation&scisdr=ClE_r7TfEKTG19lGGCM:AFWwaeYAAAAAZnFAACN5VErBEz-NQ26VMQxwlC4&scisig=AFWwaeYAAAAAZnFAAJk9PgExYY0mQdtg64Ss3AE&scisf=4&ct=citation&cd=-1&hl=en) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-[**<font color=LightSlateGray>[CODE]</font>**](https://github.com/Yinan-Xia/PDF) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**<font color=SlateGray>[PDF]</font>**](https://arxiv.org/pdf/2406.04802) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**<font color=SlateGray>[CITE]</font>**](https://scholar.googleusercontent.com/scholar.bib?q=info:7koiDcHQJuwJ:scholar.google.com/&output=citation&scisdr=ClE_r7TfEKTG19lGGCM:AFWwaeYAAAAAZnFAACN5VErBEz-NQ26VMQxwlC4&scisig=AFWwaeYAAAAAZnFAAJk9PgExYY0mQdtg64Ss3AE&scisf=4&ct=citation&cd=-1&hl=en) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**<font color=SlateGray>[CODE]</font>**](https://github.com/Yinan-Xia/PDF) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 
 **<font color=SandyBrown>TL;DR</font>**: Dynamic weight can achieving the reduction of generalization error upper bound.
 
