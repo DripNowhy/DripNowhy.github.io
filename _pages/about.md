@@ -18,7 +18,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # 👀 About Me
-Hi! I'm a last year undergraduate student from **[<font color=SlateGray>School of Mathematics</font>](https://math.tju.edu.cn/), [<font color=LightSlateGray>Tianjin University</font>](https://www.tju.edu.cn/)**. Currently, I am an **research intern** at RZ-Lab, Purdue University, advised by **[<font color=SlateGray>Dr. Ruqi Zhang</font>](https://ruqizhang.github.io/)**. Meanwhile, I'm also a research assistant in the MLDM Lab **M**ultimodal **V**ision **P**rocessing (MVP) Group, advised by **[<font color=SlateGray>Dr. Bing Cao</font>](https://bcaosudo.github.io/)** and **[<font color=DarkSlateBlue>Prof. Qinghua Hu</font>](https://cic.tju.edu.cn/faculty/huqinghua/index.html)**. I am interested in building reliable machine learning algorithms/frameworks in the real world, especially on the alignment of Large Foundation Models (LLMs, VLMs) and the generalization of multimodal learning algorithms.
+Hi! I'm a last year undergraduate student from **[<font color=DarkSlateBlue>School of Mathematics</font>](https://math.tju.edu.cn/), [<font color=DarkSlateBlue>Tianjin University</font>](https://www.tju.edu.cn/)**. Currently, I am an **research intern** at RZ-Lab, Purdue University, advised by **[<font color=DarkSlateBlue>Dr. Ruqi Zhang</font>](https://ruqizhang.github.io/)**. Meanwhile, I'm also a research assistant in the MLDM Lab **M**ultimodal **V**ision **P**rocessing (MVP) Group, advised by **[<font color=DarkSlateBlue>Dr. Bing Cao</font>](https://bcaosudo.github.io/)** and **[<font color=DarkSlateBlue>Prof. Qinghua Hu</font>](https://cic.tju.edu.cn/faculty/huqinghua/index.html)**. I am interested in building reliable machine learning algorithms/frameworks in the real world, especially on the alignment of Large Foundation Models (LLMs, VLMs) and the generalization of multimodal learning algorithms.
 
 <span class='anchor' id='research-interests'></span>
 
@@ -27,7 +27,7 @@ Hi! I'm a last year undergraduate student from **[<font color=SlateGray>School o
 - **<font color=FireBrick>Alignment of Foundation Models:</font>** **LLMs, VLMs.**
 - **<font color=FireBrick>Trustworthy AI:</font>** **Safety, Uncertainty, etc.**
 
-## **<font color=FireBrick>I'm finding 25 Fall PhD opportunities! You can find my</font> [<font color=DarkSlateBlue>CV here~</font>](../pdf/CV_Yi_Ding.pdf) <font color=FireBrick>If you share the same research interests with me, welcome to add my</font> [<font color=SlateGray>Wechat</font>](../images/wechat.jpg)**
+## **<font color=FireBrick>I'm finding 25 Fall PhD opportunities! You can find my</font> [<font color=DarkSlateBlue>CV</font>](../pdf/CV_Yi_Ding.pdf) <font color=FireBrick>here. If you share the same research interests with me, welcome to add my</font> [<font color=DarkSlateBlue>Wechat</font>](../images/wechat.jpg)**
 
 <span class='anchor' id='news'></span>
 
