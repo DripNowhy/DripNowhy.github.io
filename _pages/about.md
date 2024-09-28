@@ -22,7 +22,7 @@ Hi! I'm a last year undergraduate student from **School of Mathematics, Tianjin 
 
 <span class='anchor' id='research-interests'></span>
 
-## 💖 Research Interests
+# 💖 Research Interests
 - **<font color=FireBrick style="font-size: 18px;">Multimodal Learning:</font>** **Multimodal Fusion, Imbalanced Multimodal Learning.**
 - **<font color=FireBrick style="font-size: 18px;">Alignment of Foundation Models:</font>** **LLMs, VLMs.**
 - **<font color=FireBrick style="font-size: 18px;">Trustworthy AI:</font>** **Safety, Uncertainty, etc.**
