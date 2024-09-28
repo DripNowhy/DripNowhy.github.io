@@ -45,7 +45,7 @@ Hi! I'm a last year undergraduate student from **[<font color=SlateGray>School o
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='images/TTD.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**<font color=Thistle>Test-Time Dynamic Image Fusion</font>**
+**<font color=#00369f>Test-Time Dynamic Image Fusion</font>**
 
 Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
@@ -57,7 +57,7 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2024</div><img src='images/PDF.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**<font color=Thistle>Predictive Dynamic Fusion</font>**
+**<font color=#00369f>Predictive Dynamic Fusion</font>**
 
 Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
