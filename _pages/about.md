@@ -18,13 +18,16 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # 👀 About Me
-Hi! I'm a last year undergraduate student from **[School of Mathematics](https://math.tju.edu.cn/), [Tianjin University](https://www.tju.edu.cn/)**. My research interests primarily focus on **<font color=Thistle>Trustworthy Multimodal Learning, Computer Vision (Image Fusion), Vision Language Models, etc</font>**.
+Hi! I'm a last year undergraduate student from **[School of Mathematics](https://math.tju.edu.cn/), [Tianjin University](https://www.tju.edu.cn/)**. Currently, I am an **research intern** at RZ-Lab, Purdue University, advised by **[<font color=Thistle>Dr. Ruqi Zhang</font>](https://ruqizhang.github.io/)**. Meanwhile, I'm also a research assistant in the MLDM Lab **M**ultimodal **V**ision **P**rocessing (MVP) Group, advised by **[<font color=Thistle>Dr. Bing Cao</font>](https://bcaosudo.github.io/)** and **[<font color=Thistle>Prof. Qinghua Hu</font>](https://cic.tju.edu.cn/faculty/huqinghua/index.html)**. I am interested in building reliable machine learning algorithms/frameworks in the real world, especially on the alignment of Large Foundation Models (LLMs, VLMs) and the generalization of multimodal learning algorithms.
 
-I am a research assistant in the MLDM Lab Multimodal Vision Processing (MVP) Group, advised by **[<font color=DarkGoldenrod4>Dr. Bing Cao</font>](https://bcaosudo.github.io/)**, and my research topic is mostly focus on **<font color=DarkOrchid>Trustworthy Machine Leaning and Multimodal Fusion with theoretical guarantee</font>**. Currently, I am doing **internship** at Computer Science Department, Purdue University, advised by **[<font color=DarkViolet>Dr. Ruqi Zhang</font>](https://ruqizhang.github.io/)**.
+## 💖 Research Interests
+- **[<font color=DarkGoldenrod4>Multimodal Learning: Multimodal Fusion, Imbalanced Multimodal Learning</font>**
+- **[<font color=DarkGoldenrod4>Alignment of Foundation Models: LLMs, VLMs.</font>**
+  **[<font color=DarkGoldenrod4>Trustworthy AI: Safety, Uncertainty, etc.</font>**
 
 In my spare time, I am very passionate about digital and film photography. In addition to this, I also enjoy making coffee, whether it is hand-poured or espresso. If you share the same interest, I welcome you to exchange ideas with me!
 
-🔥🔥🔥**<font color=FireBrick>I'm finding 25 Fall PhD opportunities!!! If you share the same research interests with me, welcome to add my</font>** [Wechat](./assets/img/wechat.jpg)🔥🔥🔥
+### **<font color=DarkGoldenrod4>I'm finding 25 Fall PhD opportunities!!! If you share the same research interests with me, welcome to add my</font> [<font color=Thistle>[Wechat]</font>](./assets/img/wechat.jpg)**
 
 
 # 🔥 News
