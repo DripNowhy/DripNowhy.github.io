@@ -23,9 +23,9 @@ Hi! I'm a last year undergraduate student from **School of Mathematics, Tianjin 
 <span class='anchor' id='research-interests'></span>
 
 # 💖 Research Interests
-- **<font color=FireBrick style="font-size: 18px;">Multimodal Learning:</font>** **Multimodal Fusion, Imbalanced Multimodal Learning.**
-- **<font color=FireBrick style="font-size: 18px;">Alignment of Foundation Models:</font>** **LLMs, VLMs.**
-- **<font color=FireBrick style="font-size: 18px;">Trustworthy AI:</font>** **Safety, Uncertainty, etc.**
+- **<font color=FireBrick>Multimodal Learning:</font>** **Multimodal Fusion, Imbalanced Multimodal Learning.**
+- **<font color=FireBrick>Alignment of Foundation Models:</font>** **LLMs, VLMs.**
+- **<font color=FireBrick>Trustworthy AI:</font>** **Safety, Uncertainty, etc.**
 
 ## **<font color=FireBrick>I'm finding 25 Fall PhD opportunities! You can find my</font> [<font color=DarkSlateBlue>CV</font>](../pdf/CV_Yi_Ding.pdf) <font color=FireBrick>here. If you share the same research interests with me, welcome to add my</font> [<font color=DarkSlateBlue>Wechat</font>](../images/wechat.jpg)**
 
@@ -45,19 +45,19 @@ Hi! I'm a last year undergraduate student from **School of Mathematics, Tianjin 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='images/TTD.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**<font color=DarkSlateBlue style="font-size: 20px;">Test-Time Dynamic Image Fusion</font>**
+**<font color=DarkSlateBlue style="font-size: 18px;">Test-Time Dynamic Image Fusion</font>**
 
 Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
 
-**<font color=SandyBrown>TL;DR:</font>** Improve quality of fused images of almost every backbones without additional training via setting dynamic weight in test-time.
+**<font color=SandyBrown>TL;DR:</font>** Improving quality of fused images of almost every backbones without additional training via setting dynamic weight in test-time.
 </div>
 </div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2024</div><img src='images/PDF.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**<font color=DarkSlateBlue style="font-size: 20px;">Predictive Dynamic Fusion</font>**
+**<font color=DarkSlateBlue style="font-size: 18px;">Predictive Dynamic Fusion</font>**
 
 Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
@@ -65,7 +65,7 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 [**<font color=DarkSlateBlue>[CITE]</font>**](https://scholar.googleusercontent.com/scholar.bib?q=info:7koiDcHQJuwJ:scholar.google.com/&output=citation&scisdr=ClE_r7TfEKTG19lGGCM:AFWwaeYAAAAAZnFAACN5VErBEz-NQ26VMQxwlC4&scisig=AFWwaeYAAAAAZnFAAJk9PgExYY0mQdtg64Ss3AE&scisf=4&ct=citation&cd=-1&hl=en) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 [**<font color=DarkSlateBlue>[CODE]</font>**](https://github.com/Yinan-Xia/PDF) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 
-**<font color=SandyBrown>TL;DR:</font>** Dynamic weight can achieving the reduction of generalization error upper bound.
+**<font color=SandyBrown>TL;DR:</font>** The key to dynamic fusion lies in the correlation between the weights and the loss, providing generalization theory for decision-level fusion.
 
 </div>
 </div>
