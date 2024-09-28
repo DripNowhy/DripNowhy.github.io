@@ -27,7 +27,7 @@ Hi! I'm a last year undergraduate student from **[<font color=SlateGray>School o
 - **<font color=FireBrick>Alignment of Foundation Models:</font>** **LLMs, VLMs.**
 - **<font color=FireBrick>Trustworthy AI:</font>** **Safety, Uncertainty, etc.**
 
-## **<font color=FireBrick>I'm finding 25 Fall PhD opportunities! You can find my</font> [<font color=SlateGray>CV here~</font>](../pdf/CV_Yi_Ding.pdf) <font color=FireBrick>If you share the same research interests with me, welcome to add my</font> [<font color=SlateGray>Wechat</font>](../images/wechat.jpg)**
+## **<font color=FireBrick>I'm finding 25 Fall PhD opportunities! You can find my</font> [<font color=DarkSlateBlue>CV here~</font>](../pdf/CV_Yi_Ding.pdf) <font color=FireBrick>If you share the same research interests with me, welcome to add my</font> [<font color=SlateGray>Wechat</font>](../images/wechat.jpg)**
 
 <span class='anchor' id='news'></span>
 
@@ -45,7 +45,7 @@ Hi! I'm a last year undergraduate student from **[<font color=SlateGray>School o
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='images/TTD.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**<font color=#00369f>Test-Time Dynamic Image Fusion</font>**
+**<font color=DarkSlateBlue>Test-Time Dynamic Image Fusion</font>**
 
 Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
@@ -57,7 +57,7 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2024</div><img src='images/PDF.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**<font color=#00369f>Predictive Dynamic Fusion</font>**
+**<font color=DarkSlateBlue>Predictive Dynamic Fusion</font>**
 
 Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
