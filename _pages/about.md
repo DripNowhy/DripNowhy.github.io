@@ -40,24 +40,24 @@ Hi! I'm a last year undergraduate student from **[<font color=SlateGray>School o
 
 # 📝 Publications 
 
-\* indicates author with **equal contribution**, † indicates the **corresponding author**.
+\* indicates author with **equal contribution**.
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='images/TTD.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**Test-Time Dynamic Image Fusion**
+**<font color=Thistle>Test-Time Dynamic Image Fusion</font>**
 
 Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
 
-**<font color=SandyBrown>TL;DR</font>**: Improve quality of fused images of almost every backbones without additional training via setting dynamic weight in test-time.
+**<font color=SandyBrown>TL;DR:</font>** Improve quality of fused images of almost every backbones without additional training via setting dynamic weight in test-time.
 </div>
 </div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2024</div><img src='images/PDF.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-<strong>Predictive Dynamic Fusion<strong>
+**<font color=Thistle>Predictive Dynamic Fusion</font>**
 
 Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
@@ -65,7 +65,7 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 [**<font color=SlateGray>[CITE]</font>**](https://scholar.googleusercontent.com/scholar.bib?q=info:7koiDcHQJuwJ:scholar.google.com/&output=citation&scisdr=ClE_r7TfEKTG19lGGCM:AFWwaeYAAAAAZnFAACN5VErBEz-NQ26VMQxwlC4&scisig=AFWwaeYAAAAAZnFAAJk9PgExYY0mQdtg64Ss3AE&scisf=4&ct=citation&cd=-1&hl=en) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 [**<font color=SlateGray>[CODE]</font>**](https://github.com/Yinan-Xia/PDF) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 
-**<font color=SandyBrown>TL;DR</font>**: Dynamic weight can achieving the reduction of generalization error upper bound.
+**<font color=SandyBrown>TL;DR:</font>** Dynamic weight can achieving the reduction of generalization error upper bound.
 
 </div>
 </div>
