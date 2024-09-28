@@ -27,7 +27,7 @@ Hi! I'm a last year undergraduate student from **[<font color=LightSlateGray>Sch
 - **<font color=DarkGoldenrod4>Alignment of Foundation Models:</font>** <font color=DarkGoldenrod4>LLMs, VLMs.</font>
 - **<font color=DarkGoldenrod4>Trustworthy AI:</font>** <font color=DarkGoldenrod4>Safety, Uncertainty, etc.</font>
 
-##$ **<font color=DarkGoldenrod4>I'm finding 25 Fall PhD opportunities! You can find my [<font color=LightSlateGray>CV here</font>]~ If you share the same research interests with me, welcome to add my</font> [<font color=LightSlateGray>Wechat</font>](./assets/img/wechat.jpg)**
+##$ **<font color=DarkGoldenrod4>I'm finding 25 Fall PhD opportunities! You can find my [<font color=LightSlateGray>CV here</font>](.pdf/CV_Yi_Ding.pdf)~ If you share the same research interests with me, welcome to add my</font> [<font color=LightSlateGray>Wechat</font>](.images/wechat.jpg)**
 
 <span class='anchor' id='news'></span>
 
