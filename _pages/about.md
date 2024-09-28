@@ -20,7 +20,7 @@ redirect_from:
 # 👀 About Me
 Hi! I'm a last year undergraduate student from **[School of Mathematics](https://math.tju.edu.cn/), [Tianjin University](https://www.tju.edu.cn/)**. My research interests primarily focus on **<font color=FireBrick>Trustworthy Multimodal Learning, Computer Vision (Image Fusion), Vision Language Models, etc</font>**.
 
-I am a research assistant in the MLDM Lab Multimodal Vision Processing (MVP) Group, advised by Dr. [Bing Cao](https://bcaosudo.github.io/), and my research topic is mostly focus on **<font color=FireBrick>Trustworthy Machine Leaning and Multimodal Fusion with theoretical guarantee</font>**. Currently, I am doing **internship** at Computer Science Department, Purdue University, advised by Dr. [Ruqi Zhang](https://ruqizhang.github.io/).
+I am a research assistant in the MLDM Lab Multimodal Vision Processing (MVP) Group, advised by Dr. [Bing Cao](https://bcaosudo.github.io/), and my research topic is mostly focus on **<font color=FireBrick>Trustworthy Machine Leaning and Multimodal Fusion with theoretical guarantee</font>**. Currently, I am doing **internship** at Computer Science Department, Purdue University, advised by Dr. [<font color=FireBrick>Ruqi Zhang</font>](https://ruqizhang.github.io/).
 
 In my spare time, I am very passionate about digital and film photography. In addition to this, I also enjoy making coffee, whether it is hand-poured or espresso. If you share the same interest, I welcome you to exchange ideas with me!
 
