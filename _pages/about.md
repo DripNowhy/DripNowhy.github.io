@@ -45,7 +45,7 @@ Hi! I'm a last year undergraduate student from **School of Mathematics, Tianjin 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='images/TTD.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**<font color=DarkSlateBlue>Test-Time Dynamic Image Fusion</font>**
+**<font color=DarkSlateBlue style="font-size: 18px;>Test-Time Dynamic Image Fusion</font>**
 
 Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
@@ -57,13 +57,13 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICML 2024</div><img src='images/PDF.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**<font color=DarkSlateBlue>Predictive Dynamic Fusion</font>**
+**<font color=DarkSlateBlue style="font-size: 24px;>Predictive Dynamic Fusion</font>**
 
 Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
-[**<font color=SlateGray>[PDF]</font>**](https://arxiv.org/pdf/2406.04802) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-[**<font color=SlateGray>[CITE]</font>**](https://scholar.googleusercontent.com/scholar.bib?q=info:7koiDcHQJuwJ:scholar.google.com/&output=citation&scisdr=ClE_r7TfEKTG19lGGCM:AFWwaeYAAAAAZnFAACN5VErBEz-NQ26VMQxwlC4&scisig=AFWwaeYAAAAAZnFAAJk9PgExYY0mQdtg64Ss3AE&scisf=4&ct=citation&cd=-1&hl=en) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-[**<font color=SlateGray>[CODE]</font>**](https://github.com/Yinan-Xia/PDF) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**<font color=DarkSlateBlue>[PDF]</font>**](https://arxiv.org/pdf/2406.04802) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**<font color=DarkSlateBlue>[CITE]</font>**](https://scholar.googleusercontent.com/scholar.bib?q=info:7koiDcHQJuwJ:scholar.google.com/&output=citation&scisdr=ClE_r7TfEKTG19lGGCM:AFWwaeYAAAAAZnFAACN5VErBEz-NQ26VMQxwlC4&scisig=AFWwaeYAAAAAZnFAAJk9PgExYY0mQdtg64Ss3AE&scisf=4&ct=citation&cd=-1&hl=en) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**<font color=DarkSlateBlue>[CODE]</font>**](https://github.com/Yinan-Xia/PDF) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 
 **<font color=SandyBrown>TL;DR:</font>** Dynamic weight can achieving the reduction of generalization error upper bound.
 
