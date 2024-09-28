@@ -28,7 +28,7 @@ Hi! I'm a last year undergraduate student from **[<font color=LightSlateGray>Sch
 -  **<font color=DarkGoldenrod4>Trustworthy AI:** Safety, Uncertainty, etc.</font>
 
 ##
-**<font color=DarkGoldenrod4>I'm finding 25 Fall PhD opportunities!!! If you share the same research interests with me, welcome to add my</font> [<font color=Thistle>[Wechat]</font>](./assets/img/wechat.jpg)**
+**<font color=DarkGoldenrod4>I'm finding 25 Fall PhD opportunities!!! If you share the same research interests with me, welcome to add my</font> [<font color=LightSlateGray>Wechat</font>](./assets/img/wechat.jpg)**
 
 <span class='anchor' id='news'></span>
 
