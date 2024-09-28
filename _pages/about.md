@@ -20,6 +20,8 @@ redirect_from:
 # 👀 About Me
 Hi! I'm a last year undergraduate student from **[School of Mathematics](https://math.tju.edu.cn/), [Tianjin University](https://www.tju.edu.cn/)**. Currently, I am an **research intern** at RZ-Lab, Purdue University, advised by **[<font color=Thistle>Dr. Ruqi Zhang</font>](https://ruqizhang.github.io/)**. Meanwhile, I'm also a research assistant in the MLDM Lab **M**ultimodal **V**ision **P**rocessing (MVP) Group, advised by **[<font color=Thistle>Dr. Bing Cao</font>](https://bcaosudo.github.io/)** and **[<font color=Thistle>Prof. Qinghua Hu</font>](https://cic.tju.edu.cn/faculty/huqinghua/index.html)**. I am interested in building reliable machine learning algorithms/frameworks in the real world, especially on the alignment of Large Foundation Models (LLMs, VLMs) and the generalization of multimodal learning algorithms.
 
+<span class='anchor' id='research-interests'></span>
+
 ## 💖 Research Interests
 - **[<font color=DarkGoldenrod4>Multimodal Learning: Multimodal Fusion, Imbalanced Multimodal Learning</font>**
 - **[<font color=DarkGoldenrod4>Alignment of Foundation Models: LLMs, VLMs.</font>**
@@ -29,11 +31,14 @@ In my spare time, I am very passionate about digital and film photography. In ad
 
 ### **<font color=DarkGoldenrod4>I'm finding 25 Fall PhD opportunities!!! If you share the same research interests with me, welcome to add my</font> [<font color=Thistle>[Wechat]</font>](./assets/img/wechat.jpg)**
 
+<span class='anchor' id='news'></span>
 
 # 🔥 News
 - **[Sep. 2024]**: &nbsp; 🎉🎉🎉 Our paper about Dynamic Image Fusion without additional training is accepted to NeurIPS 2024! 
 - **[Jul. 2024]**: &nbsp;🎉🎉🎉 Yi will make a poster presentation at Tue 23 Jul 1:30 p.m. — 3 p.m. on ICML Hall C 4-9 #2817, Vienna, Austria!
 - **[May. 2024]**: &nbsp;🎉🎉🎉 Our paper about Multimodal Fusion is accepted to ICML 2024!
+
+<span class='anchor' id='publications'></span>
 
 # 📝 Publications 
 
@@ -66,6 +71,8 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
 </div>
 </div>
+
+<span class='anchor' id='educations'></span>
 
 # 📖 Educations
 - *2021.08 - Present*, B.S., School of Mathematics, Tianjin University
