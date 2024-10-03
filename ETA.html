@@ -113,8 +113,8 @@
           Existing defense methods are either resource-intensive, requiring substantial data and compute, or fail to simultaneously ensure safety and usefulness in responses. To address these limitations, we propose a novel two-phase inference-time alignment framework, **E**valuating **T**hen **A**ligning (**ETA**): i) Evaluating input visual contents and output responses to establish a robust safety awareness in multimodal settings, and ii) Aligning unsafe behaviors at both shallow and deep levels by conditioning the VLMs' generative distribution with an interference prefix and performing sentence-level best-of-$N$ to search the most harmless and helpful generation paths.
         </div>
         <p align="center">
-          <img src="eta/eta_usr.png" width="100%"> <br>
-         <b>Left: Pre-generation evaluator can distinguish safe and unsafe images distinctlty. Right: USR changes from LLM backbone to VLM, and finally our ETA</b>
+          <img src="eta/ETA_USR.png" width="100%"> <br>
+         <b>Left: USR changes from LLM backbone to VLM, and finally our ETA. Right: Pre-generation evaluator can effectively distinguish safe and unsafe images</b>
       </p>
         <div class="content has-text-justified">
           ETA establishes a strong multimodal safety awareness and defense mechanism for VLMs without any additional training.
