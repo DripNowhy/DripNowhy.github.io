@@ -95,10 +95,31 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="content" style="text-align: left;">
-      <img src="eta/ETA.png" alt="geometric reasoning" width="85%"/>
+      <img src="eta/ETA.png" alt="geometric reasoning" width="100%"/>
       <p> 
         ETA uses a multimodal evaluator to assess visual inputs with the CLIP score and evaluates initial generated responses with a textual reward model. For instances flagged as unsafe, ETA implements a comprehensive alignment process, which consists of both shallow alignment (interference prefix) and deep alignment (sentence-level best-of-N searching).
       </p>
+    </div>
+  </div>
+</section>
+
+<!-- Introduction -->
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Introduction</h2>
+        <div class="content has-text-justified">
+          Existing defense methods are either resource-intensive, requiring substantial data and compute, or fail to simultaneously ensure safety and usefulness in responses. To address these limitations, we propose a novel two-phase inference-time alignment framework, **E**valuating **T**hen **A**ligning (**ETA**): i) Evaluating input visual contents and output responses to establish a robust safety awareness in multimodal settings, and ii) Aligning unsafe behaviors at both shallow and deep levels by conditioning the VLMs' generative distribution with an interference prefix and performing sentence-level best-of-$N$ to search the most harmless and helpful generation paths.
+        </div>
+        <p align="center">
+          <img src="eta/eta_usr.png" width="100%"> <br>
+         <b>Left: Pre-generation evaluator can distinguish safe and unsafe images distinctlty. Right: USR changes from LLM backbone to VLM, and finally our ETA</b>
+      </p>
+        <div class="content has-text-justified">
+          ETA establishes a strong multimodal safety awareness and defense mechanism for VLMs without any additional training.
+        </div>
+      </div>
     </div>
   </div>
 </section>
