@@ -138,7 +138,7 @@
           LLM backbones are typically aligned on discrete textual embeddings \( \mathcal{E}_{\text{textual}} \subset \mathbb{R}^d \). In contrast, the continuous visual embeddings \( \mathcal{E}_{\text{visual}} \subset \mathbb{R}^d \) often appear away from all textual embeddings.
         </div>
         <p align="center">
-          <img src="eta/Motivation.png" width="100%">
+          <img src="eta/Motivation.png" width="100%" style="margin-bottom: 10px;">
       </p>
         <div class="content has-text-justified">
           Continuous visual token embeddings can bypass existing safety mechanisms that are primarily aligned with discrete textual token embeddings. To verify this hypothesis, we implemented a mapping that transforms continuous visual embeddings to their nearest discrete textual embeddings based on cosine similarity. This mapping results in a significant 7% reduction in the unsafe rate (USR) when evaluated on the SPA-VL Harm test set.
