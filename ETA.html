@@ -26,6 +26,8 @@
   <script src="./eta/js/bulma-carousel.min.js"></script>
   <script src="./eta/js/bulma-slider.min.js"></script>
   <script src="./eta/js/explorer-index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </head>
 <body>
@@ -121,6 +123,24 @@
         <div class="content has-text-justified">
           ETA establishes a strong multimodal safety awareness and defense mechanism for VLMs without any additional training.
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Motivation -->
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Motivation</h2>
+        <div class="content has-text-justified">
+          LLM backbones are typically aligned on discrete textual embeddings \( \mathcal{E}_{\text{textual}} \subset \mathbb{R}^d \). In contrast, the continuous visual embeddings \( \mathcal{E}_{\text{visual}} \subset \mathbb{R}^d \) often appear away from all textual embeddings.
+        </div>
+        <p align="center">
+          <img src="eta/Motivation.png" width="100%"> <br>
+         <b>Continuous visual token embeddings can bypass existing safety mechanisms that are primarily aligned with discrete textual token embeddings. To verify this hypothesis, we implemented a mapping that transforms continuous visual embeddings to their nearest discrete textual embeddings based on cosine similarity. This mapping results in a significant 7% reduction in the unsafe rate (USR) when evaluated on the SPA-VL Harm test set.</b>
+      </p>
       </div>
     </div>
   </div>
