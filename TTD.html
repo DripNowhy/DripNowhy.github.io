@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference-Time">
-  <meta name="keywords" content="Evaluating Then Aligning, Vision Language Models, Inference-Time Alignment">
+  <meta name="description" content="Test-Time Dynamic Image Fusion">
+  <meta name="keywords" content="Test-Time Adaption, Image Fusion, Dynamic Fusion">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:url" content="https://DripNowhy.github.io/ETA.html"/>
-  <title>ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference-Time</title>
+  <meta property="og:url" content="https://DripNowhy.github.io/TTD.html"/>
+  <title>Test-Time Adaption, Image Fusion, Dynamic Fusion</title>
   
   <!-- Favicon -->
-  <link rel="icon" href="./eta/ETA.svg">
+  <link rel="icon" href="./images/Tianjin_university_logo.svg.png">
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -37,28 +37,33 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
             <h1 class="title is-1 publication-title is-bold">
-              <span><img src="eta/ETA.svg" width="108">: Evaluating Then Aligning Safety of Vision Language Models at Inference-Time</span>
+              <span>Test-Time Dyanamic Image Fusion</span>
             </h1>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
+              <a href="https://bcaosudo.github.io/">Bing Cao</a><sup style="color:#b6dbf0;">1,</sup><sup style="color:#4f4f4f;">2</sup>,</span>
+            <span class="author-block">
+              <a href="https://github.com/Yinan-Xia">Yinan Xia</a><sup style="color:#b6dbf0;">1</sup>,</span>
+            <span class="author-block">
               <a href="https://dripnowhy.github.io/">Yi Ding</a><sup style="color:#b6dbf0;">1</sup>,</span>
             <span class="author-block">
-              <a href="https://lblaoke.github.io/">Bolian Li</a><sup style="color:#b6dbf0;">1</sup>,</span>
+              <a href="https://cic.tju.edu.cn/faculty/zhangchangqing/index.html">Changqing Zhang</a><sup style="color:#b6dbf0;">1,</sup><sup style="color:#4f4f4f;">2</sup>,</span>
             <span class="author-block">
-              <a href="https://ruqizhang.github.io/">Ruqi Zhang</a><sup style="color:#b6dbf0;">1</sup>
+              <a href="https://cic.tju.edu.cn/faculty/huqinghua/index.html">Qinghua Hu</a><sup style="color:#b6dbf0;">1,</sup><sup style="color:#4f4f4f;">2,</sup><sup>*</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup style="color:#b6dbf0;">1</sup>Department of Computer Science, Purdue University</span><br>
+            <span class="author-block"><sup style="color:#b6dbf0;">1</sup>College of Intelligence and Computing, Tianjin University, Tianjin, China</span><br>
+            <span class="author-block"><sup style="color:#4f4f4f;">2</sup>Tianjin Key Lab of Machine Learning, Tianjin, China</span><br>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://dripnowhy.github.io/"
+                <a href="https://github.com/Yinan-Xia/TTD"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -67,7 +72,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://dripnowhy.github.io/"
+                <a href="https://github.com/Yinan-Xia/TTD"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -77,7 +82,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/DripNowhy/ETA"
+                <a href="https://github.com/Yinan-Xia/TTD"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -98,9 +103,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="content" style="text-align: left;">
-      <img src="eta/ETA.png" alt="geometric reasoning" width="100%"/>
+      <img src="TTD/TTD_thm.png" alt="geometric reasoning" width="100%"/>
       <p> 
-        ETA uses a multimodal evaluator to assess visual inputs with the CLIP score and evaluates initial generated responses with a textual reward model. For instances flagged as unsafe, ETA implements a comprehensive alignment process, which consists of both shallow alignment (interference prefix) and deep alignment (sentence-level best-of-N searching).
+        We proceed to reveal the generalized form of image fusion and derive a new test-time dynamic image fusion paradigm. It provably reduces the upper bound of generalization error. Specifically, we decompose the fused image into multiple components corresponding to its source data. The decomposed components represent the effective information from the source data, thus the gap between them reflects the <b>R</b>elative <b>D</b>ominability (<b>RD</b>) of the uni-source data in constructing the fusion image. Theoretically, we prove that the key to reducing generalization error hinges on the negative correlation between the RD-based fusion weight and the uni-source reconstruction loss. Intuitively, RD dynamically highlights the dominant regions of each source and can be naturally converted to the corresponding fusion weight, achieving robust results.
       </p>
     </div>
   </div>
