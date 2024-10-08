@@ -116,12 +116,12 @@
   <div class="container" style="margin-bottom: 2vh;">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">👓 Introduction</h2>
+        <h2 class="title is-3">📌 Introduction</h2>
         <div class="content has-text-justified">
-          Existing defense methods are either resource-intensive, requiring substantial data and compute, or fail to simultaneously ensure safety and usefulness in responses. To address these limitations, we propose a novel two-phase inference-time alignment framework, <b>E</b>valuating <b>T</b>hen <b>A</b>ligning (<b>ETA</b>): i) Evaluating input visual contents and output responses to establish a robust safety awareness in multimodal settings, and ii) Aligning unsafe behaviors at both shallow and deep levels by conditioning the VLMs' generative distribution with an interference prefix and performing sentence-level best-of-$N$ to search the most harmless and helpful generation paths.
+          
         </div>
         <p align="center">
-          <img src="eta/ETA_USR.png" width="90%"> <br>
+          <img src="TTD/TTD_frame.png" width="90%"> <br>
          <b>Left: USR changes from LLM backbone to VLM, and finally our ETA. Right: Pre-generation evaluator can effectively distinguish safe and unsafe images</b>
       </p>
         <div class="content has-text-justified">
@@ -132,67 +132,123 @@
   </div>
 </section>
 
-<!-- Motivation -->
-<section class="section">
-  <div class="container" style="margin-bottom: 2vh;">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">🌟 Motivation</h2>
-        <div class="content has-text-justified">
-          LLM backbones are typically aligned on discrete textual embeddings \( \mathcal{E}_{\text{textual}} \subset \mathbb{R}^d \). In contrast, the continuous visual embeddings \( \mathcal{E}_{\text{visual}} \subset \mathbb{R}^d \) often appear away from all textual embeddings.
-        </div>
-        <p align="center">
-          <img src="eta/Motivation.png" width="90%" style="margin-bottom: 10px;">
-      </p>
-        <div class="content has-text-justified">
-          Continuous visual token embeddings can bypass existing safety mechanisms that are primarily aligned with discrete textual token embeddings. To verify this hypothesis, we implemented a mapping that transforms continuous visual embeddings to their nearest discrete textual embeddings based on cosine similarity. This mapping results in a significant 7% reduction in the unsafe rate (USR) when evaluated on the SPA-VL Harm test set.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section">
   <div class="container">
     <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-        <h2 class="title is-3">📌 Results</h2>
+        <h2 class="title is-3">👓 Visualization</h2>
 
         <div class="content has-text-justified">
           <p>
-            Compared to other inference-time baselines, ETA significantly decreases responses unsafe rate on various saftey benchmarks when applied to different VLM backbones <b>[1]</b>.
+            vis VIF <b>[1]</b>.
           </p>
           <p>
-            Evaluating on comprehensive benchmarks and general VQA tasks, ETA preserves model's general ability.  <b>[2]</b>.
+            vis2 MIF  <b>[2]</b>.
           </p>
           <p>
-            Applying ETA significantly increases the helpfulness of the generated responses, aligning closely with human preferences, even when compared to fine-tuned methods <b>[3]</b>.
-          </p>
-          <p>
-            Compared to other methods, ETA does not significantly increase inference time. <b>[3]</b>.
-          </p>
-          <p>
-            Abalation study on Aligning process of ETA. <b>[4]</b>.
+            vis on MFF MEF <b>[3]</b>.
           </p>
           <div id="results-carousel" class="carousel results-carousel">
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="eta/exp_1.png" alt="image name" width="90%"/>
+                <img src="TTD/TTD_vis1.png" alt="image name" width="90%"/>
               </div>
             </div>
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="eta/exp_2.png" alt="image name" width="90%"/>
+                <img src="TTD/TTD_vis2.png" alt="image name" width="90%"/>
               </div>
             </div>
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="eta/exp_3.png" alt="image name" width="90%"/>
+                <img src="TTD/TTD_vis3.png" alt="image name" width="90%"/>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+      <div class="content has-text-justified">
+          <p>
+            RD VIF <b>[1]</b>.
+          </p>
+          <p>
+            RD MIF  <b>[2]</b>.
+          </p>
+          <p>
+            RD on MFF MEF <b>[3]</b>.
+          </p>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="TTD/RD_vis1.png" alt="image name" width="90%"/>
               </div>
             </div>
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="eta/exp_4.png" alt="image name" width="90%"/>
+                <img src="TTD/RD_vis2.png" alt="image name" width="90%"/>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="TTD/RD_vis3.png" alt="image name" width="90%"/>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+</section>
+  
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+        <h2 class="title is-3">🖨 Results</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            VIF <b>[1]</b>.
+          </p>
+          <p>
+            MEF MFF  <b>[2]</b>.
+          </p>
+          <p>
+            MIF1 <b>[3]</b>.
+          </p>
+          <p>
+            MIF2 <b>[4]</b>.
+          </p>
+          <p>
+            MIF3 <b>[5]</b>.
+          </p>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="TTD/tab_1.png" alt="image name" width="90%"/>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="TTD/tab_2.png" alt="image name" width="90%"/>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="TTD/tab_3.png" alt="image name" width="90%"/>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="TTD/tab_4.png" alt="image name" width="90%"/>
+              </div>
+            </div>
+            <div class="box m-5">
+              <div class="content has-text-centered">
+                <img src="TTD/tab_5.png" alt="image name" width="90%"/>
               </div>
             </div>
           </div>
@@ -206,7 +262,7 @@
 <section>
   <div class="section" id="org-banners" style="display:flex">
     <a href="https://www.purdue.edu/" target="_blank" rel="external">
-      <img class="center-block org-banner" src="eta/purdue_logo.png" style="max-width: 300px; height: auto;">
+      <img class="center-block org-banner" src="images/Tianjin_University_logo.svg.png" style="max-width: 300px; height: auto;">
   </a>
   </div>
 </section>
