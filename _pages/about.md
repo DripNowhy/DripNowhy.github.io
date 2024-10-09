@@ -42,6 +42,23 @@ Hi! I'm a last year undergraduate student from **School of Mathematics, Tianjin 
 
 \* indicates author with **equal contribution**.
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ArXiv.</div><img src='images/ETA.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**<font color=DarkSlateBlue style="font-size: 18px;">ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time</font>**
+
+<strong>Yi Ding</strong>, Bolian Li, Ruqi Zhang
+
+**<font color=SandyBrown>TL;DR:</font>**  Establishing multimodal safety mechanism for VLMs and enhancing harmlessness and helpfulness of responses without additional training.
+
+**<font color=DarkSlateBlue>Priprint.</font>**
+
+[**<font color=DarkSlateBlue>[PDF]</font>**](https://DripNowhy.github.io/ETA.html) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**<font color=DarkSlateBlue>[Project Page]</font>**](https://DripNowhy.github.io/ETA.html) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**<font color=DarkSlateBlue>[CODE]</font>**](https://github.com/DripNowht/ETA) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2024</div><img src='images/TTD.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
