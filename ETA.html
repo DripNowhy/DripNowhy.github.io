@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference-Time">
-  <meta name="keywords" content="Evaluating Then Aligning, Vision Language Models, Inference-Time Alignment">
+  <meta name="description" content="ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time">
+  <meta name="keywords" content="Evaluating Then Aligning, Vision Language Models, Inference Time Alignment">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:url" content="https://DripNowhy.github.io/ETA.html"/>
-  <title>ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference-Time</title>
+  <title>ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time</title>
   
   <!-- Favicon -->
   <link rel="icon" href="./eta/ETA.svg">
@@ -37,7 +37,7 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
             <h1 class="title is-1 publication-title is-bold">
-              <span><img src="eta/ETA.svg" width="108">: Evaluating Then Aligning Safety of Vision Language Models at Inference-Time</span>
+              <span><img src="eta/ETA.svg" width="108">: Evaluating Then Aligning Safety of Vision Language Models at Inference Time</span>
             </h1>
 
           <div class="is-size-5 publication-authors">
@@ -98,9 +98,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="content" style="text-align: left;">
-      <img src="eta/ETA.png" alt="geometric reasoning" width="100%"/>
+      <img src="eta/ETA_frame.png" alt="geometric reasoning" width="100%"/>
       <p> 
-        ETA uses a multimodal evaluator to assess visual inputs with the CLIP score and evaluates initial generated responses with a textual reward model. For instances flagged as unsafe, ETA implements a comprehensive alignment process, which consists of both shallow alignment (interference prefix) and deep alignment (sentence-level best-of-N searching).
+        ETA uses a multimodal evaluator to assess visual inputs with the CLIP score and evaluates initially generated responses with a textual reward model. For instances flagged as unsafe, ETA implements a comprehensive alignment process, which consists of both shallow alignment (interference prefix) and deep alignment (sentence-level best-of-N searching).
       </p>
     </div>
   </div>
@@ -155,10 +155,10 @@
 
         <div class="content has-text-justified">
           <p>
-            Compared to other inference-time baselines, ETA significantly decreases responses unsafe rate on various saftey benchmarks when applied to different VLM backbones <b>[1]</b>.
+            Compared to other inference-time baselines, ETA significantly decreases responses unsafe rate on various safety benchmarks when applied to different VLM backbones <b>[1]</b>.
           </p>
           <p>
-            Evaluating on comprehensive benchmarks and general VQA tasks, ETA preserves model's general ability.  <b>[2]</b>.
+            Evaluating on comprehensive benchmarks and general VQA tasks, ETA preserves model's general ability. <b>[2]</b>.
           </p>
           <p>
             Applying ETA significantly increases the helpfulness of the generated responses, aligning closely with human preferences, even when compared to fine-tuned methods <b>[3]</b>.
@@ -167,27 +167,31 @@
             Compared to other methods, ETA does not significantly increase inference time. <b>[3]</b>.
           </p>
           <p>
-            Abalation study on Aligning process of ETA. <b>[4]</b>.
+            Ablation study on Aligning process of ETA. <b>[4]</b>.
           </p>
           <div id="results-carousel" class="carousel results-carousel">
-            <div class="box m-5">
+            <div class="box m-5" style="position: relative;">
               <div class="content has-text-centered">
                 <img src="eta/exp_1.png" alt="image name" width="90%"/>
+                <span style="position: absolute; top: 10px; left: 10px; background-color: rgba(255, 255, 255, 0.8); padding: 5px; font-weight: bold;">[1]</span>
               </div>
             </div>
-            <div class="box m-5">
+            <div class="box m-5" style="position: relative;">
               <div class="content has-text-centered">
                 <img src="eta/exp_2.png" alt="image name" width="90%"/>
+                <span style="position: absolute; top: 10px; left: 10px; background-color: rgba(255, 255, 255, 0.8); padding: 5px; font-weight: bold;">[2]</span>
               </div>
             </div>
-            <div class="box m-5">
+            <div class="box m-5" style="position: relative;">
               <div class="content has-text-centered">
                 <img src="eta/exp_3.png" alt="image name" width="90%"/>
+                <span style="position: absolute; top: 10px; left: 10px; background-color: rgba(255, 255, 255, 0.8); padding: 5px; font-weight: bold;">[3]</span>
               </div>
             </div>
-            <div class="box m-5">
+            <div class="box m-5" style="position: relative;">
               <div class="content has-text-centered">
                 <img src="eta/exp_4.png" alt="image name" width="90%"/>
+                <span style="position: absolute; top: 10px; left: 10px; background-color: rgba(255, 255, 255, 0.8); padding: 5px; font-weight: bold;">[4]</span>
               </div>
             </div>
           </div>
@@ -197,6 +201,7 @@
     </div>
   </div>
 </section>
+
 
 <section>
   <div class="section" id="org-banners" style="display:flex">
