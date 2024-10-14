@@ -38,11 +38,11 @@ Hi! I'm a last-year undergraduate student from **School of Mathematics, Tianjin 
 
 <span class='anchor' id='publications'></span>
 
-# 📝 Publications 
+# 📝 Publications & Preprints
 
 \* indicates author with **equal contribution**.
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv.</div><img src='images/ETA.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2024</div><img src='images/ETA.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **<font color=DarkSlateBlue style="font-size: 18px;">ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time</font>**
