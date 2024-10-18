@@ -32,7 +32,7 @@ Hi! I'm a last-year undergraduate student from **School of Mathematics, Tianjin 
 <span class='anchor' id='news'></span>
 
 # 🔥 News
-- **[Oct. 2024]**: &nbsp;🎉🎉🎉 Our Paper about Inference Time Alignment of LVLMs is preprinted now. You can use our 🛡**ETA** to safeguard your Large Vision Language Models (LVLMs)!
+- **[Oct. 2024]**: &nbsp;🎉🎉🎉 Our Paper about Inference Time Alignment of LVLMs is preprinted now. You can use our **[ETA](https://DripNowhy.github.io/ETA.html)** to safeguard your Large Vision Language Models (LVLMs)!
 - **[Sep. 2024]**: &nbsp;🎉🎉🎉 Our paper about Dynamic Image Fusion without additional training is accepted to **NeurIPS 2024**! Congratulations to all Collaborators!
 - **[Jul. 2024]**: &nbsp;🎉🎉🎉 Yi will make a poster presentation at Tue 23 Jul 1:30 p.m. — 3 p.m. on ICML Hall C 4-9 #2817, Vienna, Austria!
 - **[May. 2024]**: &nbsp;🎉🎉🎉 Our paper about Multimodal Fusion is accepted to **ICML 2024**!
