@@ -72,6 +72,7 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
 **<font color=DarkSlateBlue>Neural Information Processing Systems (NeurIPS), 2024</font>**
 
+[**<font color=DarkSlateBlue>[PDF]</font>**](https://arxiv.org/pdf/2411.02840) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 [**<font color=DarkSlateBlue>[CODE]</font>**](https://github.com/Yinan-Xia/TTD) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 </div>
 </div>
