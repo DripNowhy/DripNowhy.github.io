@@ -27,7 +27,7 @@ Hi! I'm a last-year undergraduate student from **School of Mathematics, Tianjin 
 - **<font color=FireBrick>Alignment of Foundation Models:</font>** **LLMs, VLMs.**
 - **<font color=FireBrick>Trustworthy AI:</font>** **Safety, Uncertainty, etc.**
 
-## **<font color=FireBrick>I'm finding 25 Fall PhD opportunities! You can find my</font> [<font color=DarkSlateBlue>CV</font>](../pdf/CV_Yi_Ding.pdf) <font color=FireBrick>here. If you share the same research interests with me, welcome to add my</font> [<font color=DarkSlateBlue>Wechat</font>](../images/wechat.jpg)**
+## **<font color=FireBrick>I'm finding 25 Fall PhD opportunities! You can find my</font> [<font color=DarkSlateBlue>CV</font>](../pdf/CV.pdf) <font color=FireBrick>here. If you share the same research interests with me, welcome to add my</font> [<font color=DarkSlateBlue>Wechat</font>](../images/wechat.jpg)**
 
 <span class='anchor' id='news'></span>
 
