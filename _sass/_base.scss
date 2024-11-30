@@ -1,709 +1,59 @@
 /* ==========================================================================
-   BASE ELEMENTS
+   基础变量
    ========================================================================== */
-html {
-  /* sticky footer fix */
-  position: relative;
-  min-height: 100%;
+:root {
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --link-color: #2196F3;
+  --border-color: #e9ecef;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  padding-bottom: 0em;
-  color: $text-color;
-  font-family: $global-font-family;
-  line-height: 1.5;
-
-  &.overflow--hidden {
-    /* when primary navigation is visible, the content in the background won't scroll */
-    overflow: hidden;
-  }
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 1em 0 0.5em;
-  line-height: 1.2;
-  font-family: $header-font-family;
-  font-weight: bold;
-}
-
-h1 {
-  // margin: 4em 0 0.5em;
-  margin-top: 1em;
-  font-size: $type-size-3;
-}
-
-h2 {
-  font-size: $type-size-4;
-}
-
-h3 {
-  font-size: $type-size-5;
-}
-
-h4 {
-  font-size: $type-size-6;
-}
-
-h5 {
-  font-size: $type-size-6;
-}
-
-h6 {
-  font-size: $type-size-6;
-}
-
-small, .small {
-  font-size: $type-size-6;
-}
-
-p {
-  margin-bottom: 0.5em;
-}
-
-u,
-ins {
-  text-decoration: none;
-  border-bottom: 1px solid $text-color;
-  a {
-    color: inherit;
-  }
-}
-
-ul {
-  padding-inline-start: 2em;
-  margin-block-start: 0.5em;
-}
-
-del a {
-  color: inherit;
-}
-
-/* reduce orphans and widows when printing */
-
-p, pre, blockquote, ul, ol, dl, figure, table, fieldset {
-  orphans: 3;
-  widows: 3;
-}
-
-/* abbreviations */
-
-abbr[title],
-abbr[data-original-title] {
-  text-decoration: none;
-  cursor: help;
-  border-bottom: 1px dotted $text-color;
-}
-
-/* blockquotes */
-
-blockquote {
-  margin: 2em 1em 2em 0;
-  padding-left: 1em;
-  padding-right: 1em;
-  font-style: italic;
-  border-left: 0.25em solid $primary-color;
-
-  cite {
-    font-style: italic;
-
-    &:before {
-      content: "\2014";
-      padding-right: 5px;
-    }
-  }
-}
-
-/* links */
-
-a {
-  
-  &:focus {
-    @extend %tab-focus;
-  }
-
-  &:hover,
-  &:active {
-    outline: 0;
-  }
-}
-
-/* code */
-
-tt, code, kbd, samp, pre {
-  font-family: $monospace;
-}
-
-pre {
-  overflow-x: auto; /* add scrollbars to wide code blocks*/
-}
-
-p > code,
-a > code,
-li > code,
-figcaption > code,
-td > code {
-  padding-top: 0.1rem;
-  padding-bottom: 0.1rem;
-  font-size: $type-size-6;
-  background: $code-background-color;
-  border: 1px solid $lighter-gray;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
-
-  &:before, &:after {
-    letter-spacing: -0.2em;
-    content: "\00a0"; /* non-breaking space*/
-  }
-}
-
-/* horizontal rule */
-
-hr {
-  display: block;
-  margin: 1em 0;
-  border: 0;
-  border-top: 1px solid $border-color;
-}
-
-/* lists */
-
-ul li,
-ol li {
-  margin-bottom: 0.5em;
-}
-
-li ul,
-li ol {
-  margin-top: 0.5em;
-}
-
-/*
-   Media and embeds
+/* ==========================================================================
+   深色模式变量
    ========================================================================== */
-
-/* Figures and images */
-
-figure {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-          align-items: flex-start;
-  flex-wrap: wrap;
-  margin: 2em 0;
-
-  img,
-  iframe,
-  .fluid-width-video-wrapper {
-    margin-bottom: 1em;
-  }
-
-  img {
-    width: 100%;
-    border-radius: $border-radius;
-    -webkit-transition: $global-transition;
-    transition: $global-transition;
-  }
-
-  > a {
-    display: block;
-  }
-
-  &.half {
-    > a,
-    > img {
-      @include breakpoint($small) {
-        width: calc(50% - 0.5em);
-      }
-    }
-
-    figcaption {
-      width: 100%;
-    }
-  }
-
-  &.third {
-    > a,
-    > img {
-      @include breakpoint($small) {
-        width: calc(33.3333% - 0.5em);
-      }
-    }
-
-    figcaption {
-      width: 100%;
-    }
-  }
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --text-color: #ffffff;
+  --link-color: #58a6ff;
+  --border-color: #2f2f2f;
 }
 
-/* Figure captions */
-
-figcaption {
-  margin-bottom: 0.5em;
-  color: mix(#fff, $text-color, 25%);
-  font-family: $caption-font-family;
-  font-size: $type-size-6;
-
-  a {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid $light-gray;
-    -webkit-transition: $global-transition;
-    transition: $global-transition;
-
-    &:hover {
-      color: #000;
-      border-bottom-color: #000;
-    }
-  }
-}
-
-
-/* Fix IE9 SVG bug */
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
-
-/*
-   Navigation lists
+/* ==========================================================================
+   边栏样式
    ========================================================================== */
-
-/**
- * Removes margins, padding, and bullet points from navigation lists
- *
- * Example usage:
- * <nav>
- *    <ul>
- *      <li><a href="#link-1">Link 1</a></li>
- *      <li><a href="#link-2">Link 2</a></li>
- *      <li><a href="#link-3">Link 3</a></li>
- *    </ul>
- *  </nav>
- */
-
-nav {
-  ul {
-    margin: 0;
-    padding: 0;
+.author__urls {
+  // 统一图标基础样式
+  .fas, .fab, .far, .fa {
+    font-size: 13px !important;
+    width: 15px !important;
+    text-align: center;
+    margin-right: 6px;
+    vertical-align: middle;
   }
 
-  li {
-    list-style: none;
+  // 特定图标微调
+  .fa-envelope {
+    font-size: 12px !important;
   }
 
-  a {
-    text-decoration: none;
+  .fa-graduation-cap {
+    font-size: 14px !important;
   }
 
-  /* override white-space for nested lists */
-  ul li,
-  ol li {
-    margin-bottom: 0;
-  }
-
-  li ul,
-  li ol {
-    margin-top: 0;
-  }
-}
-
-/*
-   Global animation transition
-   ========================================================================== */
-
-b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a, tr, td, form button, input[type="submit"], .btn, .highlight, .archive__item-teaser {
-  -webkit-transition: $global-transition;
-  transition: $global-transition;
-}
-
-.fa-file-pdf {
-  color: #E94B3C;
-  &:hover {
-    color: #C41E3A;
-  }
-}
-
-.fa-globe {
-  color: #4682B4;
-  &:hover {
-    color: #1E4D8C;
-  }
-}
-
-.fa-github {
-  color: #24292e;
-  &:hover {
-    color: #000000;
-  }
-}
-
-.fa-quote-right {
-  color: #3CB371;
-  &:hover {
-    color: #2E8B57;
-  }
-}
-
-.fa-weixin {
-  color: #2BAE67;
-  &:hover {
-    color: #1D884D;
-  }
-}
-
-.fas, .fab {
-  margin: 0 5px;
-  font-size: 1.5em;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    transform: scale(1.2);
-  }
-}
-
-.paper-box-text {
-  a {
-    text-decoration: none;
-    
-    &:hover {
-      text-decoration: none;
-      opacity: 0.8;
-    }
+  .fa-map-marker-alt,
+  .fa-github {
+    font-size: 13px !important;
   }
 }
 
 /* ==========================================================================
-   CUSTOM ADDITIONS
+   主题切换按钮样式
    ========================================================================== */
-
-// 论文链接的图标样式（调整大小）
-.paper-box-text {
-  .fas, .fab {
-    margin: 0 5px;
-    font-size: 1.3em;  // 减小图标大小
-    transition: all 0.3s ease;
-    
-    &:hover {
-      transform: scale(1.2);
-    }
-  }
-}
-
-// 防止位置信息换行
-.author__location {
-  white-space: nowrap;
-  display: inline-block;
-}
-
-// 图标颜色
-.fa-file-pdf {
-  color: #E94B3C;
-  &:hover {
-    color: #C41E3A;
-  }
-}
-
-.fa-globe {
-  color: #4682B4;
-  &:hover {
-    color: #1E4D8C;
-  }
-}
-
-.fa-github {
-  color: #24292e;
-  &:hover {
-    color: #000000;
-  }
-}
-
-.fa-quote-right {
-  color: #3CB371;
-  &:hover {
-    color: #2E8B57;
-  }
-}
-
-.fa-weixin {
-  color: #2BAE67;
-  &:hover {
-    color: #1D884D;
-  }
-}
-
-// 侧边栏文本对齐
-.author__location-text,
-.author__text {
-  display: inline-block;
-  padding-left: 0.2em;  // 微调文本和图标的间距
-}
-
-.author__urls {
-  li {
-    i {
-      width: 1em;       // 统一图标宽度
-      text-align: center;
-    }
-  }
-}
-
-/* 深色模式样式 */
-:root {
-  --background-color: #ffffff;
-  --text-color: #24292e;
-  --link-color: #4682B4;
-  --border-color: #e1e4e8;
-  --heading-color: #24292e;
-}
-
-[data-theme="dark"] {
-  --background-color: #1e1e1e;  // macOS 风格的深灰色背景
-  --text-color: #e4e4e4;        // 浅色文本
-  --link-color: #58a6ff;        // 亮蓝色链接
-  --border-color: #404040;      // 深色边框
-  --heading-color: #ffffff;     // 白色标题
-  
-  // 添加顶部导航栏的深色模式样式
-  .masthead {
-    background-color: var(--background-color);
-    border-bottom: 1px solid var(--border-color);
-    
-    &__inner-wrap {
-      background-color: var(--background-color);
-    }
-  }
-  
-  .greedy-nav {
-    background-color: var(--background-color) !important;
-    
-    .visible-links {
-      background-color: var(--background-color);
-      
-      li {
-        background-color: var(--background-color);
-      }
-    }
-    
-    a {
-      color: var(--text-color);
-      
-      &:hover {
-        color: var(--link-color);
-      }
-    }
-    
-    .visible-links {
-      a {
-        &:before {
-          background: var(--link-color);
-        }
-      }
-    }
-  }
-  
-  .site-title {
-    color: var(--text-color);
-  }
-  
-  // 调整深色模式下的图标颜色
-  .author__urls {
-    .fa-github {
-      color: #ffffff;  // GitHub 图标在深色模式下变为白色
-      
-      &:hover {
-        color: #c9d1d9;  // 悬停时稍微变暗
-      }
-    }
-    
-    .fa-envelope {
-      color: #ffffff;
-      
-      &:hover {
-        color: #c9d1d9;
-      }
-    }
-    
-    .fa-graduation-cap {
-      color: #ffffff;
-      
-      &:hover {
-        color: #c9d1d9;
-      }
-    }
-    
-    .fa-map-marker-alt {
-      color: #ffffff;
-      
-      &:hover {
-        color: #c9d1d9;
-      }
-    }
-  }
-  
-  // 修复导航栏背景
-  .masthead {
-    background-color: var(--background-color);
-    
-    &__inner-wrap {
-      background-color: var(--background-color);
-    }
-  }
-  
-  .greedy-nav {
-    background-color: var(--background-color) !important;
-    
-    .visible-links {
-      background-color: var(--background-color);
-      
-      li {
-        background-color: var(--background-color);
-      }
-    }
-    
-    a {
-      color: var(--text-color);
-      
-      &:hover {
-        color: var(--link-color);
-      }
-    }
-    
-    .visible-links {
-      a {
-        &:before {
-          background: var(--link-color);
-        }
-      }
-    }
-  }
-  
-  // 确保下拉菜单也使用深色背景
-  .hidden-links {
-    background-color: var(--background-color);
-    border: 1px solid var(--border-color);
-    
-    a {
-      background-color: var(--background-color);
-      
-      &:hover {
-        background-color: var(--border-color);
-      }
-    }
-  }
-  
-  // 添加论文部分的图标颜色调整
-  .paper-box-text {
-    .fa-github {
-      color: #ffffff;
-      
-      &:hover {
-        color: #c9d1d9;
-      }
-    }
-    
-    .fa-file-pdf {
-      color: #E94B3C;
-      
-      &:hover {
-        color: #C41E3A;
-      }
-    }
-    
-    .fa-globe {
-      color: #58a6ff;
-      
-      &:hover {
-        color: #1E4D8C;
-      }
-    }
-    
-    .fa-quote-right {
-      color: #3CB371;
-      
-      &:hover {
-        color: #2E8B57;
-      }
-    }
-  }
-}
-
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: all 0.3s ease;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: var(--heading-color);
-}
-
-a {
-  color: var(--link-color);
-}
-
-// 更新主题切换按钮样式
-.theme-toggle-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px 15px;
-  margin: 0;
-  display: inline-flex;
-  align-items: center;
-  
-  .fa-moon, .fa-sun {
-    font-size: 18px;
-  }
-  
-  .fa-moon {
-    display: none;
-    color: #f1c40f;
-  }
-  
-  .fa-sun {
-    display: inline-block;
-    color: #f39c12;
-  }
-  
-  &:hover {
-    opacity: 0.8;
-  }
-}
-
-[data-theme="dark"] {
-  .theme-toggle-button {
-    .fa-moon {
-      display: inline-block;
-    }
-    
-    .fa-sun {
-      display: none;
-    }
-  }
-}
-
-// 确保按钮在导航栏中正确显示
-.greedy-nav {
-  .visible-links {
-    li:last-child {
-      margin-right: 1em;  // 给最后一个项目添加右边距
-    }
-  }
-}
-
-// 主题切换按钮样式
 .theme-toggle-wrapper {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
   z-index: 1000;
-  margin-right: 1em;
 }
 
 .theme-toggle {
@@ -715,84 +65,78 @@ a {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  
+
   i {
     font-size: 18px;
-    color: #f39c12;
     transition: all 0.3s ease;
   }
-  
+
+  .fa-sun {
+    color: #f39c12;
+    display: block;
+  }
+
+  .fa-moon {
+    color: #f1c40f;
+    display: none;
+  }
+
   &:hover {
     transform: scale(1.1);
   }
 }
 
-// 深色模式样式
+/* ==========================================================================
+   深色模式样式覆盖
+   ========================================================================== */
 [data-theme="dark"] {
-  .theme-toggle {
-    i {
-      color: #f1c40f;
-    }
-    
-    .fa-sun {
-      display: none;
-    }
-    
-    &::before {
-      content: "\f186";
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      font-size: 18px;
-      color: #f1c40f;
-    }
-  }
-}
-
-// 确保导航栏布局正确
-.greedy-nav {
-  position: relative;
-  
-  .visible-links {
-    margin-right: 3em;
-  }
-}
-
-// 统一边栏图标大小
-.author__urls {
-  .fas, .fab, .far, .fa {
-    font-size: 13px !important;  // 统一设置更小的图标大小
-    width: 15px !important;      // 统一宽度
-    text-align: center;          // 居中对齐
-    margin-right: 6px;           // 统一右边距
-    vertical-align: middle;      // 垂直对齐
-  }
-  
-  // 特别处理某些需要微调的图标以保持视觉一致性
-  .fa-envelope {
-    font-size: 12px !important;  // 邮件图标稍微小一点以视觉平衡
-  }
-  
-  .fa-graduation-cap {
-    font-size: 14px !important;  // 学位帽图标稍微大一点以视觉平衡
-  }
-  
-  .fa-map-marker-alt {
-    font-size: 13px !important;
-  }
-  
-  .fa-github {
-    font-size: 13px !important;
-  }
-}
-
-[data-theme="dark"] {
+  // 边栏图标颜色
   .author__urls {
     .fas, .fab, .far, .fa {
       color: #ffffff;
-      
+
       &:hover {
         color: #c9d1d9;
       }
     }
+  }
+
+  // 主题切换按钮
+  .theme-toggle {
+    .fa-sun {
+      display: none;
+    }
+
+    .fa-moon {
+      display: block;
+    }
+  }
+
+  // 导航栏样式
+  .masthead {
+    background-color: var(--background-color);
+    
+    &__inner-wrap {
+      background-color: var(--background-color);
+    }
+  }
+
+  // 导航链接样式
+  .greedy-nav {
+    background-color: var(--background-color);
+    
+    a {
+      color: var(--text-color);
+    }
+  }
+}
+
+/* ==========================================================================
+   响应式布局调整
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  .theme-toggle-wrapper {
+    top: 0.5rem;
+    right: 0.5rem;
   }
 }
