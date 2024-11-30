@@ -698,12 +698,10 @@ a {
 
 // 主题切换按钮样式
 .theme-toggle-wrapper {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
+  position: fixed;  // 改回固定定位
+  top: 1rem;       // 调整顶部距离
+  right: 1rem;     // 调整右侧距离
   z-index: 1000;
-  margin-right: 1em;
 }
 
 .theme-toggle {
@@ -718,8 +716,15 @@ a {
   
   i {
     font-size: 18px;
-    color: #f39c12;
     transition: all 0.3s ease;
+    
+    &.fa-sun {
+      color: #f39c12;
+    }
+    
+    &.fa-moon {
+      color: #f1c40f;
+    }
   }
   
   &:hover {
@@ -727,23 +732,18 @@ a {
   }
 }
 
-// 深色模式样式
 [data-theme="dark"] {
   .theme-toggle {
-    i {
-      color: #f1c40f;
-    }
-    
-    .fa-sun {
+    i.fa-sun {
       display: none;
     }
-    
-    &::before {
-      content: "\f186";
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      font-size: 18px;
-      color: #f1c40f;
+  }
+}
+
+[data-theme="light"] {
+  .theme-toggle {
+    i.fa-moon {
+      display: none;
     }
   }
 }

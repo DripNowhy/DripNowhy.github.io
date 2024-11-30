@@ -22,12 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // 更新图标
   function updateIcon(theme) {
-    if (theme === 'dark') {
-      icon.classList.remove('fa-sun');
-      icon.classList.add('fa-moon');
-    } else {
-      icon.classList.remove('fa-moon');
-      icon.classList.add('fa-sun');
-    }
+    icon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
   }
 }); 
