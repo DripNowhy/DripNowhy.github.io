@@ -756,3 +756,43 @@ a {
     margin-right: 3em;
   }
 }
+
+// 统一边栏图标大小
+.author__urls {
+  .fas, .fab, .far, .fa {
+    font-size: 13px !important;  // 统一设置更小的图标大小
+    width: 15px !important;      // 统一宽度
+    text-align: center;          // 居中对齐
+    margin-right: 6px;           // 统一右边距
+    vertical-align: middle;      // 垂直对齐
+  }
+  
+  // 特别处理某些需要微调的图标以保持视觉一致性
+  .fa-envelope {
+    font-size: 12px !important;  // 邮件图标稍微小一点以视觉平衡
+  }
+  
+  .fa-graduation-cap {
+    font-size: 14px !important;  // 学位帽图标稍微大一点以视觉平衡
+  }
+  
+  .fa-map-marker-alt {
+    font-size: 13px !important;
+  }
+  
+  .fa-github {
+    font-size: 13px !important;
+  }
+}
+
+[data-theme="dark"] {
+  .author__urls {
+    .fas, .fab, .far, .fa {
+      color: #ffffff;
+      
+      &:hover {
+        color: #c9d1d9;
+      }
+    }
+  }
+}
