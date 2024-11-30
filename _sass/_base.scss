@@ -394,3 +394,24 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
     transform: scale(1.05);
   }
 }
+
+// 论文链接的图标样式（保持大图标）
+.paper-box-text {
+  .fas, .fab {
+    margin: 0 5px;
+    font-size: 1.5em;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+// 侧边栏图标样式（恢复原始大小）
+.author__urls {
+  .fas, .fab {
+    font-size: 1em;
+    margin-right: 0.5em;
+  }
+}
