@@ -440,7 +440,7 @@
   .author__location-text,
   .author__text {
     display: inline-block;
-    padding-left: 0.2em;  // 微调文本和图标的间距
+    padding-left: 0.2em;  // 微调文本和图标�����距
   }
   
   .author__urls {
@@ -754,6 +754,51 @@
     
     .visible-links {
       margin-right: 3em;
+    }
+  }
+  
+  /* ==========================================================================
+   边栏样式
+   ========================================================================== */
+  .author__urls {
+    .social-icons {
+      .fas, .fab, .far, .fa {
+        font-size: 13px !important;  // 统一字体大小
+        width: 13px !important;      // 统一宽度
+        height: 13px !important;     // 统一高度
+        line-height: 13px !important; // 确保垂直居中
+        text-align: center;          // 水平居中
+        margin-right: 8px;           // 统一右边距
+        vertical-align: middle;      // 垂直对齐
+        display: inline-flex;        // 使用 flex 布局
+        align-items: center;         // 垂直居中
+        justify-content: center;     // 水平居中
+      }
+    }
+
+    a {
+      display: flex;          // 使用 flex 布局
+      align-items: center;    // 垂直居中
+      padding: 4px 8px;       // 统一内边距
+      
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  // 深色模式下的图标颜色
+  [data-theme="dark"] {
+    .author__urls {
+      .social-icons {
+        .fas, .fab, .far, .fa {
+          color: #ffffff;
+          
+          &:hover {
+            color: #c9d1d9;
+          }
+        }
+      }
     }
   }
   
