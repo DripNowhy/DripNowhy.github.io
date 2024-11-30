@@ -461,3 +461,64 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
   font-size: 0.9em;
   color: #24292e;  // 使用与 GitHub 图标相同的黑色
 }
+
+/* 深色模式样式 */
+:root {
+  --background-color: #ffffff;
+  --text-color: #24292e;
+  --link-color: #4682B4;
+  --border-color: #e1e4e8;
+}
+
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --text-color: #c9d1d9;
+  --link-color: #58a6ff;
+  --border-color: #30363d;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// 主题切换按钮样式
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+  padding: 0.5em;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+  
+  .fa-moon {
+    display: none;
+    color: #f1c40f;
+  }
+  
+  .fa-sun {
+    display: inline-block;
+    color: #f39c12;
+  }
+}
+
+[data-theme="dark"] {
+  .theme-toggle {
+    .fa-moon {
+      display: inline-block;
+    }
+    
+    .fa-sun {
+      display: none;
+    }
+  }
+}
