@@ -47,45 +47,6 @@
 }
 
 /* ==========================================================================
-   主题切换按钮样式
-   ========================================================================== */
-.theme-toggle-wrapper {
-  position: fixed;
-  top: 1.2em;
-  right: 2em;
-  z-index: 1000;
-}
-
-.theme-toggle {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-
-  i {
-    font-size: 18px;
-    transition: all 0.3s ease;
-  }
-
-  .fa-sun {
-    color: #f39c12;
-  }
-
-  .fa-moon {
-    color: #f1c40f;
-    display: none;
-  }
-
-  &:hover {
-    transform: scale(1.1);
-  }
-}
-
-/* ==========================================================================
    深色模式样式覆盖
    ========================================================================== */
 [data-theme="dark"] {
@@ -97,17 +58,6 @@
       &:hover {
         color: #c9d1d9;
       }
-    }
-  }
-
-  // 主题切换按钮
-  .theme-toggle {
-    .fa-sun {
-      display: none;
-    }
-
-    .fa-moon {
-      display: block;
     }
   }
 
@@ -134,8 +84,5 @@
    响应式布局调整
    ========================================================================== */
 @media screen and (max-width: 768px) {
-  .theme-toggle-wrapper {
-    top: 0.5rem;
-    right: 0.5rem;
-  }
+  // 移除主题切换按钮相关的响应式样式
 }
