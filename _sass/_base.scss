@@ -479,7 +479,15 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
   }
   
   .greedy-nav {
-    background-color: var(--background-color);
+    background-color: var(--background-color) !important;
+    
+    .visible-links {
+      background-color: var(--background-color);
+      
+      li {
+        background-color: var(--background-color);
+      }
+    }
     
     a {
       color: var(--text-color);
@@ -536,6 +544,57 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
       }
     }
   }
+  
+  // 修复导航栏背景
+  .masthead {
+    background-color: var(--background-color);
+    
+    &__inner-wrap {
+      background-color: var(--background-color);
+    }
+  }
+  
+  .greedy-nav {
+    background-color: var(--background-color) !important;
+    
+    .visible-links {
+      background-color: var(--background-color);
+      
+      li {
+        background-color: var(--background-color);
+      }
+    }
+    
+    a {
+      color: var(--text-color);
+      
+      &:hover {
+        color: var(--link-color);
+      }
+    }
+    
+    .visible-links {
+      a {
+        &:before {
+          background: var(--link-color);
+        }
+      }
+    }
+  }
+  
+  // 确保下拉菜单也使用深色背景
+  .hidden-links {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    
+    a {
+      background-color: var(--background-color);
+      
+      &:hover {
+        background-color: var(--border-color);
+      }
+    }
+  }
 }
 
 body {
@@ -577,5 +636,36 @@ a {
   .fa-sun {
     display: inline-block;
     color: #f39c12;  // 太阳图标颜色
+  }
+}
+
+// 统一侧边栏图标大小
+.author__urls {
+  .fas, .fab, .far, .fa {
+    font-size: 14px !important;  // 强制统一大小
+    width: 16px !important;      // 统一宽度
+    text-align: center;          // 居中对齐
+    margin-right: 8px;           // 统一右边距
+  }
+  
+  // 特别处理某些可能需要微调的图标
+  .fa-envelope {
+    font-size: 13px !important;  // 邮件图标稍微小一点以视觉平衡
+  }
+  
+  .fa-graduation-cap {
+    font-size: 15px !important;  // 学位帽图标稍微大一点以视觉平衡
+  }
+}
+
+[data-theme="dark"] {
+  .author__urls {
+    .fas, .fab, .far, .fa {
+      color: #ffffff;
+      
+      &:hover {
+        color: #c9d1d9;
+      }
+    }
   }
 }
