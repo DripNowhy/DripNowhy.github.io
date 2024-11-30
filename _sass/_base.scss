@@ -695,3 +695,70 @@ a {
     }
   }
 }
+
+// 主题切换按钮样式
+.theme-switch-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.theme-switch {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+  
+  .fa-sun {
+    display: inline-block;
+    color: #f39c12;
+    font-size: 20px;
+  }
+  
+  .fa-moon {
+    display: none;
+    color: #f1c40f;
+    font-size: 20px;
+  }
+}
+
+// 深色模式样式
+[data-theme="dark"] {
+  .theme-switch {
+    .fa-sun {
+      display: none;
+    }
+    
+    .fa-moon {
+      display: inline-block;
+    }
+  }
+}
+
+// 确保导航栏布局正确
+.greedy-nav {
+  display: flex;
+  align-items: center;
+  
+  .visible-links {
+    flex: 1;
+  }
+  
+  .theme-switch-wrapper {
+    order: 2;  // 确保在汉堡菜单按钮之前
+  }
+  
+  .greedy-nav__toggle {
+    order: 3;
+  }
+}
