@@ -22,6 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // 更新图标
   function updateIcon(theme) {
-    icon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+    if (theme === 'dark') {
+      icon.className = 'fas fa-moon';
+    } else {
+      icon.className = 'fas fa-sun';
+    }
   }
 }); 
