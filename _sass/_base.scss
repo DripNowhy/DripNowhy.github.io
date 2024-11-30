@@ -762,3 +762,61 @@ a {
     order: 3;
   }
 }
+
+// 主题切换按钮样式
+.theme-toggle-wrapper {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+  
+  .light-icon,
+  .dark-icon {
+    font-size: 24px;
+    position: absolute;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .light-icon {
+    color: #f39c12;
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  
+  .dark-icon {
+    color: #f1c40f;
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+}
+
+// 深色模式样式
+[data-theme="dark"] {
+  .theme-toggle {
+    .light-icon {
+      opacity: 0;
+      transform: rotate(-90deg);
+    }
+    
+    .dark-icon {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+  }
+}
