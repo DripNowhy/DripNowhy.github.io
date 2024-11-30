@@ -467,6 +467,75 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
   --link-color: #58a6ff;        // 亮蓝色链接
   --border-color: #404040;      // 深色边框
   --heading-color: #ffffff;     // 白色标题
+  
+  // 添加顶部导航栏的深色模式样式
+  .masthead {
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+    
+    &__inner-wrap {
+      background-color: var(--background-color);
+    }
+  }
+  
+  .greedy-nav {
+    background-color: var(--background-color);
+    
+    a {
+      color: var(--text-color);
+      
+      &:hover {
+        color: var(--link-color);
+      }
+    }
+    
+    .visible-links {
+      a {
+        &:before {
+          background: var(--link-color);
+        }
+      }
+    }
+  }
+  
+  .site-title {
+    color: var(--text-color);
+  }
+  
+  // 调整深色模式下的图标颜色
+  .author__urls {
+    .fa-github {
+      color: #ffffff;  // GitHub 图标在深色模式下变为白色
+      
+      &:hover {
+        color: #c9d1d9;  // 悬停时稍微变暗
+      }
+    }
+    
+    .fa-envelope {
+      color: #ffffff;
+      
+      &:hover {
+        color: #c9d1d9;
+      }
+    }
+    
+    .fa-graduation-cap {
+      color: #ffffff;
+      
+      &:hover {
+        color: #c9d1d9;
+      }
+    }
+    
+    .fa-map-marker-alt {
+      color: #ffffff;
+      
+      &:hover {
+        color: #c9d1d9;
+      }
+    }
+  }
 }
 
 body {
@@ -508,31 +577,5 @@ a {
   .fa-sun {
     display: inline-block;
     color: #f39c12;  // 太阳图标颜色
-  }
-}
-
-[data-theme="dark"] {
-  .theme-toggle {
-    .fa-moon {
-      display: inline-block;
-    }
-    
-    .fa-sun {
-      display: none;
-    }
-  }
-  
-  // 深色模式下的其他元素样式
-  .masthead {
-    background-color: var(--background-color);
-    border-bottom: 1px solid var(--border-color);
-  }
-  
-  .page__content {
-    color: var(--text-color);
-  }
-  
-  .author__urls {
-    color: var(--text-color);
   }
 }
