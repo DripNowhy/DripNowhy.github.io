@@ -55,9 +55,9 @@ Hi! I'm a last-year undergraduate student from **School of Mathematics, Tianjin 
 
 **<font color=DarkSlateBlue>Priprint.</font>**
 
-[<i class="fas fa-file-pdf" aria-label="PDF"></i> PDF](https://arxiv.org/pdf/2410.06625)
-[<i class="fas fa-globe" aria-label="Project Page"></i> Project](https://DripNowhy.github.io/ETA.html)
-[<i class="fab fa-github" aria-label="Code"></i> Code](https://github.com/DripNowhy/ETA)
+[<i class="fas fa-file-pdf" aria-label="PDF"></i>[PDF]](https://arxiv.org/pdf/2410.06625)
+[<i class="fas fa-globe" aria-label="Project Page"></i>[Project]](https://DripNowhy.github.io/ETA.html)
+[<i class="fab fa-github" aria-label="Code"></i>[Code]](https://github.com/DripNowhy/ETA)
 </div>
 </div>
 
@@ -72,8 +72,8 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
 **<font color=DarkSlateBlue>Neural Information Processing Systems (NeurIPS), 2024</font>**
 
-[<i class="fas fa-file-pdf" aria-label="PDF"></i> [PDF]](https://arxiv.org/pdf/2411.02840)
-[<i class="fab fa-github" aria-label="Code"></i> [Code]](https://github.com/Yinan-Xia/TTD)
+[<i class="fas fa-file-pdf" aria-label="PDF"></i>[PDF]](https://arxiv.org/pdf/2411.02840)
+[<i class="fab fa-github" aria-label="Code"></i>[Code]](https://github.com/Yinan-Xia/TTD)
 </div>
 </div>
 
@@ -88,9 +88,9 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
 **<font color=DarkSlateBlue>International Conference on Machine Learning (ICML), 2024</font>**
 
-[<i class="fas fa-file-pdf" aria-label="PDF"></i> PDF](https://arxiv.org/pdf/2406.04802)
-[<i class="fas fa-quote-right" aria-label="Cite"></i> Cite](https://scholar.googleusercontent.com/...)
-[<i class="fab fa-github" aria-label="Code"></i> Code](https://github.com/Yinan-Xia/PDF)
+[<i class="fas fa-file-pdf" aria-label="PDF"></i>[PDF]](https://arxiv.org/pdf/2406.04802)
+[<i class="fas fa-quote-right" aria-label="Cite"></i>[Cite]](https://scholar.googleusercontent.com/...)
+[<i class="fab fa-github" aria-label="Code"></i>[Code]](https://github.com/Yinan-Xia/PDF)
 
 </div>
 </div>
