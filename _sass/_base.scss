@@ -613,29 +613,25 @@ a {
 
 // 主题切换按钮样式
 .theme-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 999;
   padding: 0.5em;
   border: none;
-  border-radius: 50%;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
-  
-  &:hover {
-    transform: scale(1.1);
-  }
+  margin-left: 1em;
   
   .fa-moon {
     display: none;
-    color: #c1c1c1;  // 更柔和的月亮图标颜色
+    color: var(--text-color);
   }
   
   .fa-sun {
     display: inline-block;
-    color: #f39c12;  // 太阳图标颜色
+    color: var(--text-color);
+  }
+  
+  &:hover {
+    transform: scale(1.1);
   }
 }
 
