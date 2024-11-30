@@ -410,8 +410,33 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
 
 // 侧边栏图标样式（恢复原始大小）
 .author__urls {
-  .fas, .fab {
-    font-size: 1em;
-    margin-right: 0.5em;
+  li {
+    padding-left: 2px;  // 统一左对齐
+    line-height: 1.7;   // 统一行高
+  }
+  
+  .fas, .fab, .far {
+    width: 1.25em;      // 统一图标宽度
+    text-align: center; // 图标居中对齐
+    margin-right: 0.5em;// 统一间距
+    font-size: 1em;     // 统一大小
+  }
+}
+
+// 位置信息样式
+.author__content {
+  .author__bio {
+    margin-bottom: 10px;
+  }
+  
+  .author__urls-wrapper {
+    .author__location {
+      margin-left: 2px;  // 与下方列表对齐
+      i {
+        width: 1.25em;   // 与下方图标宽度一致
+        text-align: center;
+        margin-right: 0.5em;
+      }
+    }
   }
 }
