@@ -322,26 +322,75 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
 }
 
 .fa-file-pdf {
-  color: #dc3545;
+  color: #E94B3C;
+  &:hover {
+    color: #C41E3A;
+  }
 }
 
 .fa-globe {
-  color: #007bff;
+  color: #4682B4;
+  &:hover {
+    color: #1E4D8C;
+  }
 }
 
 .fa-github {
-  color: #333;
+  color: #24292e;
+  &:hover {
+    color: #000000;
+  }
 }
 
 .fa-quote-right {
-  color: #28a745;
+  color: #3CB371;
+  &:hover {
+    color: #2E8B57;
+  }
 }
 
 .fa-weixin {
-  color: #7bb32e;
+  color: #2BAE67;
+  &:hover {
+    color: #1D884D;
+  }
 }
 
 .fas, .fab {
-  margin: 0 3px;
-  font-size: 1.1em;
+  margin: 0 5px;
+  font-size: 1.5em;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.paper-box-text {
+  a {
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: none;
+      opacity: 0.8;
+    }
+  }
+}
+
+// CV 图标样式
+.cv-icon {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 0.9em;
+  padding: 0.2em 0.4em;
+  margin-right: 0.2em;
+  border-radius: 3px;
+  background-color: #E94B3C;
+  color: white;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: #C41E3A;
+    transform: scale(1.05);
+  }
 }
