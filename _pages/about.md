@@ -27,7 +27,7 @@ Hi! I'm a last-year undergraduate student from **School of Mathematics, Tianjin 
 - **<font color=FireBrick>Alignment of Foundation Models:</font>** **LLMs, VLMs.**
 - **<font color=FireBrick>Trustworthy AI:</font>** **Safety, Uncertainty, etc.**
 
-## **<font color=FireBrick>I'm finding 25 Fall PhD opportunities! You can find my</font> [<font color=DarkSlateBlue>CV</font>](../pdf/CV.pdf) <font color=FireBrick>here. If you share the same research interests with me, welcome to add my</font> [<font color=DarkSlateBlue>Wechat</font>](../images/wechat.jpg)**
+## **<font color=FireBrick>I'm finding 25 Fall PhD opportunities! You can find my</font> [<i class="fas fa-file-pdf" title="CV"></i>](../pdf/CV.pdf) <font color=FireBrick>here. If you share the same research interests with me, welcome to add my</font> [<i class="fab fa-weixin" title="Wechat"></i>](../images/wechat.jpg)**
 
 <span class='anchor' id='news'></span>
 
@@ -55,9 +55,9 @@ Hi! I'm a last-year undergraduate student from **School of Mathematics, Tianjin 
 
 **<font color=DarkSlateBlue>Priprint.</font>**
 
-[**<font color=DarkSlateBlue>[PDF]</font>**](https://arxiv.org/pdf/2410.06625) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-[**<font color=DarkSlateBlue>[Project Page]</font>**](https://DripNowhy.github.io/ETA.html) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-[**<font color=DarkSlateBlue>[CODE]</font>**](https://github.com/DripNowhy/ETA) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[<i class="fas fa-file-pdf" title="PDF"></i>](https://arxiv.org/pdf/2410.06625) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[<i class="fas fa-globe" title="Project Page"></i>](https://DripNowhy.github.io/ETA.html) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[<i class="fab fa-github" title="Code"></i>](https://github.com/DripNowhy/ETA) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 </div>
 </div>
 
@@ -72,8 +72,8 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
 **<font color=DarkSlateBlue>Neural Information Processing Systems (NeurIPS), 2024</font>**
 
-[**<font color=DarkSlateBlue>[PDF]</font>**](https://arxiv.org/pdf/2411.02840) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-[**<font color=DarkSlateBlue>[CODE]</font>**](https://github.com/Yinan-Xia/TTD) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[<i class="fas fa-file-pdf" title="PDF"></i>](https://arxiv.org/pdf/2411.02840) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[<i class="fab fa-github" title="Code"></i>](https://github.com/Yinan-Xia/TTD) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 </div>
 </div>
 
@@ -88,9 +88,8 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
 **<font color=DarkSlateBlue>International Conference on Machine Learning (ICML), 2024</font>**
 
-[**<font color=DarkSlateBlue>[PDF]</font>**](https://arxiv.org/pdf/2406.04802) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-[**<font color=DarkSlateBlue>[CITE]</font>**](https://scholar.googleusercontent.com/scholar.bib?q=info:7koiDcHQJuwJ:scholar.google.com/&output=citation&scisdr=ClE_r7TfEKTG19lGGCM:AFWwaeYAAAAAZnFAACN5VErBEz-NQ26VMQxwlC4&scisig=AFWwaeYAAAAAZnFAAJk9PgExYY0mQdtg64Ss3AE&scisf=4&ct=citation&cd=-1&hl=en) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-[**<font color=DarkSlateBlue>[CODE]</font>**](https://github.com/Yinan-Xia/PDF) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[<i class="fas fa-file-pdf" title="PDF"></i>](https://arxiv.org/pdf/2406.04802) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[<i class="fab fa-github" title="Code"></i>](https://github.com/Yinan-Xia/PDF) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 
 </div>
 </div>

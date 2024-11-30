@@ -320,3 +320,28 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
   -webkit-transition: $global-transition;
   transition: $global-transition;
 }
+
+.fa-file-pdf {
+  color: #dc3545;
+}
+
+.fa-globe {
+  color: #007bff;
+}
+
+.fa-github {
+  color: #333;
+}
+
+.fa-quote-right {
+  color: #28a745;
+}
+
+.fa-weixin {
+  color: #7bb32e;
+}
+
+.fas, .fab {
+  margin: 0 3px;
+  font-size: 1.1em;
+}
