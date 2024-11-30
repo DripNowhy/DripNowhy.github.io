@@ -376,3 +376,62 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
     }
   }
 }
+
+/* ==========================================================================
+   CUSTOM ADDITIONS
+   ========================================================================== */
+
+// 论文链接的图标样式（调整大小）
+.paper-box-text {
+  .fas, .fab {
+    margin: 0 5px;
+    font-size: 1.3em;  // 减小图标大小
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+// 防止位置信息换行
+.author__location {
+  white-space: nowrap;
+  display: inline-block;
+}
+
+// 图标颜色
+.fa-file-pdf {
+  color: #E94B3C;
+  &:hover {
+    color: #C41E3A;
+  }
+}
+
+.fa-globe {
+  color: #4682B4;
+  &:hover {
+    color: #1E4D8C;
+  }
+}
+
+.fa-github {
+  color: #24292e;
+  &:hover {
+    color: #000000;
+  }
+}
+
+.fa-quote-right {
+  color: #3CB371;
+  &:hover {
+    color: #2E8B57;
+  }
+}
+
+.fa-weixin {
+  color: #2BAE67;
+  &:hover {
+    color: #1D884D;
+  }
+}
