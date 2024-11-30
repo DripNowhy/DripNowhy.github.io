@@ -665,3 +665,30 @@ a {
     }
   }
 }
+
+// 导航栏样式调整
+.greedy-nav {
+  .visible-links {
+    display: flex;
+    align-items: center;
+    
+    li {
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    
+    a {
+      padding: 1em;
+      margin: 0;
+      
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
