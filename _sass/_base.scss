@@ -698,10 +698,12 @@ a {
 
 // 主题切换按钮样式
 .theme-toggle-wrapper {
-  position: fixed;
-  top: 1.2em;
-  right: 2em;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
   z-index: 1000;
+  margin-right: 1em;
 }
 
 .theme-toggle {
@@ -737,11 +739,20 @@ a {
     }
     
     &::before {
-      content: "\f186";  // 月亮图标的 Unicode
+      content: "\f186";
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
       font-size: 18px;
       color: #f1c40f;
     }
+  }
+}
+
+// 确保导航栏布局正确
+.greedy-nav {
+  position: relative;
+  
+  .visible-links {
+    margin-right: 3em;
   }
 }
