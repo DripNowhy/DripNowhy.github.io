@@ -440,7 +440,7 @@
   .author__location-text,
   .author__text {
     display: inline-block;
-    padding-left: 0.2em;  // 微调文本和图标�����距
+    padding-left: 0.2em;  // 微调文本和图标距
   }
   
   .author__urls {
@@ -646,43 +646,45 @@
     color: var(--link-color);
   }
   
-  // 更新主题切换按钮样式
-  .theme-toggle-button {
-    background: none;
+  /* ==========================================================================
+   主题切换按钮样式
+   ========================================================================== */
+  .theme-toggle {
+    position: fixed;
+    top: 0.7em;          // 调整到与顶栏对齐
+    right: 2em;          // 右侧边距
+    background: transparent;
     border: none;
     cursor: pointer;
-    padding: 10px 15px;
-    margin: 0;
-    display: inline-flex;
-    align-items: center;
-    
-    .fa-moon, .fa-sun {
-      font-size: 18px;
+    padding: 8px;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+
+    i {
+      font-size: 16px;    // 稍微调小图标尺寸
+      color: #f39c12;     // 太阳图标颜色
+      transition: all 0.3s ease;
     }
-    
-    .fa-moon {
-      display: none;
-      color: #f1c40f;
-    }
-    
-    .fa-sun {
-      display: inline-block;
-      color: #f39c12;
-    }
-    
+
     &:hover {
-      opacity: 0.8;
+      transform: scale(1.1);
     }
   }
-  
+
   [data-theme="dark"] {
-    .theme-toggle-button {
-      .fa-moon {
-        display: inline-block;
+    .theme-toggle {
+      i {
+        &.fa-sun {
+          display: none;
+        }
       }
-      
-      .fa-sun {
-        display: none;
+
+      &::before {
+        content: "\f186";  // Font Awesome 月亮图标的 Unicode
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 16px;  // 保持与太阳图标相同大小
+        color: #f1c40f;   // 月亮图标颜色
       }
     }
   }
