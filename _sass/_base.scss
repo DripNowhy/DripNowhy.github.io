@@ -452,16 +452,6 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
   }
 }
 
-// CV 文本样式
-.cv-text {
-  display: inline-block;
-  font-weight: bold;
-  width: 1em;
-  margin-right: 0.5em;
-  font-size: 0.9em;
-  color: #24292e;  // 使用与 GitHub 图标相同的黑色
-}
-
 /* 深色模式样式 */
 :root {
   --background-color: #ffffff;
