@@ -595,6 +595,41 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
       }
     }
   }
+  
+  // 添加论文部分的图标颜色调整
+  .paper-box-text {
+    .fa-github {
+      color: #ffffff;
+      
+      &:hover {
+        color: #c9d1d9;
+      }
+    }
+    
+    .fa-file-pdf {
+      color: #E94B3C;
+      
+      &:hover {
+        color: #C41E3A;
+      }
+    }
+    
+    .fa-globe {
+      color: #58a6ff;
+      
+      &:hover {
+        color: #1E4D8C;
+      }
+    }
+    
+    .fa-quote-right {
+      color: #3CB371;
+      
+      &:hover {
+        color: #2E8B57;
+      }
+    }
+  }
 }
 
 body {
@@ -611,23 +646,29 @@ a {
   color: var(--link-color);
 }
 
-// 主题切换按钮样式
+// 更新主题切换按钮样式
 .theme-toggle {
-  padding: 0.5em;
+  padding: 0.5em 1em;
   border: none;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-left: 1em;
+  display: flex;
+  align-items: center;
+  
+  .fa-moon, .fa-sun {
+    font-size: 1.2em;  // 增大图标
+  }
   
   .fa-moon {
     display: none;
-    color: var(--text-color);
+    color: #c1c1c1;    // 月亮图标颜色
   }
   
   .fa-sun {
     display: inline-block;
-    color: var(--text-color);
+    color: #f39c12;    // 太阳图标颜色
   }
   
   &:hover {
@@ -690,5 +731,17 @@ a {
         text-decoration: none;
       }
     }
+  }
+}
+
+// 确保按钮在导航栏中正确显示
+.greedy-nav {
+  position: relative;
+  
+  .theme-toggle {
+    position: absolute;
+    right: 2.5em;      // 调整位置，避免与其他按钮重叠
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
