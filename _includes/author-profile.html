@@ -20,7 +20,11 @@
         <li><div style="white-space: normal; margin-bottom: 1em;">{{ site.description }}</div></li>
       {% endif %}
       {% if author.location %}
-        <li class="author__location"><i class="fas fa-fw fa-map-marker-alt"></i> <a href="https://www.google.com/maps/place/Beijing,+China" target="_blank">{{ author.location }}</a></li>
+        <li class="author__location">
+          <a href="https://www.google.com/maps/place/Beijing,+China" target="_blank">
+            <i class="fas fa-fw fa-map-marker-alt"></i>{{ author.location }}
+          </a>
+        </li>
       {% endif %}
       {% if author.employer %}
         <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.employer }}</li>
