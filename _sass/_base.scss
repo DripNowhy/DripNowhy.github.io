@@ -51,8 +51,8 @@
    ========================================================================== */
 .theme-toggle-wrapper {
   position: fixed;
-  top: 1rem;
-  right: 1rem;
+  top: 1.2em;
+  right: 2em;
   z-index: 1000;
 }
 
@@ -73,7 +73,6 @@
 
   .fa-sun {
     color: #f39c12;
-    display: block;
   }
 
   .fa-moon {
