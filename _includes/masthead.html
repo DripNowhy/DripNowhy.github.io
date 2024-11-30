@@ -11,10 +11,10 @@
               <a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
             </li>
           {%- endfor -%}
-          <li class="masthead__menu-item theme-toggle-wrapper">
-            <button id="theme-toggle" class="theme-toggle">
-              <i class="fas fa-moon"></i>
-              <i class="fas fa-sun"></i>
+          <li class="masthead__menu-item">
+            <button id="theme-toggle" class="theme-toggle-button">
+              <i class="fas fa-moon" aria-hidden="true"></i>
+              <i class="fas fa-sun" aria-hidden="true"></i>
             </button>
           </li>
         </ul>
