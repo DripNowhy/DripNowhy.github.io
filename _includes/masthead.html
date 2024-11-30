@@ -12,17 +12,9 @@
             </li>
           {%- endfor -%}
         </ul>
-        <div class="theme-switch-wrapper">
-          <button id="theme-toggle" class="theme-switch" title="Switch theme">
-            <i class="fas fa-sun"></i>
-            <i class="fas fa-moon"></i>
-          </button>
-        </div>
-        <button type="button" class="greedy-nav__toggle hidden" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle menu">
-          <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
-          <div class="navicon"></div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-moon dark-icon"></i>
         </button>
-        <ul class="hidden-links hidden"></ul>
       </nav>
     </div>
   </div>

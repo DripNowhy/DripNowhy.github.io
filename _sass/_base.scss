@@ -749,17 +749,10 @@ a {
 .greedy-nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   
   .visible-links {
     flex: 1;
-  }
-  
-  .theme-switch-wrapper {
-    order: 2;  // 确保在汉堡菜单按钮之前
-  }
-  
-  .greedy-nav__toggle {
-    order: 3;
   }
 }
 
@@ -776,47 +769,36 @@ a {
   border: none;
   cursor: pointer;
   padding: 10px;
-  border-radius: 50%;
+  margin-left: 1em;
+  margin-right: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
   
+  .dark-icon {
+    font-size: 18px;
+    color: #666;
+    transition: color 0.3s ease;
+  }
+  
   &:hover {
     transform: scale(1.1);
-  }
-  
-  .light-icon,
-  .dark-icon {
-    font-size: 24px;
-    position: absolute;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-  
-  .light-icon {
-    color: #f39c12;
-    opacity: 1;
-    transform: rotate(0deg);
-  }
-  
-  .dark-icon {
-    color: #f1c40f;
-    opacity: 0;
-    transform: rotate(90deg);
+    .dark-icon {
+      color: #333;
+    }
   }
 }
 
 // 深色模式样式
 [data-theme="dark"] {
   .theme-toggle {
-    .light-icon {
-      opacity: 0;
-      transform: rotate(-90deg);
-    }
-    
     .dark-icon {
-      opacity: 1;
-      transform: rotate(0deg);
+      color: #f1c40f;
+      
+      &:hover {
+        color: #f39c12;
+      }
     }
   }
 }
