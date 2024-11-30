@@ -11,11 +11,13 @@
               <a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
             </li>
           {%- endfor -%}
+          <li class="masthead__menu-item theme-toggle-wrapper">
+            <button id="theme-toggle" class="theme-toggle">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun"></i>
+            </button>
+          </li>
         </ul>
-        <button id="theme-toggle" class="theme-toggle nav-toggle">
-          <i class="fas fa-moon"></i>
-          <i class="fas fa-sun"></i>
-        </button>
         <button type="button" class="greedy-nav__toggle hidden" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle menu">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
           <div class="navicon"></div>

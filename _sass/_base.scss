@@ -647,32 +647,66 @@ a {
 }
 
 // 更新主题切换按钮样式
+.theme-toggle-wrapper {
+  margin-left: auto !important;  // 强制靠右对齐
+  padding-right: 1em !important; // 右侧留出空间
+}
+
 .theme-toggle {
-  padding: 0.5em 1em;
+  padding: 0.5em;
   border: none;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-left: 1em;
   display: flex;
   align-items: center;
+  height: 100%;
   
   .fa-moon, .fa-sun {
-    font-size: 1.2em;  // 增大图标
+    font-size: 1.2em;
   }
   
   .fa-moon {
     display: none;
-    color: #c1c1c1;    // 月亮图标颜色
+    color: #c1c1c1;
   }
   
   .fa-sun {
     display: inline-block;
-    color: #f39c12;    // 太阳图标颜色
+    color: #f39c12;
   }
   
   &:hover {
     transform: scale(1.1);
+  }
+}
+
+// 确保导航栏布局正确
+.greedy-nav {
+  .visible-links {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    
+    li {
+      flex: none;  // 防止项目被拉伸
+      
+      &.theme-toggle-wrapper {
+        flex: 0 0 auto;  // 不参与弹性布局
+      }
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .theme-toggle {
+    .fa-moon {
+      display: inline-block;
+      color: #f1c40f;
+    }
+    
+    .fa-sun {
+      display: none;
+    }
   }
 }
 
