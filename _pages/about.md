@@ -32,8 +32,8 @@ Hi! I'm a last-year undergraduate student from **School of Mathematics, Tianjin 
 <span class='anchor' id='news'></span>
 
 # 🔥 News
+- **[Jan. 2025]**: &nbsp;🎉🎉🎉 Our paper, dataset, and models about MLLM Multi-Image Safety ([MIS](https://dripnowhy.github.io/MIS/)) is released now!
 - **[Jan. 2025]**: &nbsp;🎉🎉🎉 Our paper about MLLM safety alignment is accepted to **ICLR 2025**. Congratulations to all Collaborators!
-- **[Oct. 2024]**: &nbsp;🎉🎉🎉 Our Paper about Inference Time Alignment of MLLMs is preprinted now. You can use our **[ETA](https://DripNowhy.github.io/ETA.html)** to safeguard your Multimodal Large Language Models (MLLMs)!
 - **[Sep. 2024]**: &nbsp;🎉🎉🎉 Yi serves as Reviewer of ICLR 2025!
 - **[Sep. 2024]**: &nbsp;🎉🎉🎉 Our paper about Dynamic Image Fusion without additional training is accepted to **NeurIPS 2024**! Congratulations to all Collaborators!
 - **[Jul. 2024]**: &nbsp;🎉🎉🎉 Yi will make a poster presentation at Tue 23 Jul 1:30 p.m. — 3 p.m. on ICML Hall C 4-9 #2817, Vienna, Austria!
