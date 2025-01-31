@@ -53,7 +53,7 @@ Hi! I'm a last-year undergraduate student from **School of Mathematics, Tianjin 
 <strong>Yi Ding*</strong>, Lijun Li*, Bing Cao, Jing Shao
 
 **<font color=SandyBrown>TL;DR:</font>**  Introducing the first multi-image safety (MIS) dataset, which includes both training and test splits. The VLMs fine-tuned with the MIRage method and MIS training set to improve both the safety and general performance of the models.
-**<font color=DarkSlateBlue>International Conference on Learning Representations (ICLR), 2025</font>**
+**<font color=DarkSlateBlue>Preprint, arXiv 2025</font>**
 
 [**<font color=DarkSlateBlue>[PDF]</font>**](https://arxiv.org/pdf/2501.18533) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 [**<font color=DarkSlateBlue>[Project Page]</font>**](https://DripNowhy.github.io/MIS/) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
