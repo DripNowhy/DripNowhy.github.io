@@ -48,9 +48,11 @@ Hi! I'm a last-year undergraduate student from **School of Mathematics, Tianjin 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/mis.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
+**<font color=DarkSlateBlue style="font-size: 18px;"></font>**
+
 **<font color=DarkSlateBlue style="font-size: 18px;">Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models</font>**
 
-<strong>Yi Ding*</strong>, Lijun Li*, Bing Cao, Jing Shao
+<strong>Yi Ding\*</strong>, Lijun Li\*, Bing Cao, Jing Shao
 
 **<font color=SandyBrown>TL;DR:</font>**  Introducing the first multi-image safety (MIS) dataset, which includes both training and test splits. The VLMs fine-tuned with the MIRage method and MIS training set to improve both the safety and general performance of the models.
 **<font color=DarkSlateBlue>Preprint, arXiv 2025</font>**
