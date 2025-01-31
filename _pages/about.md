@@ -45,6 +45,22 @@ Hi! I'm a last-year undergraduate student from **School of Mathematics, Tianjin 
 
 \* indicates author with **equal contribution**.
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/mis.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**<font color=DarkSlateBlue style="font-size: 18px;">Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models</font>**
+
+<strong>Yi Ding*</strong>, Lijun Li*, Bing Cao, Jing Shao
+
+**<font color=SandyBrown>TL;DR:</font>**  Introducing the first multi-image safety (MIS) dataset, which includes both training and test splits. The VLMs fine-tuned with the MIRage method and MIS training set to improve both the safety and general performance of the models.
+**<font color=DarkSlateBlue>International Conference on Learning Representations (ICLR), 2025</font>**
+
+[**<font color=DarkSlateBlue>[PDF]</font>**](https://arxiv.org/pdf/2501.18533) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**<font color=DarkSlateBlue>[Project Page]</font>**](https://DripNowhy.github.io/MIS/) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**<font color=DarkSlateBlue>[CODE]</font>**](https://github.com/DripNowhy/MIS) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2025</div><img src='images/ETA.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
