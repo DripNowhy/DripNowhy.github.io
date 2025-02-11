@@ -74,7 +74,7 @@ Hi! I'm a final-year undergraduate student from **School of Mathematics, Tianjin
 
 **<font color=DarkSlateBlue>International Conference on Learning Representations (ICLR), 2025</font>**
 
-[**<font color=DarkSlateBlue>[PDF]</font>**](https://arxiv.org/pdf/2410.06625) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**<font color=DarkSlateBlue>[PDF]</font>**](https://arxiv.org/pdf/2410.06625v2) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 [**<font color=DarkSlateBlue>[Project Page]</font>**](https://DripNowhy.github.io/ETA.html) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 [**<font color=DarkSlateBlue>[CODE]</font>**](https://github.com/DripNowhy/ETA) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 </div>
