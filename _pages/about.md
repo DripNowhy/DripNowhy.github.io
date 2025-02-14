@@ -18,11 +18,11 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # 👀 About Me
-Hi! I'm a final-year undergraduate student from **School of Mathematics, Tianjin University**. Currently, I am an **research intern** at RZ-Lab, Purdue University, advised by **[<font color=DarkSlateBlue>Dr. Ruqi Zhang</font>](https://ruqizhang.github.io/)**. Meanwhile, I'm also a research assistant in the MLDM Lab **M**ultimodal **V**ision **P**rocessing (MVP) Group, advised by **[<font color=DarkSlateBlue>Dr. Bing Cao</font>](https://bcaosudo.github.io/)** and **[<font color=DarkSlateBlue>Prof. Qinghua Hu</font>](https://cic.tju.edu.cn/faculty/huqinghua/index.html)**. I am interested in building reliable machine learning algorithms/frameworks in the real world, especially on the alignment of Large Foundation Models (LLMs, VLMs) and the generalization of multimodal learning algorithms.
+Hi! I'm a final-year undergraduate student from **School of Mathematics, Tianjin University**<img src="images/Tianjin_University_logo.svg.png" alt="TJU Logo" style="height:1em; vertical-align:middle;">. Currently, I am an **research intern** at RZ-Lab, Purdue University <img src="eta/purdue_logo.png" alt="Purdue Logo" style="height:1em; vertical-align:middle;">, advised by **[<font color=DarkSlateBlue>Dr. Ruqi Zhang</font>](https://ruqizhang.github.io/)**. Meanwhile, I'm also a research assistant in the MLDM Lab **M**ultimodal **V**ision **P**rocessing (MVP) Group, advised by **[<font color=DarkSlateBlue>Dr. Bing Cao</font>](https://bcaosudo.github.io/)** and **[<font color=DarkSlateBlue>Prof. Qinghua Hu</font>](https://cic.tju.edu.cn/faculty/huqinghua/index.html)**. I am interested in building reliable machine learning algorithms/frameworks in the real world, especially on the alignment of Large Foundation Models (LLMs, VLMs) and the generalization of multimodal learning algorithms.
 
 <span class='anchor' id='research-interests'></span>
 
-# 💖 Research Interests
+# 🧩 Research Interests
 - **<font color=FireBrick>Multimodal Learning:</font>** **Multimodal Fusion, Imbalanced Multimodal Learning.**
 - **<font color=FireBrick>Alignment of Foundation Models:</font>** **LLMs, VLMs.**
 - **<font color=FireBrick>Trustworthy AI:</font>** **Safety, Uncertainty, etc.**
@@ -117,5 +117,5 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 <span class='anchor' id='educations'></span>
 
 # 📖 Educations
-- *2021.08 - Present*, B.S., School of Mathematics, Tianjin University
-- *2024.05 - Present*, Intern, Department of Computer Science, Purdue University 
+- *2024.05 - Present*, Research Intern, Computer Science, Purdue University <img src="eta/purdue_logo.png" alt="Purdue Logo" style="height:1em; vertical-align:middle;">
+- *2021.08 - Present*, B.S., School of Mathematics, Tianjin University <img src="images/Tianjin_University_logo.svg.png" alt="TJU Logo" style="height:1em; vertical-align:middle;">
