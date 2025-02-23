@@ -42,9 +42,7 @@ Hi! I'm a final-year undergraduate student from **School of Mathematics, Tianjin
 <span class='anchor' id='publications'></span>
 
 # 📝 Publications & Preprints
-
 \* indicates author with **equal contribution**.
-
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/mis.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
