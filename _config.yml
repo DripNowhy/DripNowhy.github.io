@@ -22,13 +22,13 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 # Site Author
 author:
   name             : "Yi Ding (丁熠)"
-  avatar           : "images/yi_photo.jpg"
+  avatar           : "images/Yi.jpg"
   bio              : "Purdue University"
   location         : "Beijing, China"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=KywyOjkAAAAJ"
-  email            : "yi.ding.tju@gmail.com"
+  email            : "ding432@purdue.edu"
   researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
