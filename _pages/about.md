@@ -115,7 +115,7 @@ Bing Cao, Yinan Xia*, <strong>Yi Ding*</strong>, Changqing Zhang, Qinghua Hu
 
 <span class='anchor' id='educations'></span>
 
-# 📖 Education and Service
+# 📖 Education & Service
 - **Reviewer**: ICLR 2025, NeurIPS 2025 
 - *2024.05 - Present*, Research Intern, Computer Science, Purdue University <img src="eta/purdue_logo.png" alt="Purdue Logo" style="height:1em; vertical-align:middle;">
 - *2021.08 - Present*, B.S., School of Mathematics, Tianjin University <img src="images/Tianjin_University_logo.svg.png" alt="TJU Logo" style="height:1em; vertical-align:middle;">
