@@ -29,7 +29,7 @@ My research interests lie in developing reliable machine learning algorithms and
 - **<font color=FireBrick>Alignment of Foundation Models:</font>** **LLMs, VLMs.**
 - **<font color=FireBrick>Trustworthy AI:</font>** **Safety, Uncertainty, etc.**
 
-## **<font color=FireBrick>I am very excited about potential collaboration opportunities! You can find my</font> [<font color=DarkSlateBlue>CV</font>](../pdf/CV.pdf) <font color=FireBrick>here. If you share similar research interests and find my work interesting, I warmly welcome you to add my </font> [<font color=DarkSlateBlue>Wechat</font>](../images/wechat.jpg) <font color=FireBrick>for further discussion!</font>**
+## **<font color=FireBrick>I am very excited about potential collaboration opportunities! If you share similar research interests and find my work interesting, I warmly welcome you to add my </font> [<font color=DarkSlateBlue>Wechat</font>](../images/wechat.jpg) <font color=FireBrick>for further discussion!</font>**
 
 <span class='anchor' id='news'></span>
 
