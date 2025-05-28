@@ -45,6 +45,24 @@ My research interests lie in developing reliable machine learning algorithms and
 
 # 📝 Publications & Preprints
 \* indicates author with **equal contribution**.
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/sherlock_pipeline.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**<font color=DarkSlateBlue style="font-size: 18px;">Sherlock: Self-Correcting Reasoning in Vision-Language Models</font>**
+
+<strong>Yi Ding</strong>, Ruqi Zhang
+
+**<font color=SandyBrown>TL;DR:</font>** We present Sherlock, a self-correction and self-improvement training framework enhancing VLM reasoning ability using minimal annotated data.
+
+**<font color=DarkSlateBlue>Preprint, arXiv 2025</font>**
+
+[**<font color=DarkSlateBlue>[PDF]</font>**](https://github.com/DripNowhy/Sherlock) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**<font color=DarkSlateBlue>[Project Page]</font>**](https://dripnowhy.github.io/Sherlock/) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**<font color=DarkSlateBlue>[CODE]</font>**](https://github.com/DripNowhy/Sherlock) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/mis.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
