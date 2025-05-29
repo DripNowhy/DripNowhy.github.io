@@ -57,7 +57,7 @@ My research interests lie in developing reliable machine learning algorithms and
 
 **<font color=DarkSlateBlue>Preprint, arXiv 2025</font>**
 
-[**<font color=DarkSlateBlue>[PDF]</font>**](https://github.com/DripNowhy/Sherlock) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+[**<font color=DarkSlateBlue>[PDF]</font>**](http://arxiv.org/abs/2505.22651) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 [**<font color=DarkSlateBlue>[Project Page]</font>**](https://dripnowhy.github.io/Sherlock/) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 [**<font color=DarkSlateBlue>[CODE]</font>**](https://github.com/DripNowhy/Sherlock) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 </div>
