@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yi Ding's Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <link rel="icon" type="image/jpeg" href="images/yi_avatar.jpg">
+    <link rel="apple-touch-icon" href="images/yi_avatar.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="images/yi_avatar.jpg">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Yi Ding</div>
+            <div class="nav-wrapper">
+                <ul class="nav-links">
+                    <li><a href="#about"><i class="fas fa-user-circle"></i> About</a></li>
+                    <li><a href="#research"><i class="fas fa-microscope"></i> Research</a></li>
+                    <li><a href="#news"><i class="fas fa-newspaper"></i> News</a></li>
+                    <li><a href="#publications"><i class="fas fa-book"></i> Publications</a></li>
+                    <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li class="theme-btn-wrapper">
+                        <button class="theme-btn" title="Toggle Theme">
+                            <i class="fas fa-circle-half-stroke"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <div class="sidebar-left">
+            <div class="profile-card">
+                <div class="profile-image">
+                    <img src="images/profile.jpg" alt="Profile Photo">
+                </div>
+                <div class="profile-info">
+                    <h2>Yi Ding</h2>
+                    <p class="title"></p>
+                    <p class="department"></p>
+                    <p class="university">Purdue University</p>
+                    <img class="purdue-logo" src="images/purdue.svg" alt="Purdue University Logo" />
+                    <div class="social-links">
+                        <a href="https://scholar.google.com/citations?user=YOUR_ID" title="Google Scholar"><i class="fab fa-google-scholar"></i></a>
+                        <a href="https://github.com/YOUR_USERNAME" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/YOUR_PROFILE" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:your.email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="content-right">
+            <!-- About Section -->
+            <section id="about" class="section">
+                <div id="about-anchor" style="position: relative; top: -80px; height: 0;"></div>
+                <div class="section-header">
+                    <i class="fas fa-user-circle"></i>
+                    <h2>About Me</h2>
+                </div>
+                <div class="section-content">
+                    <p>Welcome to my academic homepage! I am a passionate researcher and educator focused on advancing the frontiers of artificial intelligence and machine learning. My work combines theoretical insights with practical applications to solve real-world challenges.</p>
+                </div>
+            </section>
+
+            <!-- Research Section -->
+            <section id="research" class="section">
+                <div id="research-anchor" style="position: relative; top: -80px; height: 0;"></div>
+                <div class="section-header">
+                    <i class="fas fa-microscope"></i>
+                    <h2>Research Interests</h2>
+                </div>
+                <div class="section-content">
+                    <div class="research-section"></div>
+                </div>
+            </section>
+
+            <!-- News Section -->
+            <section id="news" class="section">
+                <div id="news-anchor" style="position: relative; top: -80px; height: 0;"></div>
+                <div class="section-header">
+                    <i class="fas fa-newspaper"></i>
+                    <h2>Latest News</h2>
+                </div>
+                <div class="section-content">
+                    <div class="news-item">
+                        <span class="date">March 20, 2024</span>
+                        <p>Our paper on "Advanced Neural Networks" was accepted at NeurIPS 2024!</p>
+                    </div>
+                    <div class="news-item">
+                        <span class="date">February 15, 2024</span>
+                        <p>Received the Outstanding Researcher Award from ACM</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Publications Section -->
+            <section id="publications" class="section">
+                <div id="publications-anchor" style="position: relative; top: -80px; height: 0;"></div>
+                <div class="section-header">
+                    <i class="fas fa-book"></i>
+                    <h2>Publications</h2>
+                </div>
+                <div class="pub-note" style="color:#888;font-size:0.98rem;margin:-1.2rem 0 1.2rem 2.2rem;">* indicates author with equal contribution.</div>
+                <div class="section-content">
+                    <div class="publication-item">
+                        <div class="pub-year">2024</div>
+                        <div class="pub-content">
+                            <h3>Deep Learning for Natural Language Processing</h3>
+                            <p class="authors">Doe, J., Smith, A., Johnson, B.</p>
+                            <p class="journal">Nature Machine Intelligence, 2024</p>
+                            <div class="pub-links">
+                                <a href="#" class="pub-link"><i class="fas fa-external-link-alt"></i> Paper</a>
+                                <a href="#" class="pub-link"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GitHub Repositories Section -->
+            <section id="github-repos" class="section">
+                <div id="github-repos-anchor" style="position: relative; top: -80px; height: 0;"></div>
+                <div class="section-header">
+                    <i class="fab fa-github"></i>
+                    <h2>GitHub Repositories</h2>
+                </div>
+                <div class="github-repo-section"></div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="section">
+                <div id="education-anchor" style="position: relative; top: -80px; height: 0;"></div>
+                <div class="section-header">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h2>Education</h2>
+                </div>
+                <div class="section-content">
+                    <div class="education-item">
+                        <div class="edu-year">2018-2022</div>
+                        <div class="edu-content">
+                            <h3>Ph.D. in Computer Science</h3>
+                            <p class="school">Massachusetts Institute of Technology</p>
+                            <p class="thesis">Thesis: "Advanced Machine Learning Algorithms"</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <div id="contact-anchor" style="position: relative; top: -80px; height: 0;"></div>
+                <div class="section-header">
+                    <i class="fas fa-envelope"></i>
+                    <h2>Contact</h2>
+                </div>
+                <div class="section-content">
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>john.doe@stanford.edu</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Room 123, Gates Building<br>Stanford University</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            Homepage Builder: Yi Ding | Last updated: <span id="footer-update-date"></span>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html> 

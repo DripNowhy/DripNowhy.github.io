@@ -1,0 +1,61 @@
+# 个人信息
+profile:
+  name: "Yi Ding (丁熠)"
+  title: "Incoming PhD"
+  department: "Computer Science"
+  university: "Purdue University"
+  image: "images/yi_photo.jpg"
+
+# 社交媒体链接
+social:
+  google_scholar:
+    url: "https://scholar.google.com/citations?hl=en&user=KywyOjkAAAAJ"
+    icon: "fas fa-graduation-cap"
+    title: "Google Scholar"
+  github:
+    url: "#github-repos"
+    icon: "fab fa-github"
+    title: "GitHub"
+  twitter:
+    url: "https://x.com/YiDingywhy"
+    icon: "fab fa-twitter"
+    title: "Twitter"
+  cv:
+    url: "pdf/CV.pdf"
+    icon: "cv-svg-icon"
+    title: "CV"
+  email:
+    url: "mailto:ding432@purdue.edu"
+    icon: "fas fa-envelope"
+    title: "Email"
+
+# 导航链接
+navigation:
+  about:
+    url: "#about-anchor"
+    icon: "fas fa-user-circle"
+    title: "About"
+  research:
+    url: "#research-anchor"
+    icon: "fas fa-microscope"
+    title: "Research"
+  news:
+    url: "#news-anchor"
+    icon: "fas fa-newspaper"
+    title: "News"
+  publications:
+    url: "#publications-anchor"
+    icon: "fas fa-book"
+    title: "Publications"
+  github:
+    url: "#github-repos-anchor"
+    icon: "fab fa-github"
+    title: "GitHub"
+  education:
+    url: "#education-anchor"
+    icon: "fas fa-graduation-cap"
+    title: "Education"
+  contact:
+    url: "#contact-anchor"
+    icon: "fas fa-envelope"
+    title: "Contact" 
