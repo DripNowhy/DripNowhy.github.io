@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time">
+  <meta name="keywords" content="Evaluating Then Aligning, Vision Language Models, Inference Time Alignment">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:url" content="https://DripNowhy.github.io/ETA.html"/>
+  <title>ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./eta/ETA.svg">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./eta/css/bulma.min.css">
+  <link rel="stylesheet" href="./eta/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./eta/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./eta/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./eta/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./eta/js/fontawesome.all.min.js"></script>
+  <script src="./eta/js/bulma-carousel.min.js"></script>
+  <script src="./eta/js/bulma-slider.min.js"></script>
+  <script src="./eta/js/explorer-index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title is-bold">
+              <span><img src="eta/ETA.svg" width="108">: Evaluating Then Aligning Safety of Vision Language Models at Inference Time</span>
+            </h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://dripnowhy.github.io/">Yi Ding</a><sup style="color:#b6dbf0;">1</sup>,</span>
+            <span class="author-block">
+              <a href="https://lblaoke.github.io/">Bolian Li</a><sup style="color:#b6dbf0;">1</sup>,</span>
+            <span class="author-block">
+              <a href="https://ruqizhang.github.io/">Ruqi Zhang</a><sup style="color:#b6dbf0;">1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup style="color:#b6dbf0;">1</sup>Department of Computer Science, Purdue University</span><br>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2410.06625v2"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2410.06625v2"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/DripNowhy/ETA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+          <div class="content" style="text-align: left;">
+            <p align="center">
+               <b>ETA was Accepted at ICLR 2025!</b>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="content" style="text-align: left;">
+      <img src="eta/ETA_frame.png" alt="geometric reasoning" width="100%"/>
+    </div>
+  </div>
+</section>
+
+<!-- Introduction -->
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">👓 Introduction</h2>
+        <div class="content has-text-justified">
+          Existing defense methods are either resource-intensive, requiring substantial data and compute, or fail to simultaneously ensure safety and usefulness in responses. To address these limitations, we propose a novel two-phase inference-time alignment framework, <b>E</b>valuating <b>T</b>hen <b>A</b>ligning (<b>ETA</b>): i) Evaluating input visual contents and output responses to establish a robust safety awareness in multimodal settings, and ii) Aligning unsafe behaviors at both shallow and deep levels by conditioning the VLMs' generative distribution with an interference prefix and performing sentence-level best-of-$N$ to search the most harmless and helpful generation paths.
+        </div>
+        <p align="center">
+          <img src="eta/ETA_USR.png" width="90%"> <br>
+         <b>Left: USR changes from LLM backbone to VLM, and finally our ETA. Right: Pre-generation evaluator can effectively distinguish safe and unsafe images</b>
+      </p>
+        <div class="content has-text-justified">
+          ETA establishes a strong multimodal safety awareness and defense mechanism for VLMs without any additional training.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Motivation -->
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">🌟 Motivation</h2>
+        <div class="content has-text-justified">
+          LLM backbones are typically aligned on discrete textual embeddings \( \mathcal{E}_{\text{textual}} \subset \mathbb{R}^d \). In contrast, the continuous visual embeddings \( \mathcal{E}_{\text{visual}} \subset \mathbb{R}^d \) often appear away from all textual embeddings.
+        </div>
+        <p align="center">
+          <img src="eta/Motivation.png" width="90%" style="margin-bottom: 10px;">
+      </p>
+        <div class="content has-text-justified">
+          Continuous visual token embeddings can bypass existing safety mechanisms that are primarily aligned with discrete textual token embeddings. To verify this hypothesis, we implemented a mapping that transforms continuous visual embeddings to their nearest discrete textual embeddings based on cosine similarity. This mapping results in a significant 7% reduction in the unsafe rate (USR) when evaluated on the SPA-VL Harm test set.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+        <h2 class="title is-3">📌 Results</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Compared to other inference-time baselines, ETA significantly decreases responses unsafe rate on various safety benchmarks when applied to different VLM backbones <b>[1]</b>.
+          </p>
+          <p>
+            Evaluating on comprehensive benchmarks and general VQA tasks, ETA preserves model's general ability. <b>[2]</b>.
+          </p>
+          <p>
+            Applying ETA significantly increases the helpfulness of the generated responses, aligning closely with human preferences, even when compared to fine-tuned methods <b>[3]</b>.
+          </p>
+          <p>
+            Compared to other methods, ETA does not significantly increase inference time. <b>[3]</b>.
+          </p>
+          <p>
+            Ablation study on Aligning process of ETA. <b>[4]</b>.
+          </p>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="box m-5" style="position: relative;">
+              <div class="content has-text-centered">
+                <img src="eta/exp_1.png" alt="image name" width="90%"/>
+                <span style="position: absolute; top: 10px; left: 10px; background-color: rgba(255, 255, 255, 0.8); padding: 5px; border: 2px solid blue; color: blue; font-weight: bold;">[1]</span>
+              </div>
+            </div>
+            <div class="box m-5" style="position: relative;">
+              <div class="content has-text-centered">
+                <img src="eta/exp_2.png" alt="image name" width="90%"/>
+                <span style="position: absolute; top: 10px; left: 10px; background-color: rgba(255, 255, 255, 0.8); padding: 5px; border: 2px solid blue; color: blue; font-weight: bold;">[2]</span>
+              </div>
+            </div>
+            <div class="box m-5" style="position: relative;">
+              <div class="content has-text-centered">
+                <img src="eta/exp_3.png" alt="image name" width="90%"/>
+                <span style="position: absolute; top: 10px; left: 10px; background-color: rgba(255, 255, 255, 0.8); padding: 5px; border: 2px solid blue; color: blue; font-weight: bold;">[3]</span>
+              </div>
+            </div>
+            <div class="box m-5" style="position: relative;">
+              <div class="content has-text-centered">
+                <img src="eta/exp_4.png" alt="image name" width="90%"/>
+                <span style="position: absolute; top: 10px; left: 10px; background-color: rgba(255, 255, 255, 0.8); padding: 5px; border: 2px solid blue; color: blue; font-weight: bold;">[4]</span>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+        <h2 class="title is-3">📋 Examples</h2>
+
+        <div class="content has-text-justified">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="box m-5" style="position: relative;">
+              <div class="content has-text-centered">
+                <img src="eta/ETA_exp1.png" alt="image name" width="90%"/>
+              </div>
+            </div>
+            <div class="box m-5" style="position: relative;">
+              <div class="content has-text-centered">
+                <img src="eta/ETA_exp2.png" alt="image name" width="90%"/>
+              </div>
+            </div>
+            <div class="box m-5" style="position: relative;">
+              <div class="content has-text-centered">
+                <img src="eta/ETA_exp3.png" alt="image name" width="90%"/>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- @PAN TODO: bibtex -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+
+    <pre><code>@article{ding2024eta,
+  title={ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time},
+  author={Ding, Yi and Li, Bolian and Zhang, Ruqi},
+  journal={arXiv preprint arXiv:2410.06625},
+  year={2024}
+}</code></pre>
+  </div>
+</section>
+  
+<section>
+  <div class="section" id="org-banners" style="display:flex">
+    <a href="https://www.purdue.edu/" target="_blank" rel="external">
+      <img class="center-block org-banner" src="eta/purdue_logo.png" style="max-width: 300px; height: auto;">
+  </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <!-- <div class="container"> -->
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a> and <a href="https://mathvista.github.io/">MathVista</a>, licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+</footer>
+  
+</body>
+</html>
