@@ -13,7 +13,7 @@ social:
     icon: "fas fa-graduation-cap"
     title: "Google Scholar"
   github:
-    url: "https://github.com/DripNowhy/DripNowhy.github.io/deployments/github-pages"
+    url: "https://github.com/DripNowhy/DripNowhy.github.io"
     icon: "fab fa-github"
     title: "GitHub"
   twitter:
