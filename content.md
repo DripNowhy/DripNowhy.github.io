@@ -104,7 +104,7 @@ publications:
         code: "https://github.com/Yinan-Xia/PDF"
 ```
 
-## Education
+## Education and Services
 ```yaml
 education:
   items:
