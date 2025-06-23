@@ -245,6 +245,22 @@ async function initializeContent() {
         }
     }
 
+    // 更新服务
+    if (content.services) {
+        const servicesContent = document.querySelector('#services .section-content');
+        if (servicesContent && content.services.items && Array.isArray(content.services.items)) {
+            servicesContent.innerHTML = content.services.items.map(item => `
+                <div class="service-item">
+                    <span class="service-role">${item.role || ''}:</span>
+                    <span class="service-venue">${item.venue || ''}</span>
+                </div>
+            `).join('');
+        } else {
+            console.warn('content.services.items is missing or not an array.');
+            if (servicesContent) servicesContent.innerHTML = '<p>Services information is currently unavailable.</p>';
+        }
+    }
+
     // 更新联系方式
     if (content.contact) {
         const contactGrid = document.querySelector('.contact-grid');

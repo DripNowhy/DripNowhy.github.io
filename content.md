@@ -104,7 +104,7 @@ publications:
         code: "https://github.com/Yinan-Xia/PDF"
 ```
 
-## Education and Services
+## Education
 ```yaml
 education:
   items:
@@ -122,13 +122,14 @@ education:
       advisor:
         name: "Dr. Bing Cao"
         url: "https://bcaosudo.github.io/"
-    - period: 
-      degree: "Reviewer:"
-      school: "ICLR 2025, NeurIPS 2025, ARR 2025 May"
-      school_logo: 
-      advisor:
-        name: 
-        url: 
+```
+
+## Services
+```yaml
+services:
+  items:
+    - role: "Reviewer"
+      venue: "ICLR 2025, NeurIPS 2025, ARR 2025 May"
 ```
 
 ## Contact
