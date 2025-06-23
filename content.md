@@ -122,6 +122,13 @@ education:
       advisor:
         name: "Dr. Bing Cao"
         url: "https://bcaosudo.github.io/"
+    - period: 
+      degree: "Reviewer:"
+      school: "ICLR 2025, NeurIPS 2025, ARR 2025 May"
+      school_logo: 
+      advisor:
+        name: 
+        url: 
 ```
 
 ## Contact
