@@ -101,7 +101,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-content a {
     color: #2d47af;
-    text-decoration: underline;
     font-weight: 600;
     transition: color 0.2s;
     font-family: 'Quicksand', 'Baloo 2', 'Poppins', 'Arial', 'sans-serif';
@@ -604,7 +603,6 @@ h1, h2, h3, h4, h5, h6 {
 /* Education Items */
 .education-item {
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
     gap: 2rem;
     margin-bottom: 2rem;
@@ -622,6 +620,7 @@ h1, h2, h3, h4, h5, h6 {
 .edu-content {
     flex: 1;
     text-align: left;
+    min-width: 0;
 }
 
 .edu-content h3 {
@@ -629,13 +628,10 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.18rem;
     font-weight: 700;
     color: var(--text-primary);
+    line-height: 1.4;
 }
 
-.edu-content .school {
-    color: var(--text-secondary);
-    font-size: 1.05rem;
-    margin-bottom: 0.5rem;
-}
+
 
 .edu-content .advisor {
     color: var(--accent-color);
@@ -698,13 +694,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .wechat-link {
     color: #2062c5;
-    text-decoration: underline;
     font-weight: bold;
 }
 
 .wechat-link:hover {
     color: #174a99;
-    text-decoration: underline wavy;
 }
 
 /* Responsive Design */
@@ -743,7 +737,11 @@ h1, h2, h3, h4, h5, h6 {
         grid-template-columns: 1fr;
     }
 
-    .publication-item,
+    .publication-item {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
     .education-item {
         flex-direction: column;
         gap: 1rem;
@@ -751,7 +749,29 @@ h1, h2, h3, h4, h5, h6 {
 
     .pub-year,
     .edu-year {
-        min-width: auto;
+        width: auto;
+        text-align: left;
+    }
+    
+    .edu-logo {
+        height: 60px;
+        width: 80px;
+        margin-top: 1rem;
+    }
+    
+    .edu-logo img {
+        height: 60px;
+        width: auto;
+    }
+    
+    /* 移动端Purdue logo调小一点 */
+    .edu-logo img[src*="purdue"] {
+        height: 45px;
+    }
+    
+    /* 移动端TJU logo调大一点 */
+    .edu-logo img[src*="tju"] {
+        height: 75px;
     }
 }
 
@@ -767,10 +787,18 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* 添加高亮名称的通用样式 */
+.highlight-name {
+    font-weight: 900;
+}
+
+/* 强制移除所有链接的下划线 */
+a {
+    text-decoration: none !important;
+}
+
 .profile-info h2 .highlight-name {
     color: #483d8b;
-    text-decoration: underline;
-    text-underline-offset: 4px;
     font-weight: 900;
 }
 
@@ -783,13 +811,38 @@ h1, h2, h3, h4, h5, h6 {
 
 .edu-content .advisor a {
     color: var(--accent-color);
-    text-decoration: underline;
     font-weight: 600;
     transition: color 0.2s;
 }
 
 .edu-content .advisor a:hover {
     color: #e67e22 !important;
+}
+
+/* 教育logo样式 */
+.edu-logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100px;
+}
+
+.edu-logo img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Purdue logo调小一点 */
+.edu-logo img[src*="purdue"] {
+    height: 60px;
+}
+
+/* TJU logo调大一点 */
+.edu-logo img[src*="tju"] {
+    height: 100px;
 }
 
 .contact-grid {
@@ -820,7 +873,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-content a,
 .edu-content .advisor a {
-    text-decoration: underline;
     font-weight: 600;
     transition: color 0.2s;
 }
@@ -876,7 +928,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 .repo-title a:hover {
     color: #483d8b;
-    text-decoration: underline;
 }
 .repo-desc {
     color: var(--text-secondary);
@@ -916,13 +967,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [data-theme="dark"] .highlight-name {
-    color: #fff !important;
+    font-weight: 900;
 }
 [data-theme="dark"] .pub-tldr {
     color: #fff;
 }
 
+/* 修复教育时间显示 */
+.edu-year {
+    width: 200px;
+    flex-shrink: 0;
+    text-align: right;
+    color: #222;
+    font-weight: 800;
+    font-size: 1.13rem;
+}
+
 [data-theme="dark"] .edu-period {
+    color: #fff;
+}
+
+[data-theme="dark"] .edu-year {
     color: #fff;
 }
 
