@@ -49,6 +49,15 @@ news:
 ```yaml
 publications:
   items:
+  - year: "2025"
+      title: "SafeWork-R1: Coevolving Safety and Intelligence under the AI-45◦ Law"
+      authors: "Shanghai Artificial Intelligence Laboratory, ..., <strong>Yi Ding</strong>, [and 100+ authors]"
+      journal: "Technical Report, 2025"
+      venue: "Technical Report"
+      tldr: "We introduce SafeWork-R1, a cutting-edge multimodal reasoning model that demonstrates the coevolution of capabilities and safety."
+      image: "images/safework-r1.png"
+      links:
+        paper: "https://arxiv.org/pdf/2507.18576"
     - year: "2025"
       title: "Sherlock: Self-Correcting Reasoning in Vision-Language Models"
       authors: "<strong>Yi Ding</strong>, Ruqi Zhang"
