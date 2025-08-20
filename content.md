@@ -27,6 +27,8 @@ research:
 ```yaml
 news:
   items:
+  - date: "Aug 2025"
+      content: "🎉 1 paper was accepted by EMNLP 2025 Main Conference. Congratulations to all Collaborators!"
     - date: "May 2025"
       content: "🎉 Yi will give a talk about VLM safety at Shenlan School!"
     - date: "Apr 2025"
@@ -70,16 +72,6 @@ publications:
         code: "https://github.com/DripNowhy/Sherlock"
         project: "https://dripnowhy.github.io/Sherlock/"
     - year: "2025"
-      title: "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection"
-      authors: "Ziqi Miao*, <strong>Yi Ding*</strong>, Lijun Li, Jing Shao"
-      journal: "Preprint, arXiv 2025"
-      venue: "Preprint"
-      tldr: "We present VisCo-Attack, which jailbreak MLLMs via visual-centric setting and fabricated visual context."
-      image: "images/visco_attack.jpg"
-      links:
-        paper: "https://arxiv.org/pdf/2507.02844"
-        code: "https://github.com/Dtc7w3PQ/Visco-Attack"
-    - year: "2025"
       title: "Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models"
       authors: "<strong>Yi Ding*</strong>, Lijun Li*, Bing Cao, Jing Shao"
       journal: "Preprint, arXiv 2025"
@@ -90,6 +82,16 @@ publications:
         paper: "https://arxiv.org/pdf/2501.18533"
         code: "https://github.com/DripNowhy/MIS"
         project: "https://dripnowhy.github.io/MIS/"
+    - year: "2025"
+      title: "Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection"
+      authors: "Ziqi Miao*, <strong>Yi Ding*</strong>, Lijun Li, Jing Shao"
+      journal: "EMNLP 2025 Main"
+      venue: "EMNLP 2025 Main"
+      tldr: "We present VisCo-Attack, which jailbreak MLLMs via visual-centric setting and fabricated visual context."
+      image: "images/visco_attack.jpg"
+      links:
+        paper: "https://arxiv.org/pdf/2507.02844"
+        code: "https://github.com/Dtc7w3PQ/Visco-Attack"
     - year: "2025"
       title: "ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time"
       authors: "<strong>Yi Ding</strong>, Bolian Li, Ruqi Zhang"
