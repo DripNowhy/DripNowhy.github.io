@@ -129,7 +129,7 @@ publications:
 ```yaml
 education:
   items:
-    - period: "2025.08 (Expected) - Present"
+    - period: "2025.08 - Present"
       degree: "Ph.D."
       school: "Computer Science, Purdue University"
       school_logo: "images/purdue.svg"
