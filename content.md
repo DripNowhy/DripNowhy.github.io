@@ -27,6 +27,8 @@ research:
 ```yaml
 news:
   items:
+  - date: "Sep 2025"
+      content: "🎉 1 paper was accepted by NeurIPS 2025! Congratulations to all Collaborators!"
   - date: "Aug 2025"
       content: "🎉 1 paper was accepted by EMNLP 2025 Main Conference. Congratulations to all Collaborators!"
     - date: "May 2025"
@@ -63,8 +65,8 @@ publications:
     - year: "2025"
       title: "Sherlock: Self-Correcting Reasoning in Vision-Language Models"
       authors: "<strong>Yi Ding</strong>, Ruqi Zhang"
-      journal: "Preprint, arXiv 2025"
-      venue: "Preprint"
+      journal: "Neural Information Processing Systems (NeurIPS), 2025"
+      venue: "NeurIPS 2025"
       tldr: "We present Sherlock, a self-correction and self-improvement training framework enhancing VLM reasoning ability using minimal annotated data."
       image: "images/sherlock_pipeline.png"
       links:
