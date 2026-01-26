@@ -27,6 +27,8 @@ research:
 ```yaml
 news:
   items:
+  - date: "Jan 2026"
+      content: "🎉 1 paper was accepted by ICLR 2026! Congratulations to all Collaborators!"
   - date: "Sep 2025"
       content: "🎉 1 paper was accepted by NeurIPS 2025! Congratulations to all Collaborators!"
   - date: "Aug 2025"
@@ -65,8 +67,8 @@ publications:
     - year: "2025"
       title: "Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models"
       authors: "<strong>Yi Ding*</strong>, Lijun Li*, Bing Cao, Jing Shao"
-      journal: "Preprint, arXiv 2025"
-      venue: "Preprint"
+      journal: "International Conference on Learning Representations (ICLR), 2026"
+      venue: "ICLR 2026"
       tldr: "Introducing the first multi-image safety (MIS) dataset, which includes both training and test splits. The VLMs fine-tuned with the MIRage method and MIS training set to improve both the safety and general performance of the models."
       image: "images/mis.png"
       links:
