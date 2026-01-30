@@ -6,8 +6,7 @@
     <title>Yi Ding's Homepage</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Pacifico&family=Great+Vibes&family=Satisfy&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <link rel="icon" type="image/jpeg" href="images/yi_avatar.jpg">
     <link rel="apple-touch-icon" href="images/yi_avatar.jpg">
@@ -25,8 +24,7 @@
                     <li><a href="#news"><i class="fas fa-newspaper"></i> News</a></li>
                     <li><a href="#publications"><i class="fas fa-book"></i> Publications</a></li>
                     <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
-                    <li><a href="#services"><i class="fas fa-concierge-bell"></i> Services</a></li>
-                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="#services"><i class="fas fa-glasses"></i> Services</a></li>
                     <li class="theme-btn-wrapper">
                         <button class="theme-btn" title="Toggle Theme">
                             <i class="fas fa-circle-half-stroke"></i>
@@ -37,13 +35,35 @@
         </div>
     </nav>
 
+    <!-- Hero Section - Full screen on load -->
+    <div class="hero-section" id="hero">
+        <canvas id="handwriting-canvas"></canvas>
+        <div class="hero-content">
+            <div class="profile-image hero-image">
+                <img src="images/yi_photo.jpg" alt="Yi Ding">
+            </div>
+            <div class="hero-info">
+                <h1 class="hero-name">Yi Ding</h1>
+                <p class="hero-title">PhD Student in Computer Science</p>
+                <p class="hero-uni">Purdue University</p>
+                <div class="social-links hero-social">
+                    <!-- Social links will be populated by JS -->
+                </div>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <span>Scroll to explore</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
     <!-- Main Content -->
-    <div class="main-container">
-        <!-- Left Sidebar -->
-        <div class="sidebar-left">
+    <div class="main-container" id="main-content">
+        <!-- Left Sidebar (appears after scroll) -->
+        <div class="sidebar-left" id="sidebar">
             <div class="profile-card">
                 <div class="profile-image">
-                    <img src="images/profile.jpg" alt="Profile Photo">
+                    <img src="images/yi_photo.jpg" alt="Profile Photo">
                 </div>
                 <div class="profile-info">
                     <h2>Yi Ding</h2>
@@ -52,10 +72,7 @@
                     <p class="university">Purdue University</p>
                     <img class="purdue-logo" src="images/purdue.svg" alt="Purdue University Logo" />
                     <div class="social-links">
-                        <a href="https://scholar.google.com/citations?user=YOUR_ID" title="Google Scholar"><i class="fab fa-google-scholar"></i></a>
-                        <a href="https://github.com/YOUR_USERNAME" title="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/YOUR_PROFILE" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:your.email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        <!-- Populated by JS -->
                     </div>
                 </div>
             </div>
@@ -84,13 +101,45 @@
                     <h2>Research Interests</h2>
                 </div>
                 <div class="section-content">
-                    <div class="research-section">
-                        <ul class="research-list">
-                            <li><span class="interest-keyword">Multimodal Learning:</span> Multimodal Fusion, Imbalanced Multimodal Learning.</li>
-                            <li><span class="interest-keyword">Alignment of Foundation Models:</span> LLMs, VLMs.</li>
-                            <li><span class="interest-keyword">Trustworthy AI:</span> Safety, Uncertainty, etc.</li>
-                        </ul>
-                        <div class="collab-invite">I am very excited about potential collaboration opportunities! If you share similar research interests and find my work interesting, I warmly welcome you to contact me via email!</div>
+                    <div class="research-grid">
+                        <div class="research-card">
+                            <div class="research-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <h3>Multimodal Learning</h3>
+                            <p>Multimodal Fusion, Imbalanced Multimodal Learning</p>
+                            <div class="research-tags">
+                                <span class="tag">Fusion</span>
+                                <span class="tag">Imbalanced Data</span>
+                            </div>
+                        </div>
+                        <div class="research-card">
+                            <div class="research-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>Foundation Models</h3>
+                            <p>Alignment of LLMs and VLMs</p>
+                            <div class="research-tags">
+                                <span class="tag">LLM</span>
+                                <span class="tag">VLM</span>
+                                <span class="tag">Alignment</span>
+                            </div>
+                        </div>
+                        <div class="research-card">
+                            <div class="research-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Trustworthy AI</h3>
+                            <p>Safety, Uncertainty, Reliability</p>
+                            <div class="research-tags">
+                                <span class="tag">Safety</span>
+                                <span class="tag">Uncertainty</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collab-invite">
+                        <i class="fas fa-handshake"></i>
+                        <p>Open to collaborations! Feel free to reach out if our research interests align.</p>
                     </div>
                 </div>
             </section>
@@ -163,8 +212,8 @@
                 <div class="section-content">
 
                     <div class="publication-item">
+                        <div class="pub-venue-badge">Technical Report</div>
                         <div class="pub-image-block">
-                            <div class="pub-venue-badge">Technical Report</div>
                             <img class="pub-image" src="images/safework-r1.png" alt="SafeWork-R1: Coevolving Safety and Intelligence under the AI-45◦ Law">
                         </div>
                         <div class="pub-content">
@@ -181,8 +230,8 @@
                     </div>
                     
                     <div class="publication-item">
+                        <div class="pub-venue-badge">ICLR 2026</div>
                         <div class="pub-image-block">
-                            <div class="pub-venue-badge">ICLR 2026</div>
                             <img class="pub-image" src="images/mis.png" alt="Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models">
                         </div>
                         <div class="pub-content">
@@ -198,8 +247,8 @@
                         </div>
                     </div>
                     <div class="publication-item">
+                        <div class="pub-venue-badge">NeurIPS 2025</div>
                         <div class="pub-image-block">
-                            <div class="pub-venue-badge">NeurIPS 2025</div>
                             <img class="pub-image" src="images/sherlock_pipeline.png" alt="Sherlock: Self-Correcting Reasoning in Vision-Language Models">
                         </div>
                         <div class="pub-content">
@@ -215,8 +264,8 @@
                         </div>
                     </div>
                     <div class="publication-item">
+                        <div class="pub-venue-badge">EMNLP 2025</div>
                         <div class="pub-image-block">
-                            <div class="pub-venue-badge">EMNLP 2025 Main</div>
                             <img class="pub-image" src="images/visco_attack.jpg" alt="Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection">
                         </div>
                         <div class="pub-content">
@@ -231,8 +280,8 @@
                         </div>
                     </div>
                     <div class="publication-item">
+                        <div class="pub-venue-badge">ICLR 2025</div>
                         <div class="pub-image-block">
-                            <div class="pub-venue-badge">ICLR 2025</div>
                             <img class="pub-image" src="images/eta.png" alt="ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time">
                         </div>
                         <div class="pub-content">
@@ -248,8 +297,8 @@
                         </div>
                     </div>
                     <div class="publication-item">
+                        <div class="pub-venue-badge">NeurIPS 2024</div>
                         <div class="pub-image-block">
-                            <div class="pub-venue-badge">NeurIPS 2024</div>
                             <img class="pub-image" src="images/ttd.png" alt="Test-Time Dynamic Image Fusion">
                         </div>
                         <div class="pub-content">
@@ -264,8 +313,8 @@
                         </div>
                     </div>
                     <div class="publication-item">
+                        <div class="pub-venue-badge">ICML 2024</div>
                         <div class="pub-image-block">
-                            <div class="pub-venue-badge">ICML 2024</div>
                             <img class="pub-image" src="images/pdf.jpg" alt="Predictive Dynamic Fusion">
                         </div>
                         <div class="pub-content">
@@ -327,33 +376,17 @@
             <section id="services" class="section">
                 <div id="services-anchor" style="position: relative; top: -80px; height: 0;"></div>
                 <div class="section-header">
-                    <i class="fas fa-concierge-bell"></i>
-                    <h2>Services</h2>
+                    <i class="fas fa-glasses"></i>
+                    <h2>Academic Services</h2>
                 </div>
                 <div class="section-content">
-                    <div class="service-item">
-                        <span class="service-role">Reviewer</span>
-                        <span class="service-venue">ICLR 2025, NeurIPS 2025, ARR 2025 May</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact" class="section">
-                <div id="contact-anchor" style="position: relative; top: -80px; height: 0;"></div>
-                <div class="section-header">
-                    <i class="fas fa-envelope"></i>
-                    <h2>Contact</h2>
-                </div>
-                <div class="section-content">
-                    <div class="contact-grid">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <p>ding432@purdue.edu</p>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>Beijing, China<br>Indiana, USA</p>
+                    <div class="services-compact">
+                        <span class="services-label">Conference Reviewer</span>
+                        <div class="services-venues">
+                            <span class="venue-tag">ICLR 2025, 2026</span>
+                            <span class="venue-tag">NeurIPS 2025</span>
+                            <span class="venue-tag">ICML 2026</span>
+                            <span class="venue-tag">ARR 2025</span>
                         </div>
                     </div>
                 </div>

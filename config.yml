@@ -22,7 +22,7 @@ social:
     title: "Twitter"
   cv:
     url: "pdf/CV.pdf"
-    icon: "cv-svg-icon"
+    icon: "fas fa-file-alt"
     title: "CV"
   email:
     url: "mailto:ding432@purdue.edu"
