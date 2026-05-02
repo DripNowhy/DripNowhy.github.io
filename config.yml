@@ -55,7 +55,7 @@ navigation:
     url: "#education-anchor"
     icon: "fas fa-graduation-cap"
     title: "Education"
-  contact:
-    url: "#contact-anchor"
-    icon: "fas fa-envelope"
-    title: "Contact" 
+  services:
+    url: "#services-anchor"
+    icon: "fas fa-glasses"
+    title: "Services"

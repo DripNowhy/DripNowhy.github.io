@@ -6,7 +6,7 @@
     <title>Yi Ding's Homepage</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Pacifico&family=Great+Vibes&family=Satisfy&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
     <link rel="icon" type="image/jpeg" href="images/yi_avatar.jpg">
     <link rel="apple-touch-icon" href="images/yi_avatar.jpg">
@@ -34,28 +34,6 @@
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section - Full screen on load -->
-    <div class="hero-section" id="hero">
-        <canvas id="handwriting-canvas"></canvas>
-        <div class="hero-content">
-            <div class="profile-image hero-image">
-                <img src="images/yi_photo.jpg" alt="Yi Ding">
-            </div>
-            <div class="hero-info">
-                <h1 class="hero-name">Yi Ding</h1>
-                <p class="hero-title">PhD Student in Computer Science</p>
-                <p class="hero-uni">Purdue University</p>
-                <div class="social-links hero-social">
-                    <!-- Social links will be populated by JS -->
-                </div>
-            </div>
-        </div>
-        <div class="scroll-hint">
-            <span>Scroll to explore</span>
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </div>
 
     <!-- Main Content -->
     <div class="main-container" id="main-content">
@@ -88,7 +66,7 @@
                     <h2>About Me</h2>
                 </div>
                 <div class="section-content">
-                    <p>Hi there! I'm an PhD student at <strong>Purdue University</strong> <img src="images/purdue.svg" alt="Purdue Logo" style="height:1em; vertical-align:middle;">, Department of Computer Science, advised by <strong><a href="https://ruqizhang.github.io/" style="color: DarkSlateBlue;">Dr. Ruqi Zhang</a></strong>. I obtained my B.S. degree at the <strong>School of Mathematics, Tianjin University</strong> <img src="images/tju.png" alt="TJU Logo" style="height:1em; vertical-align:middle;">. Previously, I worked as a research assistant in the MLDM Lab's <strong>Multimodal Vision Processing (MVP)</strong> Group, under the guidance of <strong><a href="https://bcaosudo.github.io/" style="color: DarkSlateBlue;">Dr. Bing Cao</a></strong>.</p>
+                    <p>Hi there! I'm a PhD student at <strong>Purdue University</strong> <img src="images/purdue.svg" alt="Purdue Logo" style="height:1em; vertical-align:middle;">, Department of Computer Science, advised by <strong><a href="https://ruqizhang.github.io/">Dr. Ruqi Zhang</a></strong>. I obtained my B.S. degree at the <strong>School of Mathematics, Tianjin University</strong> <img src="images/tju.png" alt="TJU Logo" style="height:1em; vertical-align:middle;">. Previously, I worked as a research assistant in the MLDM Lab's <strong>Multimodal Vision Processing (MVP)</strong> Group, under the guidance of <strong><a href="https://bcaosudo.github.io/">Dr. Bing Cao</a></strong>.</p>
                     <p>My research interests lie in developing reliable machine learning algorithms and frameworks for real-world applications, with a particular focus on the alignment of Large Foundation Models (LLMs and VLMs) and the generalization of multimodal learning algorithms.</p>
                 </div>
             </section>
@@ -101,42 +79,20 @@
                     <h2>Research Interests</h2>
                 </div>
                 <div class="section-content">
-                    <div class="research-grid">
-                        <div class="research-card">
-                            <div class="research-icon">
-                                <i class="fas fa-layer-group"></i>
-                            </div>
-                            <h3>Multimodal Learning</h3>
-                            <p>Multimodal Fusion, Imbalanced Multimodal Learning</p>
-                            <div class="research-tags">
-                                <span class="tag">Fusion</span>
-                                <span class="tag">Imbalanced Data</span>
-                            </div>
-                        </div>
-                        <div class="research-card">
-                            <div class="research-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <h3>Foundation Models</h3>
-                            <p>Alignment of LLMs and VLMs</p>
-                            <div class="research-tags">
-                                <span class="tag">LLM</span>
-                                <span class="tag">VLM</span>
-                                <span class="tag">Alignment</span>
-                            </div>
-                        </div>
-                        <div class="research-card">
-                            <div class="research-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <h3>Trustworthy AI</h3>
-                            <p>Safety, Uncertainty, Reliability</p>
-                            <div class="research-tags">
-                                <span class="tag">Safety</span>
-                                <span class="tag">Uncertainty</span>
-                            </div>
-                        </div>
-                    </div>
+                    <ul class="research-list">
+                        <li>
+                            <span class="interest-keyword">Multimodal Learning</span>
+                            <p>Multimodal fusion and imbalanced multimodal learning.</p>
+                        </li>
+                        <li>
+                            <span class="interest-keyword">Foundation Models</span>
+                            <p>Alignment, reasoning, and self-correction for LLMs and VLMs.</p>
+                        </li>
+                        <li>
+                            <span class="interest-keyword">Trustworthy AI</span>
+                            <p>Safety, uncertainty, and reliability in real-world model behavior.</p>
+                        </li>
+                    </ul>
                     <div class="collab-invite">
                         <i class="fas fa-handshake"></i>
                         <p>Open to collaborations! Feel free to reach out if our research interests align.</p>
@@ -154,48 +110,52 @@
                 <div class="section-content">
                     <div class="news-container">
                         <div class="news-item">
+                            <span class="date">May 2026</span>
+                            <p>Two papers were accepted to ICML 2026.</p>
+                        </div>
+                        <div class="news-item">
                             <span class="date">Jan 2026</span>
-                            <p>🎉 1 paper was accepted by ICLR 2026!</p>
+                            <p>One paper was accepted by ICLR 2026.</p>
                         </div>
                         <div class="news-item">
                             <span class="date">Sep 2025</span>
-                            <p>🎉 1 paper was accepted by NeurIPS 2025! Congratulations to all Collaborators!</p>
+                            <p>One paper was accepted by NeurIPS 2025.</p>
                         </div>
                         <div class="news-item">
                             <span class="date">Aug 2025</span>
-                            <p>🎉 1 paper was accepted by EMNLP 2025 Main Conference. Congratulations to all Collaborators!</p>
+                            <p>One paper was accepted by EMNLP 2025 Main Conference.</p>
                         </div>
                         <div class="news-item">
                             <span class="date">May 2025</span>
-                            <p>🎉 Yi will give a talk about VLM safety at Shenlan School!</p>
+                            <p>Yi will give a talk about VLM safety at Shenlan School.</p>
                         </div>
                         <div class="news-item">
                             <span class="date">Apr 2025</span>
-                            <p>🎉 Yi serves as Reviewer of NeurIPS 2025!</p>
+                            <p>Yi serves as reviewer for NeurIPS 2025.</p>
                         </div>
                         <div class="news-item">
                             <span class="date">Jan 2025</span>
-                            <p>🎉 Our paper, dataset, and models about VLM Multi-Image Safety (MIS) are released now!</p>
+                            <p>Our paper, dataset, and models about VLM Multi-Image Safety (MIS) are released.</p>
                         </div>
                         <div class="news-item">
                             <span class="date">Jan 2025</span>
-                            <p>🎉 Our paper about MLLM safety alignment is accepted at ICLR 2025. Congratulations to all Collaborators!</p>
+                            <p>Our paper about MLLM safety alignment was accepted at ICLR 2025.</p>
                         </div>
                         <div class="news-item">
                             <span class="date">Sep 2024</span>
-                            <p>🎉 Yi serves as Reviewer of ICLR 2025!</p>
+                            <p>Yi serves as reviewer for ICLR 2025.</p>
                         </div>
                         <div class="news-item">
                             <span class="date">Sep 2024</span>
-                            <p>🎉 Our paper about Dynamic Image Fusion without additional training is accepted at NeurIPS 2024! Congratulations to all Collaborators!</p>
+                            <p>Our paper about dynamic image fusion without additional training was accepted at NeurIPS 2024.</p>
                         </div>
                         <div class="news-item">
                             <span class="date">Jul 2024</span>
-                            <p>🎉 Yi will make a poster presentation at Tue 23 Jul 1:30 p.m. — 3 p.m. on ICML Hall C 4-9 #2817, Vienna, Austria!</p>
+                            <p>Yi will present a poster at ICML 2024, Hall C 4-9 #2817, Vienna, Austria.</p>
                         </div>
                         <div class="news-item">
                             <span class="date">May 2024</span>
-                            <p>🎉 Our paper about Multimodal Fusion is accepted at ICML 2024!</p>
+                            <p>Our paper about multimodal fusion was accepted at ICML 2024.</p>
                         </div>
                     </div>
                 </div>
@@ -207,12 +167,12 @@
                 <div class="section-header">
                     <i class="fas fa-book"></i>
                     <h2>Publications</h2>
+                    <span class="pub-note">* indicates equal contribution.</span>
                 </div>
-                <div class="pub-note" style="color:#888;font-size:0.98rem;margin:-1.2rem 0 1.2rem 2.2rem;">* indicates author with equal contribution.</div>
                 <div class="section-content">
 
                     <div class="publication-item">
-                        <div class="pub-venue-badge">Preprint</div>
+                        <div class="pub-venue-badge">ICML 2026</div>
                         <div class="pub-image-block">
                             <img class="pub-image" src="images/octopus.png" alt="Learning Self-Correction in Vision–Language Models via Rollout Augmentation">
                         </div>
@@ -220,7 +180,7 @@
                             <h3>Learning Self-Correction in Vision–Language Models via Rollout Augmentation</h3>
                             <p class="authors"><span class="highlight-name">Yi Ding</span>, Ziliang Qiu, Bolian Li, Ruqi Zhang</p>
                             <div class="pub-tldr"><span class="pub-tldr-label">TL;DR:</span> We propose Octopus, an RL rollout augmentation framework that synthesizes dense self-correction examples by recombining existing rollouts. Octopus-8B achieves SoTA performance by advancing reasoning and self-correction capabilities.</div>
-                            <p class="journal">Under Review, 2026</p>
+                            <p class="journal">International Conference on Machine Learning (ICML), 2026</p>
                             <div class="pub-links">
                                 <a href="https://arxiv.org/pdf/2602.08503" class="pub-link"><i class="fas fa-file-alt"></i> Paper</a>
                                 <a href="https://github.com/DripNowhy/Octopus" class="pub-link"><i class="fab fa-github"></i> Code</a>
@@ -230,7 +190,7 @@
                     </div>
 
                     <div class="publication-item">
-                        <div class="pub-venue-badge">Preprint</div>
+                        <div class="pub-venue-badge">ICML 2026 Position Paper</div>
                         <div class="pub-image-block">
                             <img class="pub-image" src="images/modular_safety.png" alt="Modular Safety Guardrails Are Necessary for Foundation-Model-Enabled Robots in the Real World">
                         </div>
@@ -238,7 +198,7 @@
                             <h3>Modular Safety Guardrails Are Necessary for Foundation-Model-Enabled Robots in the Real World</h3>
                             <p class="authors">Joonkyung Kim, Wenxi Chen, Davood Soleymanzadeh, <span class="highlight-name">Yi Ding</span>, Xiangbo Gao, Zhengzhong Tu, Ruqi Zhang, Fan Fei, Sushant Veer, Yiwei Lyu, Minghui Zheng, Yan Gu</p>
                             <div class="pub-tldr"><span class="pub-tldr-label">TL;DR:</span> We propose modular safety guardrails with monitoring and intervention layers, and show how cross-layer co-design enables faster, less conservative, and more effective safety for physical AI.</div>
-                            <p class="journal">Under Review, 2026</p>
+                            <p class="journal">ICML 2026 Position Paper</p>
                             <div class="pub-links">
                                 <a href="https://arxiv.org/pdf/2602.04056" class="pub-link"><i class="fas fa-file-alt"></i> Paper</a>
                                 <!-- <a href="https://github.com/DripNowhy/Sherlock" class="pub-link"><i class="fab fa-github"></i> Code</a> 
@@ -389,7 +349,7 @@
                         <div class="edu-year">2025.08 - Present</div>
                         <div class="edu-content">
                             <h3>Ph.D. at Computer Science, Purdue University</h3>
-                            <p class="thesis">Advisor: <a href="https://ruqizhang.github.io/" style="color: DarkSlateBlue;">Dr. Ruqi Zhang</a></p>
+                            <p class="thesis">Advisor: <a href="https://ruqizhang.github.io/">Dr. Ruqi Zhang</a></p>
                         </div>
                         <div class="edu-logo">
                             <img src="images/purdue_small.png" alt="Purdue University Logo">
@@ -399,7 +359,7 @@
                         <div class="edu-year">2021.08 - 2025.06</div>
                         <div class="edu-content">
                             <h3>B.S. at School of Mathematics, Tianjin University</h3>
-                            <p class="thesis">Advisor: <a href="https://bcaosudo.github.io/" style="color: DarkSlateBlue;">Dr. Bing Cao</a></p>
+                            <p class="thesis">Advisor: <a href="https://bcaosudo.github.io/">Dr. Bing Cao</a></p>
                         </div>
                         <div class="edu-logo">
                             <img src="images/tju.png" alt="Tianjin University Logo">
@@ -420,7 +380,7 @@
                         <span class="services-label">Conference Reviewer</span>
                         <div class="services-venues">
                             <span class="venue-tag">ICLR 2025, 2026</span>
-                            <span class="venue-tag">NeurIPS 2025</span>
+                            <span class="venue-tag">NeurIPS 2025, 2026</span>
                             <span class="venue-tag">ICML 2026</span>
                             <span class="venue-tag">ARR 2025</span>
                         </div>
@@ -437,5 +397,4 @@
     </footer>
     <script src="script.js"></script>
 </body>
-</html> 
 </html> 
