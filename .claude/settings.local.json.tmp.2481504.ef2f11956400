@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:itsqyh.github.io)",
+      "WebFetch(domain:yikunhan42.github.io)",
+      "WebFetch(domain:pascaljd.github.io)",
+      "Bash(node --check script.js)",
+      "Bash(python3 -m pip install --quiet --user esprima)",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 -m venv jsenv)",
+      "Bash(./jsenv/bin/pip install *)",
+      "Bash(./jsenv/bin/python -c ' *)",
+      "Bash(curl -s http://localhost:8899/)",
+      "Bash(curl -sL --max-time 20 https://itsqyh.github.io/)",
+      "Bash(curl -sL --max-time 20 \"https://itsqyh.github.io/style.css?v=20260729-6\")",
+      "Bash(grep -iB2 -A1 \"font-family\")",
+      "Bash(curl -s -o /dev/null -w \"status %{http_code}\\\\n\" \"https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap\")",
+      "Bash(curl -s -A \"Mozilla/5.0\" \"https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap\")",
+      "Bash(python3 *)",
+      "Bash(curl -sL --max-time 25 https://www.recursive.com/)",
+      "Bash(curl -sL --max-time 25 \"https://cdn.prod.website-files.com/69c2d7e2ad6312d0a414043e/js/webflow.751e0867.148dc658e77a3916.js\")",
+      "Bash(curl -sL --max-time 25 \"https://cdn.prod.website-files.com/69c2d7e2ad6312d0a414043e/js/webflow.schunk.7321a5097fb66f41.js\")",
+      "Bash(curl -s \"https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope:wght@400;600&display=swap\")",
+      "Bash(curl -s \"https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap\")",
+      "Read(//home/nvidia/.claude/jobs/0438c3b2/tmp/**)",
+      "Bash(curl -s -o annie.ttf \"https://fonts.gstatic.com/s/annieuseyourtelescope/v20/daaLSS4tI2qYYl3Jq9s_Hu74xwktnlKxH6osGVGTkz3F.ttf\")",
+      "Bash(curl -s -o caveat.ttf \"https://fonts.gstatic.com/s/caveat/v23/WnznHAc5bAfYB2QRah7pcpNvOx-pjfJ9eIWpZA.ttf\")",
+      "Bash(git fetch *)",
+      "Bash(git push *)",
+      "Bash(gh auth *)",
+      "Bash(git config *)",
+      "Read(//home/nvidia/**)",
+      "Bash(ssh -o StrictHostKeyChecking=accept-new -o ConnectTimeout=12 -T git@github.com)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m 'Drop the hero research blurb *)"
+    ]
+  }
+}
