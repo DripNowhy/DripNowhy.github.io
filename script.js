@@ -100,19 +100,38 @@ async function loadConfig() {
 }
 
 function renderProfile(config) {
-    const profileInfo = document.querySelector('.profile-info');
-    const profileImage = document.querySelector('.profile-image img');
-    if (!profileInfo) return;
+    const profile = config.profile || {};
+    const name = document.querySelector('.hero-name');
+    const role = document.querySelector('.hero-role');
+    const motto = document.querySelector('.hero-motto');
+    const portrait = document.querySelector('.hero-portrait img');
 
-    profileInfo.querySelector('h1').textContent = config.profile.name;
-    profileInfo.querySelector('.title').textContent = config.profile.title;
-    profileInfo.querySelector('.department').textContent = config.profile.department;
-    profileInfo.querySelector('.university').textContent = config.profile.university;
-    profileInfo.querySelector('.profile-motto').textContent = config.profile.motto;
+    if (name && profile.name) {
+        // "Yi Ding (丁熠)" renders the parenthesised name as a lighter companion.
+        const parts = profile.name.match(/^(.*?)\s*[（(](.+?)[)）]\s*$/);
+        name.textContent = parts ? parts[1] : profile.name;
 
-    if (profileImage) {
-        profileImage.src = config.profile.image;
-        profileImage.alt = config.profile.name;
+        if (parts) {
+            const companion = document.createElement('span');
+            companion.className = 'hero-name-cn';
+            companion.textContent = parts[2];
+            name.append(' ', companion);
+        }
+    }
+
+    if (role) {
+        role.textContent = [profile.title, profile.department, profile.university]
+            .filter(Boolean)
+            .join(' · ');
+    }
+
+    if (motto && profile.motto) {
+        motto.textContent = profile.motto;
+    }
+
+    if (portrait && profile.image) {
+        portrait.src = profile.image;
+        portrait.alt = profile.name || '';
     }
 }
 
@@ -550,29 +569,262 @@ function createCharacterJourney(stage, reducedMotion) {
     };
 }
 
-function initJourneyState() {
-    const navList = document.querySelector('.nav-links');
-    const navAnchors = Array.from(document.querySelectorAll('.nav-links a'));
+// Conway's Game of Life, painted very faintly behind the page. Cells fade in as
+// they are born and fade out as they die, so the field breathes rather than blinks.
+function initLifeField() {
+    const noop = { toggleAt: () => {}, syncTheme: () => {} };
+    const canvas = document.querySelector('.life-canvas');
+    if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return noop;
+
+    const context = canvas.getContext('2d');
+    if (!context) return noop;
+
+    const readingColumn = document.querySelector('.page');
+    const CELL = 24;
+    const GAP = 4;
+    const TICK = 780;
+    const FADE = 0.085;
+
+    let cols = 0;
+    let rows = 0;
+    let alive = new Uint8Array(0);
+    let scratch = new Uint8Array(0);
+    let alpha = new Float32Array(0);
+    let colour = 'rgba(0, 0, 0, 0.05)';
+    let width = 0;
+    let height = 0;
+    let lastTick = 0;
+    let frame = 0;
+
+    const sprinkle = density => {
+        for (let i = 0; i < alive.length; i += 1) {
+            if (Math.random() < density) alive[i] = 1;
+        }
+    };
+
+    const resize = () => {
+        width = window.innerWidth;
+        height = window.innerHeight;
+
+        const ratio = Math.min(2, window.devicePixelRatio || 1);
+        canvas.width = Math.round(width * ratio);
+        canvas.height = Math.round(height * ratio);
+        context.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+        const nextCols = Math.ceil(width / CELL) + 1;
+        const nextRows = Math.ceil(height / CELL) + 1;
+        if (nextCols === cols && nextRows === rows) return;
+
+        const previous = { cols, rows, alive, alpha };
+        cols = nextCols;
+        rows = nextRows;
+        alive = new Uint8Array(cols * rows);
+        scratch = new Uint8Array(cols * rows);
+        alpha = new Float32Array(cols * rows);
+
+        if (previous.cols) {
+            // Carry the live pattern across the resize instead of restarting.
+            const spanX = Math.min(cols, previous.cols);
+            const spanY = Math.min(rows, previous.rows);
+            for (let y = 0; y < spanY; y += 1) {
+                for (let x = 0; x < spanX; x += 1) {
+                    alive[y * cols + x] = previous.alive[y * previous.cols + x];
+                    alpha[y * cols + x] = previous.alpha[y * previous.cols + x];
+                }
+            }
+        } else {
+            sprinkle(0.09);
+        }
+    };
+
+    const step = () => {
+        let population = 0;
+
+        for (let y = 0; y < rows; y += 1) {
+            const up = (y - 1 + rows) % rows;
+            const down = (y + 1) % rows;
+
+            for (let x = 0; x < cols; x += 1) {
+                const left = (x - 1 + cols) % cols;
+                const right = (x + 1) % cols;
+                const neighbours =
+                    alive[up * cols + left] + alive[up * cols + x] + alive[up * cols + right] +
+                    alive[y * cols + left] + alive[y * cols + right] +
+                    alive[down * cols + left] + alive[down * cols + x] + alive[down * cols + right];
+                const lives = neighbours === 3 || (alive[y * cols + x] === 1 && neighbours === 2);
+
+                scratch[y * cols + x] = lives ? 1 : 0;
+                if (lives) population += 1;
+            }
+        }
+
+        alive.set(scratch);
+
+        // Left alone a Conway field stalls; keep a low simmer so it never dies out.
+        if (population < alive.length * 0.025) sprinkle(0.05);
+    };
+
+    const draw = now => {
+        frame = window.requestAnimationFrame(draw);
+
+        if (now - lastTick >= TICK) {
+            lastTick = now;
+            step();
+        }
+
+        context.clearRect(0, 0, width, height);
+        context.fillStyle = colour;
+
+        const size = CELL - GAP;
+        for (let index = 0; index < alive.length; index += 1) {
+            const target = alive[index];
+            let level = alpha[index];
+
+            if (level !== target) {
+                level = target ? Math.min(1, level + FADE) : Math.max(0, level - FADE);
+                alpha[index] = level;
+            }
+
+            if (level <= 0.02) continue;
+
+            context.globalAlpha = level;
+            context.fillRect((index % cols) * CELL, Math.floor(index / cols) * CELL, size, size);
+        }
+
+        context.globalAlpha = 1;
+    };
+
+    const start = () => {
+        if (frame) return;
+        lastTick = performance.now();
+        frame = window.requestAnimationFrame(draw);
+    };
+
+    const stop = () => {
+        if (!frame) return;
+        window.cancelAnimationFrame(frame);
+        frame = 0;
+    };
+
+    const syncTheme = () => {
+        const value = getComputedStyle(document.documentElement)
+            .getPropertyValue('--life-cell')
+            .trim();
+        if (value) colour = value;
+    };
+
+    resize();
+    syncTheme();
+    start();
+
+    window.addEventListener('resize', resize);
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stop();
+        else start();
+    });
+
+    return {
+        syncTheme,
+
+        // Click a populated patch to wipe it, empty space to seed a new colony.
+        toggleAt(clientX, clientY) {
+            // Only the gutters are painted, so only the gutters are playable.
+            const reading = readingColumn?.getBoundingClientRect();
+            if (reading && clientX > reading.left && clientX < reading.right) return;
+
+            const column = Math.floor(clientX / CELL);
+            const row = Math.floor(clientY / CELL);
+            if (column < 0 || row < 0 || column >= cols || row >= rows) return;
+
+            const at = (dx, dy) => (
+                ((row + dy + rows) % rows) * cols + ((column + dx + cols) % cols)
+            );
+
+            let occupied = 0;
+            for (let dy = -1; dy <= 1; dy += 1) {
+                for (let dx = -1; dx <= 1; dx += 1) occupied += alive[at(dx, dy)];
+            }
+
+            const clearing = occupied >= 3;
+            for (let dy = -1; dy <= 1; dy += 1) {
+                for (let dx = -1; dx <= 1; dx += 1) {
+                    alive[at(dx, dy)] = clearing ? 0 : (Math.random() < 0.55 ? 1 : 0);
+                }
+            }
+
+            if (!clearing) alive[at(0, 0)] = 1;
+        }
+    };
+}
+
+function initThemeToggle(life) {
+    const toggle = document.querySelector('.theme-toggle');
+    if (!toggle) return;
+
+    const icon = toggle.querySelector('i');
+
+    const apply = theme => {
+        document.documentElement.dataset.theme = theme;
+        if (icon) {
+            icon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        }
+        toggle.setAttribute(
+            'aria-label',
+            theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
+        );
+        life?.syncTheme();
+    };
+
+    // The inline head script has already resolved the initial theme.
+    apply(document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
+
+    toggle.addEventListener('click', () => {
+        const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        apply(next);
+        try {
+            localStorage.setItem('theme', next);
+        } catch (error) {
+            // Storage unavailable (private mode); the theme still applies for this visit.
+        }
+    });
+
+    // Keep following the OS until the visitor makes an explicit choice.
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        let stored = null;
+        try {
+            stored = localStorage.getItem('theme');
+        } catch (error) {
+            stored = null;
+        }
+        if (!stored) apply(event.matches ? 'dark' : 'light');
+    });
+}
+
+function initScrollSpy(life) {
     const stage = document.querySelector('.traveler-stage');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const characterJourney = createCharacterJourney(stage, reducedMotion);
-    const records = navAnchors
-        .map((anchor, index) => {
+    const journey = createCharacterJourney(stage, reducedMotion);
+    const trail = document.querySelector('.trail');
+    const readout = document.querySelector('.trail-readout');
+    const topbar = document.querySelector('.topbar');
+    const navList = document.querySelector('.nav-links');
+    const records = Array.from(document.querySelectorAll('.nav-links a'))
+        .map(anchor => {
             const href = anchor.getAttribute('href');
             const section = href?.startsWith('#') ? document.querySelector(href) : null;
-            return section ? { anchor, section, id: section.id, index } : null;
+            return section ? { anchor, section, id: section.id } : null;
         })
         .filter(Boolean);
 
-    if (records.length === 0) return;
-
-    let currentScene = '';
-    let sectionPositions = [];
+    let positions = [];
+    let currentId = '';
     let lastScroll = window.scrollY;
     let lastScrollAt = performance.now();
+    let frame = 0;
 
     const centerMobileLink = anchor => {
-        if (!navList || window.innerWidth > 820) return;
+        if (!navList || window.innerWidth > 720) return;
+
         const targetLeft = anchor.offsetLeft - (navList.clientWidth - anchor.offsetWidth) / 2;
         navList.scrollTo({
             left: Math.max(0, targetLeft),
@@ -580,79 +832,89 @@ function initJourneyState() {
         });
     };
 
-    const setActiveScene = id => {
-        if (!id || id === currentScene) return;
+    const setActive = id => {
+        if (!id || id === currentId) return;
 
-        currentScene = id;
-        document.body.dataset.scene = id;
+        currentId = id;
+        records.forEach(record => {
+            const isActive = record.id === id;
+            record.anchor.classList.toggle('active', isActive);
 
-        navAnchors.forEach(anchor => {
-            const isActive = anchor.getAttribute('href') === `#${id}`;
-            anchor.classList.toggle('active', isActive);
             if (isActive) {
-                anchor.setAttribute('aria-current', 'location');
-                centerMobileLink(anchor);
+                record.anchor.setAttribute('aria-current', 'location');
+                centerMobileLink(record.anchor);
             } else {
-                anchor.removeAttribute('aria-current');
+                record.anchor.removeAttribute('aria-current');
             }
         });
     };
 
-    const measureSections = () => {
+    const measure = () => {
         const scrollTop = window.scrollY;
-        sectionPositions = records.map(record => ({
+        positions = records.map(record => ({
             ...record,
             top: record.section.getBoundingClientRect().top + scrollTop
         }));
     };
 
-    const syncFromScroll = (scrollPosition, measuredVelocity = 0) => {
-        const readingLine = scrollPosition + window.innerHeight * 0.43;
-        let activeRecord = sectionPositions[0] || records[0];
+    const sync = () => {
+        frame = 0;
 
-        sectionPositions.forEach(record => {
-            if (record.top <= readingLine) activeRecord = record;
+        const scrollPosition = window.scrollY;
+        topbar?.classList.toggle('is-stuck', scrollPosition > 8);
+
+        // Drives both the horizontal walk position and the drawn-in trail line.
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollable > 0
+            ? Math.min(1, Math.max(0, scrollPosition / scrollable))
+            : 0;
+        trail?.style.setProperty('--journey-progress', progress.toFixed(4));
+        if (readout) readout.textContent = `${Math.round(progress * 100)}%`;
+
+        const readingLine = scrollPosition + window.innerHeight * 0.35;
+        let active = positions[0];
+        positions.forEach(record => {
+            if (record.top <= readingLine) active = record;
         });
 
-        setActiveScene(activeRecord.id);
+        if (active) setActive(active.id);
 
         const now = performance.now();
         const scrollDelta = scrollPosition - lastScroll;
-        const timeDelta = Math.max(1, now - lastScrollAt);
 
         if (Math.abs(scrollDelta) > 0.5) {
-            const derivedVelocity = scrollDelta / timeDelta * 1000;
-            const velocity = Math.abs(measuredVelocity) >= 6
-                ? measuredVelocity
-                : derivedVelocity;
-            characterJourney.move(velocity);
+            journey.move(scrollDelta / Math.max(1, now - lastScrollAt) * 1000);
         }
 
         lastScroll = scrollPosition;
         lastScrollAt = now;
     };
 
-    navAnchors.forEach(anchor => {
-        anchor.addEventListener('click', event => {
-            const href = anchor.getAttribute('href');
-            const target = href?.startsWith('#') ? document.querySelector(href) : null;
-            if (!target) return;
+    const schedule = () => {
+        if (frame) return;
+        frame = window.requestAnimationFrame(sync);
+    };
 
+    const refresh = () => {
+        measure();
+        schedule();
+    };
+
+    records.forEach(record => {
+        record.anchor.addEventListener('click', event => {
             event.preventDefault();
-            setActiveScene(target.id);
-            const targetTop = target.getBoundingClientRect().top + window.scrollY;
-            characterJourney.move(targetTop >= window.scrollY ? 900 : -900);
-            target.scrollIntoView({
+            setActive(record.id);
+            journey.move(record.section.getBoundingClientRect().top >= 0 ? 900 : -900);
+            record.section.scrollIntoView({
                 behavior: reducedMotion ? 'auto' : 'smooth',
                 block: 'start'
             });
-            window.history.pushState(null, '', href);
+            window.history.pushState(null, '', `#${record.id}`);
         });
     });
 
-    measureSections();
-    syncFromScroll(window.scrollY);
-
+    // A click on empty page space stamps or clears a Conway colony, and nudges
+    // the pair out of their rest pose.
     document.addEventListener('click', event => {
         if (event.defaultPrevented || event.detail === 0) return;
 
@@ -662,284 +924,38 @@ function initJourneyState() {
             '[role="button"], [contenteditable="true"]'
         )) return;
 
-        characterJourney.interact();
+        // Don't fire while the visitor is selecting text.
+        const selection = window.getSelection();
+        if (selection && !selection.isCollapsed) return;
+
+        life?.toggleAt(event.clientX, event.clientY);
+        journey.interact();
     });
 
-    if (window.ScrollTrigger) {
-        window.ScrollTrigger.create({
-            id: 'journey-state',
-            start: 0,
-            end: 'max',
-            onRefresh: () => {
-                measureSections();
-                syncFromScroll(window.scrollY);
-            },
-            onUpdate: self => syncFromScroll(self.scroll(), self.getVelocity())
-        });
-        return;
-    }
+    measure();
+    sync();
 
-    let frame = 0;
-    const scheduleSync = () => {
-        if (frame) return;
-        frame = window.requestAnimationFrame(() => {
-            frame = 0;
-            syncFromScroll(window.scrollY);
-        });
-    };
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', refresh);
+    window.addEventListener('load', refresh, { once: true });
 
-    window.addEventListener('scroll', scheduleSync, { passive: true });
-    window.addEventListener('resize', () => {
-        measureSections();
-        scheduleSync();
-    });
-}
-
-function initScrollMotion() {
-    if (!window.gsap || !window.ScrollTrigger) return;
-
-    const gsap = window.gsap;
-    const ScrollTrigger = window.ScrollTrigger;
-    const stage = document.querySelector('.traveler-stage');
-    const sceneTrack = document.querySelector('.scene-track');
-    const traveler = document.querySelector('.traveler-scale');
-    const profileCard = document.querySelector('.profile-card');
-    const main = document.querySelector('#main-content');
-    const about = document.querySelector('#about');
-    const research = document.querySelector('#research');
-    const publications = document.querySelector('#publications');
-    const services = document.querySelector('#services');
-    const sceneSections = [
-        '#about',
-        '#research',
-        '#news',
-        '#publications',
-        '#github-repos',
-        '#education',
-        '#services'
-    ]
-        .map(selector => document.querySelector(selector))
-        .filter(Boolean);
-
-    if (
-        !stage ||
-        !sceneTrack ||
-        !traveler ||
-        !profileCard ||
-        !main ||
-        !about ||
-        !research ||
-        !publications ||
-        !services
-    ) return;
-
-    gsap.registerPlugin(ScrollTrigger);
-    const media = gsap.matchMedia();
-
-    media.add({
-        desktop: '(min-width: 821px)',
-        mobile: '(max-width: 820px)',
-        reduceMotion: '(prefers-reduced-motion: reduce)'
-    }, context => {
-        const { desktop, reduceMotion } = context.conditions;
-        if (reduceMotion) return undefined;
-        let scenePanTo;
-
-        gsap.set(traveler, {
-            scale: desktop ? 1.1 : 1,
-            x: 0,
-            y: 0,
-            transformOrigin: desktop ? '20% 100%' : '50% 100%'
-        });
-
-        if (desktop) {
-            gsap.set(stage, { clipPath: 'inset(0 0% 0 0)' });
-            gsap.set(sceneTrack, { xPercent: 0 });
-            gsap.set(profileCard, {
-                x: 0,
-                y: 0,
-                scale: 1,
-                transformOrigin: '0 0'
-            });
-
-            gsap.to(profileCard, {
-                x: () => 20 - Number.parseFloat(window.getComputedStyle(profileCard).left),
-                y: () => {
-                    const navHeight = Number.parseFloat(
-                        window.getComputedStyle(document.documentElement)
-                            .getPropertyValue('--nav-height')
-                    );
-                    return navHeight + 24 - Number.parseFloat(window.getComputedStyle(profileCard).top);
-                },
-                scale: () => {
-                    const contentLeft = document.querySelector('.content-right')
-                        ?.getBoundingClientRect().left ?? window.innerWidth;
-                    const availableWidth = Math.max(0, contentLeft - 40);
-                    return Math.min(0.9, Math.max(0.58, availableWidth / profileCard.offsetWidth));
-                },
-                ease: 'none',
-                scrollTrigger: {
-                    id: 'profile-dock',
-                    trigger: main,
-                    endTrigger: research,
-                    start: 'top top',
-                    end: 'top 58%',
-                    scrub: 0.72,
-                    invalidateOnRefresh: true
-                }
-            });
-
-            gsap.to(stage, {
-                clipPath: () => {
-                    const contentLeft = document.querySelector('.content-right')
-                        ?.getBoundingClientRect().left ?? stage.offsetWidth;
-                    const insetRight = Math.max(0, stage.offsetWidth - contentLeft);
-                    return `inset(0 ${insetRight}px 0 0)`;
-                },
-                ease: 'none',
-                scrollTrigger: {
-                    id: 'stage-narrow',
-                    trigger: main,
-                    endTrigger: publications,
-                    start: 'top top',
-                    end: 'top 48%',
-                    scrub: 0.8,
-                    invalidateOnRefresh: true
-                }
-            });
-
-            const sceneStep = 100 / sceneSections.length;
-            let sceneAnchors = [];
-
-            scenePanTo = gsap.quickTo(sceneTrack, 'xPercent', {
-                duration: 0.52,
-                ease: 'power3.out'
-            });
-
-            const measureSceneAnchors = () => {
-                sceneAnchors = sceneSections.map((section, index) => (
-                    index === 0
-                        ? 0
-                        : Math.max(0, section.offsetTop - window.innerHeight * 0.52)
-                ));
-            };
-
-            const syncScenePan = scrollPosition => {
-                let sceneIndex = 0;
-
-                while (
-                    sceneIndex < sceneAnchors.length - 1 &&
-                    scrollPosition >= sceneAnchors[sceneIndex + 1]
-                ) {
-                    sceneIndex += 1;
-                }
-
-                const nextIndex = Math.min(sceneIndex + 1, sceneAnchors.length - 1);
-                const segmentStart = sceneAnchors[sceneIndex] ?? 0;
-                const segmentEnd = sceneAnchors[nextIndex] ?? segmentStart;
-                const segmentProgress = segmentEnd > segmentStart
-                    ? Math.min(1, Math.max(0, (scrollPosition - segmentStart) / (segmentEnd - segmentStart)))
-                    : 0;
-
-                scenePanTo(-(sceneStep * (sceneIndex + segmentProgress)));
-            };
-
-            ScrollTrigger.create({
-                id: 'scene-pan',
-                start: 0,
-                end: 'max',
-                onRefresh: self => {
-                    measureSceneAnchors();
-                    syncScenePan(self.scroll());
-                },
-                onUpdate: self => syncScenePan(self.scroll())
-            });
-
-            measureSceneAnchors();
-            syncScenePan(window.scrollY);
-        }
-
-        gsap.to(traveler, {
-            scale: desktop ? 0.7 : 0.72,
-            y: desktop ? 46 : 0,
-            ease: 'none',
-            scrollTrigger: {
-                id: 'traveler-scale',
-                trigger: main,
-                endTrigger: publications,
-                start: 'top top',
-                end: 'top 46%',
-                scrub: 0.65,
-                invalidateOnRefresh: true
-            }
-        });
-
-        gsap.to(traveler, {
-            x: desktop ? 48 : -8,
-            ease: 'none',
-            scrollTrigger: {
-                id: 'traveler-travel',
-                trigger: main,
-                endTrigger: services,
-                start: 'top top',
-                end: 'bottom bottom',
-                scrub: 0.8,
-                invalidateOnRefresh: true
-            }
-        });
-
-        if (desktop) {
-            gsap.to('.cloud-a', {
-                x: 54,
-                ease: 'none',
-                scrollTrigger: {
-                    id: 'cloud-a-drift',
-                    trigger: main,
-                    endTrigger: services,
-                    start: 'top top',
-                    end: 'bottom bottom',
-                    scrub: 1.2
-                }
-            });
-
-            gsap.to('.cloud-b', {
-                x: -36,
-                ease: 'none',
-                scrollTrigger: {
-                    id: 'cloud-b-drift',
-                    trigger: main,
-                    endTrigger: services,
-                    start: 'top top',
-                    end: 'bottom bottom',
-                    scrub: 1.4
-                }
-            });
-        }
-
-        return () => {
-            scenePanTo?.tween?.kill();
-        };
-    });
+    return { refresh };
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    document.documentElement.setAttribute('data-theme', 'light');
+    const life = initLifeField();
+    initThemeToggle(life);
+
     const config = await loadConfig();
     renderProfile(config);
     renderNavigation(config);
     renderSocialLinks(config);
     setFooterDate();
+
+    // Runs after renderNavigation, which replaces the nav anchors wholesale.
+    const scrollSpy = initScrollSpy(life);
+
     await loadAndRenderGitHubRepos();
     externalizeLinks();
-
-    if (window.gsap && window.ScrollTrigger) {
-        window.gsap.registerPlugin(window.ScrollTrigger);
-    }
-
-    initJourneyState();
-    initScrollMotion();
-
-    window.addEventListener('load', () => {
-        window.ScrollTrigger?.refresh();
-    }, { once: true });
+    scrollSpy?.refresh();
 });
