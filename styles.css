@@ -1,11 +1,11 @@
 /* ==========================================================================
    Yi Ding — academic homepage
    Cool neutral palette, EB Garamond reading type, Annie Use Your Telescope display,
-   JetBrains Mono for every piece of metadata. Single 760px column.
+   JetBrains Mono for every piece of metadata. Single 900px column.
    ========================================================================== */
 
 :root {
-    --page-width: 760px;
+    --page-width: 900px;
     --topbar-height: 56px;
     --trail-height: 118px;
     --stage-width: 96px;
