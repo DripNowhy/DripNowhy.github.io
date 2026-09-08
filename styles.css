@@ -41,6 +41,9 @@
     --accent: #3f4fa8;
     --accent-hover: #33418d;
     --accent-wash: #ecedfa;
+    --badge-ink: #805000;
+    --badge-bg: #fff3ce;
+    --badge-border: #e6c776;
     --life-cell: rgba(63, 79, 168, 0.055);
     --shadow: 0 1px 2px rgba(21, 22, 28, 0.05), 0 10px 28px -18px rgba(21, 22, 28, 0.35);
 }
@@ -57,6 +60,9 @@
     --accent: #9aa6f0;
     --accent-hover: #b3bcf5;
     --accent-wash: #212540;
+    --badge-ink: #f6d680;
+    --badge-bg: #302714;
+    --badge-border: #756030;
     --life-cell: rgba(154, 166, 240, 0.075);
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.45), 0 10px 28px -18px rgba(0, 0, 0, 0.85);
 }
@@ -903,6 +909,51 @@ h3 {
 
 .pub-body {
     min-width: 0;
+}
+
+/* Reusable publication distinctions: rankings, Spotlight, Oral, etc.
+   Use an anchor when there is a source link; otherwise use a span. */
+.pub-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 0.75rem;
+}
+
+.pub-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    max-width: 100%;
+    padding: 0.24rem 0.6rem;
+    border: 1px solid var(--badge-border);
+    border-radius: var(--radius-sm);
+    background: var(--badge-bg);
+    color: var(--badge-ink);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    line-height: 1.65;
+}
+
+.pub-badge strong {
+    font-weight: 700;
+}
+
+.pub-badge time {
+    white-space: nowrap;
+    font-size: 0.62rem;
+}
+
+a.pub-badge:hover {
+    color: var(--badge-ink);
+    border-color: currentColor;
+    text-decoration: underline;
+}
+
+a.pub-badge:focus-visible {
+    outline: 2px solid var(--badge-ink);
+    outline-offset: 3px;
 }
 
 .pub-venue {
