@@ -22,7 +22,7 @@ social:
     icon: "fab fa-twitter"
     title: "Twitter"
   cv:
-    url: "pdf/CV.pdf"
+    url: "pdf/CV.pdf?v=20260910-v2"
     icon: "fas fa-file-alt"
     title: "CV"
   email:
