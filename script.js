@@ -569,195 +569,97 @@ function createCharacterJourney(stage, reducedMotion) {
     };
 }
 
-// Conway's Game of Life, painted very faintly behind the page. Cells fade in as
-// they are born and fade out as they die, so the field breathes rather than blinks.
-function initLifeField() {
-    const noop = { toggleAt: () => {}, syncTheme: () => {} };
-    const canvas = document.querySelector('.life-canvas');
-    if (!canvas || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return noop;
+// Sparse signatures stay still while visible. A new placement and handwriting
+// are chosen at the invisible boundary of each independently staggered cycle.
+function initAmbientTags() {
+    const layer = document.querySelector('.ambient-tags');
+    if (!layer) return;
 
-    const context = canvas.getContext('2d');
-    if (!context) return noop;
+    const toggle = document.querySelector('.ambient-toggle');
+    const label = toggle?.querySelector('.ambient-toggle-label');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const narrowScreen = window.matchMedia('(max-width: 720px)');
+    const fonts = ['"Caveat"', '"Allura"', '"Annie Use Your Telescope"'];
+    const random = (minimum, maximum) => minimum + Math.random() * (maximum - minimum);
+    const tags = [];
+    let paused = false;
 
-    const readingColumn = document.querySelector('.page');
-    const CELL = 24;
-    const GAP = 4;
-    const TICK = 780;
-    const FADE = 0.085;
-
-    let cols = 0;
-    let rows = 0;
-    let alive = new Uint8Array(0);
-    let scratch = new Uint8Array(0);
-    let alpha = new Float32Array(0);
-    let colour = 'rgba(0, 0, 0, 0.05)';
-    let width = 0;
-    let height = 0;
-    let lastTick = 0;
-    let frame = 0;
-
-    const sprinkle = density => {
-        for (let i = 0; i < alive.length; i += 1) {
-            if (Math.random() < density) alive[i] = 1;
+    const place = tag => {
+        const width = layer.clientWidth;
+        const height = layer.clientHeight;
+        const gutter = document.querySelector('.page')?.getBoundingClientRect().left ?? width * 0.12;
+        const mobile = narrowScreen.matches;
+        const across = gutter * (0.32 + tag.x * 0.36);
+        const x = mobile
+            ? width * ((tag.index % 2 === 0 ? 0.14 : 0.6) + tag.x * 0.28)
+            : tag.index % 2 === 0 ? across : width - across;
+        const y = mobile
+            ? height * (0.22 + tag.y * 0.62)
+            : height * (0.13 + tag.y * 0.75);
+        const baseSize = mobile ? 30 : Math.min(40, Math.max(18, (gutter - 24) / 3.8));
+        const size = baseSize * tag.scale;
+        tag.node.style.setProperty('--tag-x', `${x.toFixed(1)}px`);
+        tag.node.style.setProperty('--tag-y', `${y.toFixed(1)}px`);
+        tag.node.style.setProperty('--tag-size', `${size.toFixed(1)}px`);
+        tag.node.style.setProperty('--tag-angle', `${tag.angle.toFixed(1)}deg`);
+        tag.node.style.setProperty('--tag-font', fonts[tag.font]);
+    };
+    const renew = (tag, initial = false) => {
+        tag.font = initial ? tag.index % fonts.length : (tag.font + 1 + Math.floor(Math.random() * 2)) % fonts.length;
+        tag.x = Math.random();
+        // Spread simultaneous tags out without tying any tag to a fixed row.
+        for (let attempt = 0; attempt < 10; attempt += 1) {
+            tag.y = Math.random();
+            if (tags.every(other => other === tag || other.index % 2 !== tag.index % 2
+                || Math.abs(other.y - tag.y) > 0.18)) break;
         }
+        tag.angle = random(-28, 24);
+        tag.scale = random(0.65, 1.5);
+        tag.node.style.setProperty('--tag-opacity', random(0.055, 0.085).toFixed(3));
+        place(tag);
     };
 
-    const resize = () => {
-        width = window.innerWidth;
-        height = window.innerHeight;
+    for (let index = 0; index < 6; index += 1) {
+        const node = document.createElement('span');
+        node.className = 'ambient-tag';
+        node.textContent = 'DripNowhy';
+        const duration = random(4.5, 8.5);
+        node.style.setProperty('--tag-duration', `${duration.toFixed(1)}s`);
+        node.style.setProperty('--tag-delay', `${(-duration * Math.random()).toFixed(1)}s`);
+        const tag = { node, index };
+        renew(tag, true);
+        node.addEventListener('animationiteration', () => renew(tag));
+        layer.appendChild(node);
+        tags.push(tag);
+    }
 
-        const ratio = Math.min(2, window.devicePixelRatio || 1);
-        canvas.width = Math.round(width * ratio);
-        canvas.height = Math.round(height * ratio);
-        context.setTransform(ratio, 0, 0, ratio, 0, 0);
-
-        const nextCols = Math.ceil(width / CELL) + 1;
-        const nextRows = Math.ceil(height / CELL) + 1;
-        if (nextCols === cols && nextRows === rows) return;
-
-        const previous = { cols, rows, alive, alpha };
-        cols = nextCols;
-        rows = nextRows;
-        alive = new Uint8Array(cols * rows);
-        scratch = new Uint8Array(cols * rows);
-        alpha = new Float32Array(cols * rows);
-
-        if (previous.cols) {
-            // Carry the live pattern across the resize instead of restarting.
-            const spanX = Math.min(cols, previous.cols);
-            const spanY = Math.min(rows, previous.rows);
-            for (let y = 0; y < spanY; y += 1) {
-                for (let x = 0; x < spanX; x += 1) {
-                    alive[y * cols + x] = previous.alive[y * previous.cols + x];
-                    alpha[y * cols + x] = previous.alpha[y * previous.cols + x];
-                }
-            }
-        } else {
-            sprinkle(0.09);
-        }
+    const syncPlayback = () => {
+        const offscreen = narrowScreen.matches && window.scrollY >= layer.clientHeight;
+        layer.classList.toggle('is-paused', paused || document.hidden || offscreen);
+        layer.classList.toggle('is-static', reducedMotion.matches);
+        if (toggle) toggle.hidden = reducedMotion.matches;
     };
 
-    const step = () => {
-        let population = 0;
-
-        for (let y = 0; y < rows; y += 1) {
-            const up = (y - 1 + rows) % rows;
-            const down = (y + 1) % rows;
-
-            for (let x = 0; x < cols; x += 1) {
-                const left = (x - 1 + cols) % cols;
-                const right = (x + 1) % cols;
-                const neighbours =
-                    alive[up * cols + left] + alive[up * cols + x] + alive[up * cols + right] +
-                    alive[y * cols + left] + alive[y * cols + right] +
-                    alive[down * cols + left] + alive[down * cols + x] + alive[down * cols + right];
-                const lives = neighbours === 3 || (alive[y * cols + x] === 1 && neighbours === 2);
-
-                scratch[y * cols + x] = lives ? 1 : 0;
-                if (lives) population += 1;
-            }
-        }
-
-        alive.set(scratch);
-
-        // Left alone a Conway field stalls; keep a low simmer so it never dies out.
-        if (population < alive.length * 0.025) sprinkle(0.05);
-    };
-
-    const draw = now => {
-        frame = window.requestAnimationFrame(draw);
-
-        if (now - lastTick >= TICK) {
-            lastTick = now;
-            step();
-        }
-
-        context.clearRect(0, 0, width, height);
-        context.fillStyle = colour;
-
-        const size = CELL - GAP;
-        for (let index = 0; index < alive.length; index += 1) {
-            const target = alive[index];
-            let level = alpha[index];
-
-            if (level !== target) {
-                level = target ? Math.min(1, level + FADE) : Math.max(0, level - FADE);
-                alpha[index] = level;
-            }
-
-            if (level <= 0.02) continue;
-
-            context.globalAlpha = level;
-            context.fillRect((index % cols) * CELL, Math.floor(index / cols) * CELL, size, size);
-        }
-
-        context.globalAlpha = 1;
-    };
-
-    const start = () => {
-        if (frame) return;
-        lastTick = performance.now();
-        frame = window.requestAnimationFrame(draw);
-    };
-
-    const stop = () => {
-        if (!frame) return;
-        window.cancelAnimationFrame(frame);
-        frame = 0;
-    };
-
-    const syncTheme = () => {
-        const value = getComputedStyle(document.documentElement)
-            .getPropertyValue('--life-cell')
-            .trim();
-        if (value) colour = value;
-    };
-
-    resize();
-    syncTheme();
-    start();
-
-    window.addEventListener('resize', resize);
-    document.addEventListener('visibilitychange', () => {
-        if (document.hidden) stop();
-        else start();
+    toggle?.addEventListener('click', () => {
+        paused = !paused;
+        toggle.setAttribute('aria-pressed', String(paused));
+        toggle.setAttribute('aria-label', paused ? 'Resume background animation' : 'Pause background animation');
+        if (label) label.textContent = paused ? 'Resume background' : 'Pause background';
+        syncPlayback();
     });
-
-    return {
-        syncTheme,
-
-        // Click a populated patch to wipe it, empty space to seed a new colony.
-        toggleAt(clientX, clientY) {
-            // Only the gutters are painted, so only the gutters are playable.
-            const reading = readingColumn?.getBoundingClientRect();
-            if (reading && clientX > reading.left && clientX < reading.right) return;
-
-            const column = Math.floor(clientX / CELL);
-            const row = Math.floor(clientY / CELL);
-            if (column < 0 || row < 0 || column >= cols || row >= rows) return;
-
-            const at = (dx, dy) => (
-                ((row + dy + rows) % rows) * cols + ((column + dx + cols) % cols)
-            );
-
-            let occupied = 0;
-            for (let dy = -1; dy <= 1; dy += 1) {
-                for (let dx = -1; dx <= 1; dx += 1) occupied += alive[at(dx, dy)];
-            }
-
-            const clearing = occupied >= 3;
-            for (let dy = -1; dy <= 1; dy += 1) {
-                for (let dx = -1; dx <= 1; dx += 1) {
-                    alive[at(dx, dy)] = clearing ? 0 : (Math.random() < 0.55 ? 1 : 0);
-                }
-            }
-
-            if (!clearing) alive[at(0, 0)] = 1;
-        }
+    const resize = () => {
+        tags.forEach(place);
+        syncPlayback();
     };
+    window.addEventListener('resize', resize);
+    window.addEventListener('scroll', syncPlayback, { passive: true });
+    document.addEventListener('visibilitychange', syncPlayback);
+    reducedMotion.addEventListener('change', syncPlayback);
+    narrowScreen.addEventListener('change', resize);
+    syncPlayback();
 }
 
-function initThemeToggle(life) {
+function initThemeToggle() {
     const toggle = document.querySelector('.theme-toggle');
     if (!toggle) return;
 
@@ -772,7 +674,6 @@ function initThemeToggle(life) {
             'aria-label',
             theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
         );
-        life?.syncTheme();
     };
 
     // The inline head script has already resolved the initial theme.
@@ -800,7 +701,7 @@ function initThemeToggle(life) {
     });
 }
 
-function initScrollSpy(life) {
+function initScrollSpy() {
     const stage = document.querySelector('.traveler-stage');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const journey = createCharacterJourney(stage, reducedMotion);
@@ -913,8 +814,7 @@ function initScrollSpy(life) {
         });
     });
 
-    // A click on empty page space stamps or clears a Conway colony, and nudges
-    // the pair out of their rest pose.
+    // Empty-space clicks keep the person/cat interaction.
     document.addEventListener('click', event => {
         if (event.defaultPrevented || event.detail === 0) return;
 
@@ -928,7 +828,6 @@ function initScrollSpy(life) {
         const selection = window.getSelection();
         if (selection && !selection.isCollapsed) return;
 
-        life?.toggleAt(event.clientX, event.clientY);
         journey.interact();
     });
 
@@ -943,8 +842,8 @@ function initScrollSpy(life) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const life = initLifeField();
-    initThemeToggle(life);
+    initAmbientTags();
+    initThemeToggle();
 
     const config = await loadConfig();
     renderProfile(config);
@@ -953,7 +852,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     setFooterDate();
 
     // Runs after renderNavigation, which replaces the nav anchors wholesale.
-    const scrollSpy = initScrollSpy(life);
+    const scrollSpy = initScrollSpy();
 
     await loadAndRenderGitHubRepos();
     externalizeLinks();

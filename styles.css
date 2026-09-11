@@ -1,16 +1,19 @@
 /* ==========================================================================
    Yi Ding — academic homepage
-   Cool neutral palette, EB Garamond reading type, Annie Use Your Telescope display,
-   JetBrains Mono for every piece of metadata. Single 900px column.
+   EB Garamond reading type, JetBrains Mono metadata, restrained sans headings,
+   and a handwritten name and signature. Faint personal tags inhabit the margins.
    ========================================================================== */
 
 :root {
-    --page-width: 900px;
-    --topbar-height: 56px;
+    --page-width: 960px;
+    --page-inline-space: 3rem;
+    --topbar-height: 72px;
     --trail-height: 118px;
     --stage-width: 96px;
 
+    --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
     --font-serif: "EB Garamond", Georgia, "Songti SC", "Times New Roman", serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     /* Ships a single weight (400). Display type asks for 700 anyway and lets the
        browser synthesise the bold — deliberate, so `font-synthesis-weight` must
        stay at its default (never set it to `none`, that silently kills this).
@@ -18,8 +21,6 @@
        typical script face, so hand-font sizes are set smaller and line-heights
        looser than usual. */
     --font-hand: "Annie Use Your Telescope", "Bradley Hand", "Segoe Script", cursive;
-    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
-        monospace;
 
     --radius-sm: 6px;
     --radius-md: 10px;
@@ -35,7 +36,7 @@
     --bg-sunk: #f3f4f8;
     --ink: #15161c;
     --ink-soft: #555a68;
-    --ink-faint: #878c9b;
+    --ink-faint: #626774;
     --rule: #e1e3ea;
     --rule-soft: #edeef3;
     --accent: #3f4fa8;
@@ -44,17 +45,16 @@
     --badge-ink: #805000;
     --badge-bg: #fff3ce;
     --badge-border: #e6c776;
-    --life-cell: rgba(63, 79, 168, 0.055);
     --shadow: 0 1px 2px rgba(21, 22, 28, 0.05), 0 10px 28px -18px rgba(21, 22, 28, 0.35);
 }
 
 :root[data-theme="dark"] {
-    --bg: #0f1014;
-    --bg-elev: #16181e;
+    --bg: #121315;
+    --bg-elev: #191a1d;
     --bg-sunk: #0b0c0f;
     --ink: #e8e9ee;
     --ink-soft: #9ba1b0;
-    --ink-faint: #6e7382;
+    --ink-faint: #9296a0;
     --rule: #282b34;
     --rule-soft: #1e2027;
     --accent: #9aa6f0;
@@ -63,7 +63,6 @@
     --badge-ink: #f6d680;
     --badge-bg: #302714;
     --badge-border: #756030;
-    --life-cell: rgba(154, 166, 240, 0.075);
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.45), 0 10px 28px -18px rgba(0, 0, 0, 0.85);
 }
 
@@ -122,6 +121,11 @@ h3 {
     margin: 0;
     font-weight: 600;
     line-height: 1.25;
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
 }
 
 ::selection {
@@ -163,12 +167,9 @@ h3 {
 .topbar {
     position: sticky;
     inset-block-start: 0;
-    z-index: 50;
+    z-index: 3;
     border-block-end: 1px solid transparent;
     background: var(--bg);
-    background: color-mix(in srgb, var(--bg) 84%, transparent);
-    backdrop-filter: saturate(1.4) blur(12px);
-    -webkit-backdrop-filter: saturate(1.4) blur(12px);
     transition: border-color 200ms var(--ease);
 }
 
@@ -179,8 +180,8 @@ h3 {
 .topbar-inner {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
-    width: min(100% - 3rem, var(--page-width));
+    gap: 2.5rem;
+    width: min(100% - var(--page-inline-space), var(--page-width));
     height: var(--topbar-height);
     margin-inline: auto;
 }
@@ -204,9 +205,16 @@ h3 {
     min-width: 0;
 }
 
+.topbar-controls {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 0.25rem;
+}
+
 .nav-links {
     display: flex;
-    gap: 1.1rem;
+    gap: 1.35rem;
     margin: 0;
     padding: 0;
     overflow-x: auto;
@@ -221,17 +229,17 @@ h3 {
 .nav-links a {
     position: relative;
     display: block;
-    padding-block: 2px;
+    padding-block: 8px;
     color: var(--ink-soft);
     font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: -0.01em;
+    font-size: 0.79rem;
+    font-weight: 500;
     white-space: nowrap;
 }
 
 .nav-links a::after {
     position: absolute;
-    inset-block-end: -2px;
+    inset-block-end: 3px;
     inset-inline-start: 0;
     width: 100%;
     height: 1.5px;
@@ -260,10 +268,10 @@ h3 {
     display: grid;
     flex-shrink: 0;
     place-items: center;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     padding: 0;
-    border: 1px solid var(--rule);
+    border: 0;
     border-radius: 50%;
     background: transparent;
     color: var(--ink-soft);
@@ -283,11 +291,9 @@ h3 {
    Page shell
    -------------------------------------------------------------------------- */
 
-/* Conway field, painted behind everything. Clicks are handled on document.
-   Masked down to the two gutters so nothing ever runs behind the reading
-   column — the stops mirror `.page`'s width, so keep the two in step. */
-.life-canvas {
-    --column: min(100% - 3rem, var(--page-width));
+/* Quiet signatures occupy the perimeter, clear of the reading column. */
+.ambient-tags {
+    --column: min(100% - var(--page-inline-space), var(--page-width));
     --gutter-end: calc(50% - var(--column) / 2);
     --gutter-start: calc(50% + var(--column) / 2);
 
@@ -296,31 +302,109 @@ h3 {
     inset: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
     pointer-events: none;
+    user-select: none;
+    color: var(--ink);
     mask-image: linear-gradient(
         to right,
         #000 0,
-        #000 calc(var(--gutter-end) - 60px),
+        #000 calc(var(--gutter-end) - 32px),
         transparent var(--gutter-end),
         transparent var(--gutter-start),
-        #000 calc(var(--gutter-start) + 60px),
+        #000 calc(var(--gutter-start) + 32px),
         #000 100%
     );
     -webkit-mask-image: linear-gradient(
         to right,
         #000 0,
-        #000 calc(var(--gutter-end) - 60px),
+        #000 calc(var(--gutter-end) - 32px),
         transparent var(--gutter-end),
         transparent var(--gutter-start),
-        #000 calc(var(--gutter-start) + 60px),
+        #000 calc(var(--gutter-start) + 32px),
         #000 100%
     );
 }
 
+.ambient-tag {
+    position: absolute;
+    left: var(--tag-x);
+    top: var(--tag-y);
+    font-family: var(--tag-font), var(--font-hand);
+    font-size: var(--tag-size);
+    font-weight: 400;
+    line-height: 1.4;
+    white-space: nowrap;
+    transform: translate(-50%, -50%) rotate(var(--tag-angle));
+    opacity: var(--tag-opacity);
+    animation: tag-presence var(--tag-duration) linear infinite;
+    animation-delay: var(--tag-delay);
+}
+
+/* Only opacity changes. Each signature stays still until it is fully invisible. */
+@keyframes tag-presence {
+    0%, 84%, 100% { opacity: 0; }
+    18%, 46% { opacity: var(--tag-opacity); }
+}
+
+.ambient-tags.is-paused .ambient-tag { animation-play-state: paused; }
+.ambient-tags.is-static .ambient-tag { animation: none; }
+
+.ambient-toggle {
+    position: fixed;
+    z-index: 2;
+    inset-inline-end: 24px;
+    inset-block-end: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--rule);
+    border-radius: 50%;
+    background: var(--bg);
+    color: var(--ink-soft);
+    cursor: pointer;
+}
+
+.ambient-toggle[hidden] { display: none; }
+
+.ambient-toggle-icon {
+    width: 8px;
+    height: 10px;
+    border-inline: 2px solid currentColor;
+}
+
+.ambient-toggle[aria-pressed="true"] .ambient-toggle-icon {
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-inline-end: 0;
+    border-inline-start: 8px solid currentColor;
+}
+
+.ambient-toggle-label {
+    position: absolute;
+    inset-inline-end: calc(100% + 10px);
+    padding: 5px 10px;
+    border-radius: 4px;
+    background: var(--bg);
+    color: var(--ink-soft);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 160ms var(--ease);
+}
+
+.ambient-toggle:hover .ambient-toggle-label,
+.ambient-toggle:focus-visible .ambient-toggle-label { opacity: 1; }
+
 .page {
     position: relative;
     z-index: 1;
-    width: min(100% - 3rem, var(--page-width));
+    width: min(100% - var(--page-inline-space), var(--page-width));
     margin-inline: auto;
     padding-block-end: calc(var(--trail-height) + 1.5rem);
 }
@@ -331,9 +415,9 @@ h3 {
 
 .hero {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: clamp(1.5rem, 5vw, 3rem);
-    padding-block: clamp(2.75rem, 7vw, 4.25rem) 0;
+    padding-block: clamp(3.5rem, 8vw, 7rem) clamp(1.5rem, 3vw, 3rem);
 }
 
 .hero-text {
@@ -343,7 +427,7 @@ h3 {
 
 .hero-name {
     font-family: var(--font-hand);
-    font-size: clamp(2.85rem, 8vw, 3.95rem);
+    font-size: clamp(3.4rem, 8vw, 5rem);
     font-weight: 700;
     line-height: 1.16;
     letter-spacing: 0.005em;
@@ -353,31 +437,17 @@ h3 {
     margin-inline-start: 0.4rem;
     color: var(--ink-soft);
     font-family: var(--font-serif);
-    font-size: 0.42em;
+    font-size: 0.28em;
     font-weight: 400;
     letter-spacing: 0.02em;
 }
 
 .hero-role {
     margin-block: 0.75rem 0;
-    color: var(--ink-faint);
+    color: var(--ink-soft);
     font-family: var(--font-mono);
-    font-size: 0.735rem;
-    letter-spacing: -0.01em;
-}
-
-/* A pseudo-element, so renderProfile()'s textContent write can't clobber it. */
-.hero-role::after {
-    margin-inline-start: 0.3em;
-    color: var(--accent);
-    content: "▍";
-    animation: caret-blink 1.15s step-end infinite;
-}
-
-@keyframes caret-blink {
-    0%,
-    100% { opacity: 1; }
-    50% { opacity: 0; }
+    font-size: 0.83rem;
+    line-height: 1.7;
 }
 
 .hero-motto {
@@ -391,16 +461,20 @@ h3 {
 
 .hero-portrait {
     flex-shrink: 0;
-    width: clamp(104px, 22vw, 146px);
+    width: clamp(152px, 28vw, 224px);
 }
 
 .hero-portrait img {
     display: block;
     width: 100%;
     aspect-ratio: 1;
-    border-radius: var(--radius-lg);
+    border-radius: 8px;
     object-fit: cover;
-    box-shadow: var(--shadow);
+    transition: transform 650ms var(--ease);
+}
+
+.hero-portrait:hover img {
+    transform: translateY(-4px) rotate(-1deg);
 }
 
 .social-links {
@@ -413,10 +487,10 @@ h3 {
 .social-links a {
     display: grid;
     place-items: center;
-    width: 34px;
-    height: 34px;
-    border: 1px solid var(--rule);
-    border-radius: var(--radius-sm);
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
     color: var(--ink-soft);
     font-size: 0.85rem;
     transition: color 160ms var(--ease), border-color 160ms var(--ease),
@@ -444,7 +518,7 @@ h3 {
 
 .trail {
     position: fixed;
-    z-index: 40;
+    z-index: 2;
     inset-block-end: 0;
     inset-inline: 0;
     height: var(--trail-height);
@@ -455,14 +529,14 @@ h3 {
 .trail::before {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, var(--bg) 58%, transparent);
+    background: linear-gradient(to top, var(--bg) 55%, transparent);
     content: "";
 }
 
 /* The walked path is bounded by the reading column, not the viewport. */
 .trail-track {
     position: relative;
-    width: min(100% - 3rem, var(--page-width));
+    width: min(100% - var(--page-inline-space), var(--page-width));
     height: 100%;
     margin-inline: auto;
 }
@@ -479,7 +553,7 @@ h3 {
     );
 }
 
-/* CLI-flavoured percentage readout, sitting under the right end of the path. */
+/* Reading progress, sitting under the right end of the path. */
 .trail-readout {
     position: absolute;
     inset-block-end: 3px;
@@ -727,37 +801,37 @@ h3 {
    -------------------------------------------------------------------------- */
 
 .section {
-    padding-block: clamp(2rem, 4.5vw, 2.9rem) 0;
+    padding-block: clamp(2.75rem, 6vw, 4.5rem) 0;
 }
 
 .section-title {
     display: flex;
     align-items: baseline;
     gap: 0.8rem;
-    margin-block-end: 1.35rem;
-    font-family: var(--font-hand);
-    font-size: 1.92rem;
-    font-weight: 700;
+    margin-block-end: 1.65rem;
+    font-family: var(--font-sans);
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 600;
     line-height: 1.2;
+    letter-spacing: -0.03em;
 }
 
 .section-title::after {
-    flex: 1;
-    height: 1px;
-    background: var(--rule);
-    content: "";
+    content: none;
 }
 
 .section-note {
     color: var(--ink-faint);
     font-family: var(--font-mono);
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     font-weight: 400;
 }
 
 .prose p:last-child {
     margin-block-end: 0;
 }
+
+.prose { width: 100%; }
 
 .prose strong {
     font-weight: 600;
@@ -768,61 +842,54 @@ h3 {
     vertical-align: -0.1em;
 }
 
+:root[data-theme="dark"] .inline-logo[src$="purdue.svg"] {
+    filter: brightness(0) invert(0.9);
+}
+
 /* Research ---------------------------------------------------------------- */
 
 .research-list {
     display: grid;
-    gap: 0.8rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
 .research-list li {
-    padding: 0.9rem 1.1rem;
-    border: 1px solid var(--rule-soft);
-    border-radius: var(--radius-md);
-    background: var(--bg-elev);
-    transition: border-color 200ms var(--ease), transform 200ms var(--ease);
-}
-
-.research-list li:hover {
-    border-color: var(--rule);
-    transform: translateY(-2px);
+    padding-block-start: 1.2rem;
+    border-block-start: 1px solid var(--rule);
 }
 
 .interest-keyword {
     display: block;
     color: var(--ink);
-    font-family: var(--font-hand);
-    font-size: 1.4rem;
-    font-weight: 700;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
     line-height: 1.3;
 }
 
 .research-list p {
-    margin-block: 0.25rem 0;
+    margin-block: 0.6rem 0;
     color: var(--ink-soft);
     font-size: 1.02rem;
-    line-height: 1.5;
+    line-height: 1.8;
 }
 
 .collab-invite {
     display: flex;
     align-items: baseline;
     gap: 0.6rem;
-    margin-block: 1.1rem 0;
-    padding: 0.75rem 1rem;
-    border-inline-start: 2px solid var(--accent);
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    background: var(--accent-wash);
+    margin-block: 1.5rem 0;
+    padding: 0;
     color: var(--ink-soft);
     font-size: 1.02rem;
 }
 
 .collab-invite i {
-    color: var(--accent);
-    font-size: 0.85rem;
+    display: none;
 }
 
 /* News -------------------------------------------------------------------- */
@@ -867,7 +934,7 @@ h3 {
 .news-date {
     color: var(--ink-faint);
     font-family: var(--font-mono);
-    font-size: 0.69rem;
+    font-size: 0.75rem;
     letter-spacing: -0.02em;
     line-height: 2.1;
     white-space: nowrap;
@@ -887,10 +954,10 @@ h3 {
 
 .pub {
     display: grid;
-    grid-template-columns: 176px 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 184px 1fr;
+    gap: 2rem;
     align-items: start;
-    padding-block: 1.4rem;
+    padding-block: 2rem;
     border-block-start: 1px solid var(--rule-soft);
 }
 
@@ -905,6 +972,11 @@ h3 {
     width: 100%;
     height: auto;
     border-radius: 4px;
+    transition: transform 650ms var(--ease);
+}
+
+.pub:hover .pub-thumb img {
+    transform: translateY(-3px);
 }
 
 .pub-body {
@@ -931,7 +1003,7 @@ h3 {
     background: var(--badge-bg);
     color: var(--badge-ink);
     font-family: var(--font-mono);
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     font-weight: 500;
     line-height: 1.65;
 }
@@ -942,7 +1014,7 @@ h3 {
 
 .pub-badge time {
     white-space: nowrap;
-    font-size: 0.62rem;
+    font-size: 0.7rem;
 }
 
 a.pub-badge:hover {
@@ -960,7 +1032,7 @@ a.pub-badge:focus-visible {
     display: inline-block;
     color: var(--accent);
     font-family: var(--font-mono);
-    font-size: 0.665rem;
+    font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.02em;
     text-transform: uppercase;
@@ -969,14 +1041,15 @@ a.pub-badge:focus-visible {
 .pub-title {
     margin-block: 0.3rem 0;
     font-size: 1.26rem;
-    line-height: 1.3;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
 }
 
 .pub-authors {
     margin-block: 0.32rem 0;
     color: var(--ink-soft);
     font-size: 1rem;
-    line-height: 1.45;
+    line-height: 1.75;
 }
 
 .highlight-name {
@@ -986,17 +1059,15 @@ a.pub-badge:focus-visible {
 
 .pub-tldr {
     margin-block: 0.5rem 0;
-    padding-inline-start: 0.8rem;
-    border-inline-start: 2px solid var(--rule);
     color: var(--ink-soft);
     font-size: 0.99rem;
-    line-height: 1.48;
+    line-height: 1.8;
 }
 
 .pub-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem;
+    gap: 1.1rem;
     margin-block-start: 0.7rem;
 }
 
@@ -1004,21 +1075,19 @@ a.pub-badge:focus-visible {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    padding: 0.2rem 0.6rem;
-    border: 1px solid var(--rule);
-    border-radius: 99px;
-    color: var(--ink-soft);
+    padding: 0.4rem 0;
+    border: 0;
+    color: var(--accent);
     font-family: var(--font-mono);
-    font-size: 0.68rem;
+    font-size: 0.77rem;
     transition: color 160ms var(--ease), border-color 160ms var(--ease),
         background-color 160ms var(--ease);
 }
 
 .pub-links a:hover {
     border-color: var(--accent);
-    background: var(--accent-wash);
     color: var(--accent);
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .pub-links i {
@@ -1082,7 +1151,7 @@ a.pub-badge:focus-visible {
     gap: 0.8rem;
     color: var(--ink-faint);
     font-family: var(--font-mono);
-    font-size: 0.665rem;
+    font-size: 0.75rem;
 }
 
 .repo-meta span {
@@ -1120,7 +1189,7 @@ a.pub-badge:focus-visible {
 .edu-year {
     color: var(--ink-faint);
     font-family: var(--font-mono);
-    font-size: 0.69rem;
+    font-size: 0.75rem;
     letter-spacing: -0.02em;
 }
 
@@ -1153,7 +1222,7 @@ a.pub-badge:focus-visible {
 .services-label {
     color: var(--ink-faint);
     font-family: var(--font-mono);
-    font-size: 0.69rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
 }
 
@@ -1169,7 +1238,7 @@ a.pub-badge:focus-visible {
     border-radius: 99px;
     color: var(--ink-soft);
     font-family: var(--font-mono);
-    font-size: 0.68rem;
+    font-size: 0.75rem;
 }
 
 /* Footer ------------------------------------------------------------------ */
@@ -1180,7 +1249,7 @@ a.pub-badge:focus-visible {
     border-block-start: 1px solid var(--rule-soft);
     color: var(--ink-faint);
     font-family: var(--font-mono);
-    font-size: 0.665rem;
+    font-size: 0.75rem;
     text-align: center;
 }
 
@@ -1188,8 +1257,13 @@ a.pub-badge:focus-visible {
    Responsive
    -------------------------------------------------------------------------- */
 
+@media (min-width: 721px) and (max-width: 1100px) {
+    :root { --page-inline-space: 8rem; }
+}
+
 @media (max-width: 720px) {
     :root {
+        --topbar-height: 60px;
         --trail-height: 92px;
         --stage-width: 72px;
     }
@@ -1198,9 +1272,28 @@ a.pub-badge:focus-visible {
         width: min(100% - 2rem, var(--page-width));
     }
 
-    /* Gutters shrink to ~16px here, leaving nothing worth simulating. */
-    .life-canvas {
-        display: none;
+    /* A few light signatures in the hero; reading sections stay unmarked. */
+    .ambient-tags {
+        position: absolute;
+        height: 380px;
+        mask-image: linear-gradient(to bottom, transparent 50px, #000 85px, #000 300px, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, transparent 50px, #000 85px, #000 300px, transparent 100%);
+    }
+
+    .ambient-tag:nth-child(n + 5) { display: none; }
+
+    .ambient-toggle {
+        position: relative;
+        inset: auto;
+        width: 44px;
+        height: 44px;
+        border: 0;
+        background: transparent;
+    }
+
+    .ambient-toggle-label {
+        inset-inline-end: 0;
+        inset-block-start: calc(100% + 8px);
     }
 
     .topbar-inner,
@@ -1217,6 +1310,17 @@ a.pub-badge:focus-visible {
         align-items: flex-start;
         gap: 1.4rem;
     }
+
+    .topbar-inner { gap: 0.5rem; }
+
+    .research-list { grid-template-columns: 1fr; gap: 1.3rem; }
+
+    .nav-links a { min-height: 44px; display: flex; align-items: center; }
+
+    .social-links a,
+    .theme-toggle { width: 44px; height: 44px; }
+
+    .pub-links a { min-height: 44px; }
 
     .trail-line {
         inset-block-end: 15px;
@@ -1255,6 +1359,8 @@ a.pub-badge:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .ambient-tag { animation: none !important; }
+
     html {
         scroll-behavior: auto;
     }
@@ -1268,12 +1374,8 @@ a.pub-badge:focus-visible {
     }
 
     .trail,
-    .life-canvas {
+    .ambient-toggle {
         display: none;
-    }
-
-    .hero-role::after {
-        content: none;
     }
 
     .page {
