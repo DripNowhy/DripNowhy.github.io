@@ -24,7 +24,7 @@ const fallbackConfig = {
             title: 'Twitter'
         },
         cv: {
-            url: 'pdf/CV.pdf?v=20260923-v4',
+            url: 'pdf/CV.pdf?v=20260923-v5',
             icon: 'fa-solid fa-file-lines',
             title: 'CV'
         },
