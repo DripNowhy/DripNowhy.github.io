@@ -2,11 +2,12 @@ This homepage is made by Yi Ding.
 
 ### Publication organization
 
-The homepage defaults to five selected first/co-first-author papers, grouped into
+The homepage defaults to six selected works: five first/co-first-author papers and the
+collaborative SafeWork-R1 technical report, grouped into
 Reasoning & Self-Improvement and Multimodal Safety & Alignment. Each selected
 paper includes a figure and a one-sentence summary. All Publications reveals the
-six additional papers in a compact list; all eleven remain available without
-JavaScript. Keep papers newest first within each group and update the two button
+five additional papers in a compact list; all eleven remain available without
+JavaScript. Both sections explain the equal-contribution asterisk. Keep papers newest first within each group and update the two button
 counts when adding or removing entries.
 
 ### Publication distinctions
