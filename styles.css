@@ -948,6 +948,66 @@ p {
 
 /* Publications ------------------------------------------------------------ */
 
+.publication-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.5rem;
+    margin-block: 0 0.75rem;
+    border-block-end: 1px solid var(--rule);
+}
+
+.publication-controls[hidden],
+.publication-group[hidden] {
+    display: none;
+}
+
+.publication-controls button {
+    min-height: 44px;
+    padding: 0.6rem 0;
+    border: 0;
+    border-block-end: 2px solid transparent;
+    background: transparent;
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.publication-controls button[aria-pressed="true"] {
+    border-block-end-color: var(--accent);
+    color: var(--accent);
+}
+
+.publication-controls button:hover {
+    color: var(--accent-hover);
+}
+
+.publication-count {
+    margin-inline-start: 0.3rem;
+    color: var(--ink-faint);
+    font-size: 0.72rem;
+}
+
+.publication-view-note {
+    margin: 0 0 1.5rem;
+    color: var(--ink-soft);
+    font-size: 1rem;
+}
+
+.publication-group + .publication-group {
+    margin-block-start: 1.5rem;
+}
+
+.publication-group-title {
+    margin: 0 0 1.25rem;
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.45;
+    text-wrap: balance;
+}
+
 .publication-list {
     display: grid;
 }
@@ -1043,6 +1103,20 @@ a.pub-badge:focus-visible {
     font-size: 1.26rem;
     line-height: 1.45;
     letter-spacing: -0.02em;
+    text-wrap: pretty;
+}
+
+.pub-compact {
+    grid-template-columns: minmax(0, 1fr);
+    padding-block: 1.25rem;
+}
+
+.pub-compact .pub-title {
+    font-size: 1.12rem;
+}
+
+.pub-compact .pub-links {
+    margin-block-start: 0.3rem;
 }
 
 .pub-authors {

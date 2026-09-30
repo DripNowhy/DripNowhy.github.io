@@ -24,7 +24,7 @@ const fallbackConfig = {
             title: 'Twitter'
         },
         cv: {
-            url: 'pdf/CV.pdf?v=20260923-v5',
+            url: 'pdf/CV.pdf?v=20260930-v6',
             icon: 'fa-solid fa-file-lines',
             title: 'CV'
         },
@@ -841,9 +841,34 @@ function initScrollSpy() {
     return { refresh };
 }
 
+function initPublicationView(onChange) {
+    const controls = document.querySelector('.publication-controls');
+    const additional = document.getElementById('additional-publications');
+    if (!controls || !additional) return;
+
+    const buttons = controls.querySelectorAll('[data-publication-view]');
+    function setView(view) {
+        additional.hidden = view !== 'all';
+        buttons.forEach(button => {
+            button.setAttribute('aria-pressed', String(button.dataset.publicationView === view));
+        });
+        onChange?.();
+    }
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => setView(button.dataset.publicationView));
+    });
+    setView('selected');
+    controls.hidden = false;
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
     initAmbientTags();
     initThemeToggle();
+
+    // Initialize before network requests; all papers remain available without JS.
+    let scrollSpy;
+    initPublicationView(() => scrollSpy?.refresh());
 
     const config = await loadConfig();
     renderProfile(config);
@@ -852,7 +877,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     setFooterDate();
 
     // Runs after renderNavigation, which replaces the nav anchors wholesale.
-    const scrollSpy = initScrollSpy();
+    scrollSpy = initScrollSpy();
 
     await loadAndRenderGitHubRepos();
     externalizeLinks();

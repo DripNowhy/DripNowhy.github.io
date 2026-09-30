@@ -109,7 +109,7 @@ Three-state in effect: follows `prefers-color-scheme` until the visitor clicks `
 
 ## Adding Publications
 
-Publications are static `<article>` blocks in `#publications`, newest first:
+Publications are static `<article>` blocks in `#publications`, newest first within each group. Selected first/co-first-author papers are grouped under Reasoning & Self-Improvement and Multimodal Safety & Alignment. Additional Publications uses `.pub.pub-compact` without figures or summaries. Keep the selected/all button counts in sync with the entries. `initPublicationView()` defaults to selected and reveals the additional group on demand; without JavaScript all papers remain visible.
 
 ```html
 <article class="pub">
@@ -118,7 +118,7 @@ Publications are static `<article>` blocks in `#publications`, newest first:
     </div>
     <div class="pub-body">
         <span class="pub-venue">ICML 2026</span>
-        <h3 class="pub-title">Paper Title</h3>
+        <h4 class="pub-title">Paper Title</h4>
         <p class="pub-authors">Coauthors, <span class="highlight-name">Yi Ding</span>, More Coauthors</p>
         <p class="pub-tldr">One-sentence summary.</p>
         <div class="pub-links">
