@@ -957,7 +957,7 @@ p {
 }
 
 .publication-controls[hidden],
-.publication-group[hidden] {
+.pub[hidden] {
     display: none;
 }
 
@@ -988,24 +988,10 @@ p {
     font-size: 0.72rem;
 }
 
-.publication-view-note {
+.publication-status {
     margin: 0 0 1.5rem;
     color: var(--ink-soft);
     font-size: 1rem;
-}
-
-.publication-group + .publication-group {
-    margin-block-start: 1.5rem;
-}
-
-.publication-group-title {
-    margin: 0 0 1.25rem;
-    color: var(--ink);
-    font-family: var(--font-sans);
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.45;
-    text-wrap: balance;
 }
 
 .publication-list {
@@ -1017,13 +1003,13 @@ p {
     grid-template-columns: 184px 1fr;
     gap: 2rem;
     align-items: start;
-    padding-block: 2rem;
-    border-block-start: 1px solid var(--rule-soft);
+    padding-block: 0 2rem;
 }
 
-.pub:first-child {
-    padding-block-start: 0;
-    border-block-start: 0;
+/* Only visible preceding papers add a separator and space above the next row. */
+.pub:not([hidden]) ~ .pub {
+    padding-block-start: 2rem;
+    border-block-start: 1px solid var(--rule-soft);
 }
 
 /* Bare figure: fixed width, natural height, no frame or backdrop. */
@@ -1104,19 +1090,6 @@ a.pub-badge:focus-visible {
     line-height: 1.45;
     letter-spacing: -0.02em;
     text-wrap: pretty;
-}
-
-.pub-compact {
-    grid-template-columns: minmax(0, 1fr);
-    padding-block: 1.25rem;
-}
-
-.pub-compact .pub-title {
-    font-size: 1.12rem;
-}
-
-.pub-compact .pub-links {
-    margin-block-start: 0.3rem;
 }
 
 .pub-authors {

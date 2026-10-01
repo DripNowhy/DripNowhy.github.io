@@ -841,25 +841,41 @@ function initScrollSpy() {
     return { refresh };
 }
 
-function initPublicationView(onChange) {
-    const controls = document.querySelector('.publication-controls');
-    const additional = document.getElementById('additional-publications');
-    if (!controls || !additional) return;
+function initPublicationFilters(onChange) {
+    const section = document.getElementById('publications');
+    const controls = section?.querySelector('.publication-controls');
+    const papers = Array.from(section?.querySelectorAll('[data-publication-topic]') || []);
+    if (!controls || !papers.length) return;
 
-    const buttons = controls.querySelectorAll('[data-publication-view]');
-    function setView(view) {
-        additional.hidden = view !== 'all';
-        buttons.forEach(button => {
-            button.setAttribute('aria-pressed', String(button.dataset.publicationView === view));
+    const buttons = controls.querySelectorAll('[data-publication-filter]');
+    const status = section.querySelector('.publication-status');
+    const matches = (paper, topic) => topic === 'all' || paper.dataset.publicationTopic === topic;
+
+    function setFilter(activeButton) {
+        const topic = activeButton.dataset.publicationFilter;
+        let visibleCount = 0;
+        papers.forEach(paper => {
+            paper.hidden = !matches(paper, topic);
+            if (!paper.hidden) visibleCount += 1;
         });
+        buttons.forEach(button => {
+            button.setAttribute('aria-pressed', String(button === activeButton));
+        });
+        if (status) {
+            const label = activeButton.childNodes[0].textContent.trim();
+            status.textContent = `${visibleCount} ${visibleCount === 1 ? 'paper' : 'papers'}`
+                + (topic === 'all' ? '' : ` in ${label}`);
+        }
         onChange?.();
     }
 
     buttons.forEach(button => {
-        button.addEventListener('click', () => setView(button.dataset.publicationView));
+        const count = button.querySelector('.publication-count');
+        if (count) count.textContent = papers.filter(paper => matches(paper, button.dataset.publicationFilter)).length;
+        button.addEventListener('click', () => setFilter(button));
     });
-    setView('selected');
     controls.hidden = false;
+    setFilter(controls.querySelector('[data-publication-filter="all"]'));
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -868,7 +884,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Initialize before network requests; all papers remain available without JS.
     let scrollSpy;
-    initPublicationView(() => scrollSpy?.refresh());
+    initPublicationFilters(() => scrollSpy?.refresh());
 
     const config = await loadConfig();
     renderProfile(config);

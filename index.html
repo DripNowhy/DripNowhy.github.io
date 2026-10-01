@@ -102,9 +102,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&amp;family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=JetBrains+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Allura&amp;family=Caveat:wght@400&amp;text=DripNowhy&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=20260930-publications">
+    <link rel="stylesheet" href="styles.css?v=20261001-fields">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
-    <script defer src="script.js?v=20260930-cv-v8"></script>
+    <script defer src="script.js?v=20261001-fields"></script>
     <link rel="icon" type="image/jpeg" href="images/yi_avatar.jpg">
     <link rel="apple-touch-icon" href="images/yi_avatar.jpg">
 </head>
@@ -240,189 +240,199 @@
 
             <section id="publications" class="section">
                 <h2 class="section-title">Publications <span class="section-note">* equal contribution</span></h2>
-                <div class="publication-controls" role="group" aria-label="Publication view" hidden>
-                    <button type="button" data-publication-view="selected" aria-pressed="true" aria-controls="additional-publications">Selected <span class="publication-count">6</span></button>
-                    <button type="button" data-publication-view="all" aria-pressed="false" aria-controls="additional-publications">All Publications <span class="publication-count">11</span></button>
+                <div class="publication-controls" role="group" aria-label="Filter publications by research area" hidden>
+                    <button type="button" data-publication-filter="all" aria-pressed="true" aria-controls="publication-list">All <span class="publication-count">11</span></button>
+                    <button type="button" data-publication-filter="reasoning" aria-pressed="false" aria-controls="publication-list">Reasoning &amp; RL <span class="publication-count">4</span></button>
+                    <button type="button" data-publication-filter="safety" aria-pressed="false" aria-controls="publication-list">Safety &amp; Alignment <span class="publication-count">5</span></button>
+                    <button type="button" data-publication-filter="fusion" aria-pressed="false" aria-controls="publication-list">Multimodal Fusion <span class="publication-count">2</span></button>
                 </div>
-                <p class="publication-view-note">Selected first/co-first-author papers and a collaborative technical report across two research directions.</p>
-                <div class="publication-group" aria-labelledby="reasoning-publications">
-                    <h3 class="publication-group-title" id="reasoning-publications">Reasoning &amp; Self-Improvement</h3>
-                    <div class="publication-list">
-                        <article class="pub">
-                            <div class="pub-thumb">
-                                <img loading="lazy" src="images/opsa-methods.webp" alt="Comparison of RLVR, OPD, OPSD, and OPSA training methods">
-                            </div>
-                            <div class="pub-body">
-                                <div class="pub-meta">
-                                    <span class="pub-venue">Preprint 2026</span>
-                                    <a class="pub-badge" href="https://huggingface.co/papers/date/2026-09-01" aria-label="Ranked number 1 on Hugging Face Daily Papers, September 1, 2026">
-                                        <i class="fa-solid fa-trophy" aria-hidden="true"></i>
-                                        <span><strong>#1</strong> Hugging Face Daily Papers <time datetime="2026-09-01">· Sep 1, 2026</time></span>
-                                    </a>
-                                </div>
-                                <h4 class="pub-title">Does On-Policy Distillation Really Distill? From Noisy Teacher to Self-Improvement</h4>
-                                <p class="pub-authors"><span class="highlight-name">Yi Ding</span>, Ruqi Zhang</p>
-                                <p class="pub-tldr">Supervision-free self-improvement through on-policy self-adaptation.</p>
-                                <div class="pub-links">
-                                    <a href="https://arxiv.org/pdf/2608.31046"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
-                                    <a href="https://github.com/DripNowhy/On-Policy-Self-Adaptation"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
-                                    <a href="https://dripnowhy.github.io/On-Policy-Self-Adaptation/"><i class="fa-solid fa-globe" aria-hidden="true"></i> Project</a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="pub">
-                            <div class="pub-thumb">
-                                <img loading="lazy" src="images/octopus.png" alt="Learning Self-Correction in Vision–Language Models via Rollout Augmentation">
-                            </div>
-                            <div class="pub-body">
-                                <span class="pub-venue">ICML 2026</span>
-                                <h4 class="pub-title">Learning Self-Correction in Vision–Language Models via Rollout Augmentation</h4>
-                                <p class="pub-authors"><span class="highlight-name">Yi Ding</span>, Ziliang Qiu, Bolian Li, Ruqi Zhang</p>
-                                <p class="pub-tldr">Learning self-correction by augmenting reinforcement-learning rollouts.</p>
-                                <div class="pub-links">
-                                    <a href="https://arxiv.org/pdf/2602.08503"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
-                                    <a href="https://github.com/DripNowhy/Octopus"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
-                                    <a href="https://dripnowhy.github.io/Octopus/"><i class="fa-solid fa-globe" aria-hidden="true"></i> Project</a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="pub">
-                            <div class="pub-thumb">
-                                <img loading="lazy" src="images/sherlock_pipeline.png" alt="Sherlock: Self-Correcting Reasoning in Vision-Language Models">
-                            </div>
-                            <div class="pub-body">
-                                <span class="pub-venue">NeurIPS 2025</span>
-                                <h4 class="pub-title">Sherlock: Self-Correcting Reasoning in Vision-Language Models</h4>
-                                <p class="pub-authors"><span class="highlight-name">Yi Ding</span>, Ruqi Zhang</p>
-                                <p class="pub-tldr">Bootstrapping self-correction and self-improvement from limited supervision.</p>
-                                <div class="pub-links">
-                                    <a href="https://arxiv.org/pdf/2505.22651"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
-                                    <a href="https://github.com/DripNowhy/Sherlock"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
-                                    <a href="https://dripnowhy.github.io/Sherlock/"><i class="fa-solid fa-globe" aria-hidden="true"></i> Project</a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <div class="publication-group" aria-labelledby="safety-publications">
-                    <h3 class="publication-group-title" id="safety-publications">Multimodal Safety &amp; Alignment</h3>
-                    <div class="publication-list">
-                        <article class="pub">
-                            <div class="pub-thumb">
-                                <img loading="lazy" src="images/mis.png" alt="Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models">
-                            </div>
-                            <div class="pub-body">
-                                <span class="pub-venue">ICLR 2026</span>
-                                <h4 class="pub-title">Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models</h4>
-                                <p class="pub-authors"><span class="highlight-name">Yi Ding*</span>, Lijun Li*, Bing Cao, Jing Shao</p>
-                                <p class="pub-tldr">Teaching vision-language models to reason about safety across multiple images.</p>
-                                <div class="pub-links">
-                                    <a href="https://arxiv.org/pdf/2501.18533"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
-                                    <a href="https://github.com/DripNowhy/MIS"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
-                                    <a href="https://dripnowhy.github.io/MIS/"><i class="fa-solid fa-globe" aria-hidden="true"></i> Project</a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="pub">
-                            <div class="pub-thumb">
-                                <img loading="lazy" src="images/safework-r1.png" alt="SafeWork-R1: Coevolving Safety and Intelligence under the AI-45° Law">
-                            </div>
-                            <div class="pub-body">
-                                <span class="pub-venue">Technical Report 2025</span>
-                                <h4 class="pub-title">SafeWork-R1: Coevolving Safety and Intelligence under the AI-45° Law</h4>
-                                <p class="pub-authors">Shanghai Artificial Intelligence Laboratory, …, <span class="highlight-name">Yi Ding</span>, and 100+ authors</p>
-                                <p class="pub-tldr">Jointly improving safety and intelligence in multimodal reasoning.</p>
-                                <div class="pub-links">
-                                    <a href="https://arxiv.org/pdf/2507.18576"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="pub">
-                            <div class="pub-thumb">
-                                <img loading="lazy" src="images/eta.png" alt="ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time">
-                            </div>
-                            <div class="pub-body">
-                                <span class="pub-venue">ICLR 2025</span>
-                                <h4 class="pub-title">ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time</h4>
-                                <p class="pub-authors"><span class="highlight-name">Yi Ding</span>, Bolian Li, Ruqi Zhang</p>
-                                <p class="pub-tldr">Training-free safety alignment for vision-language models at inference time.</p>
-                                <div class="pub-links">
-                                    <a href="https://arxiv.org/pdf/2410.06625v2"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
-                                    <a href="https://github.com/DripNowhy/ETA"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
-                                    <a href="https://dripnowhy.github.io/ETA.html"><i class="fa-solid fa-globe" aria-hidden="true"></i> Project</a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <div class="publication-group" id="additional-publications" aria-labelledby="additional-publications-title">
-                    <h3 class="publication-group-title" id="additional-publications-title">Additional Publications</h3>
-                    <p class="publication-view-note">* Equal contribution.</p>
-                    <div class="publication-list">
-                        <article class="pub pub-compact">
-                            <div class="pub-body">
+                <p class="publication-status" role="status" aria-live="polite" aria-atomic="true">11 papers</p>
+                <div class="publication-list" id="publication-list">
+                    <article class="pub" data-publication-topic="reasoning">
+                        <div class="pub-thumb">
+                            <img loading="lazy" src="images/opsa-methods.webp" alt="Comparison of RLVR, OPD, OPSD, and OPSA training methods" width="1400" height="1060">
+                        </div>
+                        <div class="pub-body">
+                            <div class="pub-meta">
                                 <span class="pub-venue">Preprint 2026</span>
-                                <h4 class="pub-title">Addressing Performance Saturation for LLM RL via Precise Entropy Curve Control</h4>
-                                <p class="pub-authors">Bolian Li, Yifan Wang, <span class="highlight-name">Yi Ding</span>, Anamika Lochab, Ananth Grama, Ruqi Zhang</p>
-                                <div class="pub-links">
-                                    <a href="https://arxiv.org/pdf/2604.26326"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
-                                    <a href="https://github.com/lblaoke/entrocraft"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
-                                    <a href="https://lblaoke.github.io/demo/entrocraft"><i class="fa-solid fa-globe" aria-hidden="true"></i> Demo</a>
-                                </div>
+                                <a class="pub-badge" href="https://huggingface.co/papers/date/2026-09-01" aria-label="Ranked number 1 on Hugging Face Daily Papers, September 1, 2026">
+                                    <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                                    <span><strong>#1</strong> Hugging Face Daily Papers <time datetime="2026-09-01">· Sep 1, 2026</time></span>
+                                </a>
                             </div>
-                        </article>
+                            <h3 class="pub-title">Does On-Policy Distillation Really Distill? From Noisy Teacher to Self-Improvement</h3>
+                            <p class="pub-authors"><span class="highlight-name">Yi Ding</span>, Ruqi Zhang</p>
+                            <p class="pub-tldr">Supervision-free self-improvement through on-policy self-adaptation.</p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2608.31046"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
+                                <a href="https://github.com/DripNowhy/On-Policy-Self-Adaptation"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
+                                <a href="https://dripnowhy.github.io/On-Policy-Self-Adaptation/"><i class="fa-solid fa-globe" aria-hidden="true"></i> Project</a>
+                            </div>
+                        </div>
+                    </article>
 
-                        <article class="pub pub-compact">
-                            <div class="pub-body">
-                                <span class="pub-venue">ICML 2026 · Position Paper</span>
-                                <h4 class="pub-title">Modular Safety Guardrails Are Necessary for Foundation-Model-Enabled Robots in the Real World</h4>
-                                <p class="pub-authors">Joonkyung Kim, Wenxi Chen, Davood Soleymanzadeh, <span class="highlight-name">Yi Ding</span>, Xiangbo Gao, Zhengzhong Tu, Ruqi Zhang, Fan Fei, Sushant Veer, Yiwei Lyu, Minghui Zheng, Yan Gu</p>
-                                <div class="pub-links">
-                                    <a href="https://arxiv.org/pdf/2602.04056"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
-                                </div>
+                    <article class="pub" data-publication-topic="reasoning">
+                        <div class="pub-thumb">
+                            <img loading="lazy" src="images/entrocraft.png" alt="Addressing Performance Saturation for LLM RL via Precise Entropy Curve Control" width="964" height="918">
+                        </div>
+                        <div class="pub-body">
+                            <span class="pub-venue">Preprint 2026</span>
+                            <h3 class="pub-title">Addressing Performance Saturation for LLM RL via Precise Entropy Curve Control</h3>
+                            <p class="pub-authors">Bolian Li, Yifan Wang, <span class="highlight-name">Yi Ding</span>, Anamika Lochab, Ananth Grama, Ruqi Zhang</p>
+                            <p class="pub-tldr">We propose Entrocraft, a rejection-sampling method that precisely controls entropy schedules during LLM reinforcement learning, alleviating performance saturation while improving generalization, output diversity, and long-term training.</p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2604.26326"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
+                                <a href="https://github.com/lblaoke/entrocraft"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
+                                <a href="https://lblaoke.github.io/demo/entrocraft"><i class="fa-solid fa-globe" aria-hidden="true"></i> Demo</a>
                             </div>
-                        </article>
+                        </div>
+                    </article>
 
-                        <article class="pub pub-compact">
-                            <div class="pub-body">
-                                <span class="pub-venue">EMNLP 2025 · Main</span>
-                                <h4 class="pub-title">Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection</h4>
-                                <p class="pub-authors">Ziqi Miao*, <span class="highlight-name">Yi Ding*</span>, Lijun Li, Jing Shao</p>
-                                <div class="pub-links">
-                                    <a href="https://arxiv.org/pdf/2507.02844"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
-                                    <a href="https://github.com/Dtc7w3PQ/Visco-Attack"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
-                                </div>
+                    <article class="pub" data-publication-topic="reasoning">
+                        <div class="pub-thumb">
+                            <img loading="lazy" src="images/octopus.png" alt="Learning Self-Correction in Vision–Language Models via Rollout Augmentation" width="3510" height="1998">
+                        </div>
+                        <div class="pub-body">
+                            <span class="pub-venue">ICML 2026</span>
+                            <h3 class="pub-title">Learning Self-Correction in Vision–Language Models via Rollout Augmentation</h3>
+                            <p class="pub-authors"><span class="highlight-name">Yi Ding</span>, Ziliang Qiu, Bolian Li, Ruqi Zhang</p>
+                            <p class="pub-tldr">Learning self-correction by augmenting reinforcement-learning rollouts.</p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2602.08503"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
+                                <a href="https://github.com/DripNowhy/Octopus"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
+                                <a href="https://dripnowhy.github.io/Octopus/"><i class="fa-solid fa-globe" aria-hidden="true"></i> Project</a>
                             </div>
-                        </article>
+                        </div>
+                    </article>
 
-                        <article class="pub pub-compact">
-                            <div class="pub-body">
-                                <span class="pub-venue">NeurIPS 2024</span>
-                                <h4 class="pub-title">Test-Time Dynamic Image Fusion</h4>
-                                <p class="pub-authors">Bing Cao, Yinan Xia*, <span class="highlight-name">Yi Ding*</span>, Changqing Zhang, Qinghua Hu</p>
-                                <div class="pub-links">
-                                    <a href="https://arxiv.org/pdf/2411.02840"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
-                                    <a href="https://github.com/Yinan-Xia/TTD"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
-                                </div>
+                    <article class="pub" data-publication-topic="safety">
+                        <div class="pub-thumb">
+                            <img loading="lazy" src="images/modular_safety.png" alt="Modular Safety Guardrails Are Necessary for Foundation-Model-Enabled Robots in the Real World" width="2774" height="1980">
+                        </div>
+                        <div class="pub-body">
+                            <span class="pub-venue">ICML 2026 · Position Paper</span>
+                            <h3 class="pub-title">Modular Safety Guardrails Are Necessary for Foundation-Model-Enabled Robots in the Real World</h3>
+                            <p class="pub-authors">Joonkyung Kim, Wenxi Chen, Davood Soleymanzadeh, <span class="highlight-name">Yi Ding</span>, Xiangbo Gao, Zhengzhong Tu, Ruqi Zhang, Fan Fei, Sushant Veer, Yiwei Lyu, Minghui Zheng, Yan Gu</p>
+                            <p class="pub-tldr">We propose modular safety guardrails with monitoring and intervention layers, and show how cross-layer co-design enables faster, less conservative, and more effective safety for physical AI.</p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2602.04056"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
                             </div>
-                        </article>
+                        </div>
+                    </article>
 
-                        <article class="pub pub-compact">
-                            <div class="pub-body">
-                                <span class="pub-venue">ICML 2024</span>
-                                <h4 class="pub-title">Predictive Dynamic Fusion</h4>
-                                <p class="pub-authors">Bing Cao, Yinan Xia*, <span class="highlight-name">Yi Ding*</span>, Changqing Zhang, Qinghua Hu</p>
-                                <div class="pub-links">
-                                    <a href="https://arxiv.org/pdf/2406.04802"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
-                                    <a href="https://github.com/Yinan-Xia/PDF"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
-                                </div>
+                    <article class="pub" data-publication-topic="safety">
+                        <div class="pub-thumb">
+                            <img loading="lazy" src="images/mis.png" alt="Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models" width="3420" height="1224">
+                        </div>
+                        <div class="pub-body">
+                            <span class="pub-venue">ICLR 2026</span>
+                            <h3 class="pub-title">Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models</h3>
+                            <p class="pub-authors"><span class="highlight-name">Yi Ding*</span>, Lijun Li*, Bing Cao, Jing Shao</p>
+                            <p class="pub-tldr">Teaching vision-language models to reason about safety across multiple images.</p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2501.18533"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
+                                <a href="https://github.com/DripNowhy/MIS"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
+                                <a href="https://dripnowhy.github.io/MIS/"><i class="fa-solid fa-globe" aria-hidden="true"></i> Project</a>
                             </div>
-                        </article>
-                    </div>
+                        </div>
+                    </article>
+
+                    <article class="pub" data-publication-topic="safety">
+                        <div class="pub-thumb">
+                            <img loading="lazy" src="images/safework-r1.png" alt="SafeWork-R1: Coevolving Safety and Intelligence under the AI-45° Law" width="3914" height="1678">
+                        </div>
+                        <div class="pub-body">
+                            <span class="pub-venue">Technical Report 2025</span>
+                            <h3 class="pub-title">SafeWork-R1: Coevolving Safety and Intelligence under the AI-45° Law</h3>
+                            <p class="pub-authors">Shanghai Artificial Intelligence Laboratory, …, <span class="highlight-name">Yi Ding</span>, and 100+ authors</p>
+                            <p class="pub-tldr">Jointly improving safety and intelligence in multimodal reasoning.</p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2507.18576"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="pub" data-publication-topic="reasoning">
+                        <div class="pub-thumb">
+                            <img loading="lazy" src="images/sherlock_pipeline.png" alt="Sherlock: Self-Correcting Reasoning in Vision-Language Models" width="2499" height="979">
+                        </div>
+                        <div class="pub-body">
+                            <span class="pub-venue">NeurIPS 2025</span>
+                            <h3 class="pub-title">Sherlock: Self-Correcting Reasoning in Vision-Language Models</h3>
+                            <p class="pub-authors"><span class="highlight-name">Yi Ding</span>, Ruqi Zhang</p>
+                            <p class="pub-tldr">Bootstrapping self-correction and self-improvement from limited supervision.</p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2505.22651"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
+                                <a href="https://github.com/DripNowhy/Sherlock"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
+                                <a href="https://dripnowhy.github.io/Sherlock/"><i class="fa-solid fa-globe" aria-hidden="true"></i> Project</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="pub" data-publication-topic="safety">
+                        <div class="pub-thumb">
+                            <img loading="lazy" src="images/visco_attack.jpg" alt="Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection" width="3811" height="1766">
+                        </div>
+                        <div class="pub-body">
+                            <span class="pub-venue">EMNLP 2025 · Main</span>
+                            <h3 class="pub-title">Visual Contextual Attack: Jailbreaking MLLMs with Image-Driven Context Injection</h3>
+                            <p class="pub-authors">Ziqi Miao*, <span class="highlight-name">Yi Ding*</span>, Lijun Li, Jing Shao</p>
+                            <p class="pub-tldr">We present VisCo-Attack, which jailbreaks MLLMs via a visual-centric setting and fabricated visual context.</p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2507.02844"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
+                                <a href="https://github.com/Dtc7w3PQ/Visco-Attack"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="pub" data-publication-topic="safety">
+                        <div class="pub-thumb">
+                            <img loading="lazy" src="images/eta.png" alt="ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time" width="2184" height="1151">
+                        </div>
+                        <div class="pub-body">
+                            <span class="pub-venue">ICLR 2025</span>
+                            <h3 class="pub-title">ETA: Evaluating Then Aligning Safety of Vision Language Models at Inference Time</h3>
+                            <p class="pub-authors"><span class="highlight-name">Yi Ding</span>, Bolian Li, Ruqi Zhang</p>
+                            <p class="pub-tldr">Training-free safety alignment for vision-language models at inference time.</p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2410.06625v2"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
+                                <a href="https://github.com/DripNowhy/ETA"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
+                                <a href="https://dripnowhy.github.io/ETA.html"><i class="fa-solid fa-globe" aria-hidden="true"></i> Project</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="pub" data-publication-topic="fusion">
+                        <div class="pub-thumb">
+                            <img loading="lazy" src="images/ttd.png" alt="Test-Time Dynamic Image Fusion" width="1810" height="779">
+                        </div>
+                        <div class="pub-body">
+                            <span class="pub-venue">NeurIPS 2024</span>
+                            <h3 class="pub-title">Test-Time Dynamic Image Fusion</h3>
+                            <p class="pub-authors">Bing Cao, Yinan Xia*, <span class="highlight-name">Yi Ding*</span>, Changqing Zhang, Qinghua Hu</p>
+                            <p class="pub-tldr">Improving the quality of fused images across almost every backbone without additional training, by setting dynamic weights at test time.</p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2411.02840"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
+                                <a href="https://github.com/Yinan-Xia/TTD"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="pub" data-publication-topic="fusion">
+                        <div class="pub-thumb">
+                            <img loading="lazy" src="images/pdf.jpg" alt="Predictive Dynamic Fusion" width="1956" height="747">
+                        </div>
+                        <div class="pub-body">
+                            <span class="pub-venue">ICML 2024</span>
+                            <h3 class="pub-title">Predictive Dynamic Fusion</h3>
+                            <p class="pub-authors">Bing Cao, Yinan Xia*, <span class="highlight-name">Yi Ding*</span>, Changqing Zhang, Qinghua Hu</p>
+                            <p class="pub-tldr">The key to dynamic fusion lies in the correlation between the weights and the loss, providing generalization theory for decision-level fusion.</p>
+                            <div class="pub-links">
+                                <a href="https://arxiv.org/pdf/2406.04802"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> Paper</a>
+                                <a href="https://github.com/Yinan-Xia/PDF"><i class="fa-brands fa-github" aria-hidden="true"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </section>
 
